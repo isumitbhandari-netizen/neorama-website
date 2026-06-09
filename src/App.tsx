@@ -684,7 +684,7 @@ export default function App() {
                       <img 
                         src={member.imageUrl} 
                         alt={member.name} 
-                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                        className="w-full h-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                         style={{ height: "400px" }}
                         referrerPolicy="no-referrer"
                       />
@@ -723,7 +723,7 @@ export default function App() {
                       <img 
                         src={member.imageUrl} 
                         alt={member.name} 
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                         style={{ height: "350px" }}
                         referrerPolicy="no-referrer"
                       />
