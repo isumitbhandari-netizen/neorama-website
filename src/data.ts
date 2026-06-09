@@ -449,27 +449,39 @@ export const TEAM_MEMBERS = [
 
 export const BLOG_POSTS = [
   {
-    id: "anamorphic-trends",
-    title: "Anamorphic Textures in Brand Campaigns",
-    excerpt: "Why the clinical perfection of modern digital sensors is yielding to beautiful organic flaws, anamorphic flare spectrums, and raw lighting textures.",
-    date: "June 04, 2026",
+    id: "why-every-brand-needs-a-content-library-2026",
+    slug: "why-every-brand-needs-a-content-library-2026",
+    title: "Why Every Brand Needs a Content Library in 2026",
+    category: "Content Marketing",
+    excerpt: "Discover why modern brands are investing in photography, video, social content, and design assets to create scalable marketing systems.",
+    date: "June 09, 2026",
     readTime: "4 min read",
-    imageUrl: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80"
+    metaTitle: "Why Every Brand Needs a Content Library in 2026 | Neorama",
+    metaDescription: "Discover why modern brands invest in photography, video, and design assets to build scalable, consistent content systems. A guide for marketing leaders.",
+    imageUrl: "/images/blog/why-every-brand-needs-a-content-library-2026.jpg"
   },
   {
-    id: "high-contrast-aesthetics",
-    title: "The Power of High-Contrast Canvas Layouts",
-    excerpt: "Exploring the aesthetic authority of heavy dark canvases and selective electric color pulses in contemporary premium brand positions.",
-    date: "May 28, 2026",
+    id: "how-professional-photography-influences-buying-decisions",
+    slug: "how-professional-photography-influences-buying-decisions",
+    title: "How Professional Photography Influences Buying Decisions",
+    category: "Photography & Marketing",
+    excerpt: "Strong visual content does more than look good—it shapes trust, perception, and purchasing decisions across every industry.",
+    date: "June 02, 2026",
     readTime: "5 min read",
-    imageUrl: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80"
+    metaTitle: "How Professional Photography Influences Buying Decisions",
+    metaDescription: "Professional photography shapes trust, perception, and purchasing decisions. Learn how brand and product imagery drives conversions across industries.",
+    imageUrl: "/images/blog/how-professional-photography-influences-buying-decisions.jpg"
   },
   {
-    id: "spatial-audio-immersion",
-    title: "Sound Design: The Secret Force of Cinema",
-    excerpt: "How custom acoustic induction and microscopic sound signatures capture user focus far longer than generic silent landing maps.",
-    date: "April 15, 2026",
+    id: "the-rise-of-short-form-video-what-brands-need-to-know",
+    slug: "the-rise-of-short-form-video-what-brands-need-to-know",
+    title: "The Rise of Short-Form Video: What Brands Need to Know",
+    category: "Social Media Marketing",
+    excerpt: "From Instagram Reels to YouTube Shorts, short-form video has become one of the most effective tools for audience engagement and brand growth.",
+    date: "May 26, 2026",
     readTime: "6 min read",
-    imageUrl: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80"
+    metaTitle: "The Rise of Short-Form Video: What Brands Need to Know",
+    metaDescription: "Short-form video drives engagement and brand growth. Learn how brands use Reels and Shorts—and why professional social content is worth the investment.",
+    imageUrl: "/images/blog/the-rise-of-short-form-video-what-brands-need-to-know.jpg"
   }
 ];

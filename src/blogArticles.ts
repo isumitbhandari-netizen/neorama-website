@@ -1,0 +1,362 @@
+// Full article bodies for the blog. Kept separate from data.ts to stay readable.
+// Each article is rendered both on its standalone prerendered page (for SEO) and
+// could be consumed by an in-app reader. Blocks map 1:1 to semantic HTML.
+
+export type ArticleBlock =
+  | { type: "p"; text: string }
+  | { type: "h2"; text: string }
+  | { type: "h3"; text: string }
+  | { type: "ul"; items: string[] }
+  | { type: "cta"; text: string; label: string };
+
+export interface BlogArticle {
+  slug: string;
+  title: string;
+  category: string;
+  date: string;
+  readTime: string;
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string[];
+  imageUrl: string;
+  /** One-line standfirst shown under the H1. */
+  standfirst: string;
+  blocks: ArticleBlock[];
+}
+
+export const BLOG_ARTICLES: Record<string, BlogArticle> = {
+  "why-every-brand-needs-a-content-library-2026": {
+    slug: "why-every-brand-needs-a-content-library-2026",
+    title: "Why Every Brand Needs a Content Library in 2026",
+    category: "Content Marketing",
+    date: "June 09, 2026",
+    readTime: "4 min read",
+    metaTitle: "Why Every Brand Needs a Content Library in 2026 | Neorama",
+    metaDescription:
+      "Discover why modern brands invest in photography, video, and design assets to build scalable, consistent content systems. A guide for marketing leaders.",
+    keywords: [
+      "content creation agency",
+      "brand content library",
+      "social media content creation",
+      "commercial photography",
+      "brand video production",
+    ],
+    imageUrl: "/images/blog/why-every-brand-needs-a-content-library-2026.jpg",
+    standfirst:
+      "Modern brands are moving away from one-off campaigns and toward organised content ecosystems. Here is why a content library has become essential infrastructure.",
+    blocks: [
+      {
+        type: "p",
+        text: "Marketing teams have never produced more content, yet most still feel perpetually behind. A campaign launches, a flurry of assets gets made, and weeks later the cycle restarts from zero. The brands that have broken this loop share one quiet advantage: a content library. Rather than commissioning visuals campaign-by-campaign, they build a structured, reusable ecosystem of photography, video, social content, and design assets that compounds in value over time.",
+      },
+      {
+        type: "p",
+        text: "As a content creation agency working across hospitality, fashion, consumer, and education brands, we have watched this shift accelerate. In 2026, a content library is no longer a luxury reserved for large advertisers. It is the operating system that makes everything else, from paid media to organic social, faster, cheaper, and more consistent.",
+      },
+      { type: "h2", text: "What a Content Library Actually Is" },
+      {
+        type: "p",
+        text: "A content library is a centralised, well-organised collection of brand-owned visual and written assets, structured so any team member can find, deploy, and adapt them. Think of it less as a folder of files and more as a system: hero films and product photography, short-form social cuts, lifestyle imagery, motion graphics, templates, and design components, all tagged, versioned, and ready to use.",
+      },
+      {
+        type: "p",
+        text: "The difference between a shared drive and a true content library is intent. A library is produced against a strategy. Every asset is created knowing it will be reused, repurposed, and recombined across channels and quarters.",
+      },
+      { type: "h2", text: "Why Brands Struggle With Inconsistent Content" },
+      {
+        type: "p",
+        text: "Inconsistency is rarely a creative failure. It is a structural one. When content is made reactively, each project starts with new freelancers, new references, and new interpretations of the brand. The result is a feed that looks like five different companies wearing the same logo.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Visual identity drifts because no single source of truth exists.",
+          "Teams re-shoot assets they already own but cannot find.",
+          "Tone and quality swing depending on who delivered the last project.",
+          "Launch timelines stall while waiting on net-new production.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Each of these problems quietly taxes the marketing budget and erodes brand trust. Audiences may not articulate it, but they feel when a brand looks scattered.",
+      },
+      { type: "h2", text: "The Hidden Cost of Campaign-by-Campaign Content" },
+      {
+        type: "p",
+        text: "Producing content one campaign at a time feels economical because each invoice is small. In aggregate, it is the most expensive way to operate. You pay repeatedly for setup, crew mobilisation, location scouting, and creative direction, costs that a single, well-planned production cycle absorbs once and amortises across dozens of deliverables.",
+      },
+      {
+        type: "p",
+        text: "There is an opportunity cost, too. Reactive production means your best ideas wait in a queue behind logistics. A content library inverts this: the heavy lifting is done in advance, so your team spends its energy on strategy and distribution rather than scrambling for raw material.",
+      },
+      { type: "h2", text: "The Benefits of an Organised Content Ecosystem" },
+      {
+        type: "h3",
+        text: "Speed to market",
+      },
+      {
+        type: "p",
+        text: "When assets already exist, launching a campaign becomes an act of assembly rather than creation. Seasonal pushes, product drops, and reactive social moments ship in hours, not weeks.",
+      },
+      { type: "h3", text: "Consistency at scale" },
+      {
+        type: "p",
+        text: "A library enforces a unified visual language automatically. Every channel pulls from the same well, so the brand reads as one coherent voice whether someone discovers you on Instagram, a billboard, or a booking page.",
+      },
+      { type: "h3", text: "Measurable efficiency" },
+      {
+        type: "p",
+        text: "Cost-per-asset drops sharply when commercial photography, brand video production, and design are planned together. One shoot day can yield stills, reels, website headers, and ad creative simultaneously.",
+      },
+      { type: "h2", text: "How Photography, Video, Reels, and Design Work Together" },
+      {
+        type: "p",
+        text: "The real power of a content library is compounding. A single brand film becomes the source for a dozen short-form cuts. A photography set feeds the website, the deck, and the paid carousel. Design systems turn raw captures into on-brand templates anyone can extend.",
+      },
+      {
+        type: "p",
+        text: "When these disciplines are produced in isolation, they fight each other. When they are produced as one ecosystem, they multiply. That multidisciplinary alignment, film, photography, social content, and design under one creative direction, is precisely what turns scattered output into a system.",
+      },
+      { type: "h2", text: "What This Looks Like Across Industries" },
+      {
+        type: "ul",
+        items: [
+          "Hospitality brands build libraries of property, food, and experience imagery that power bookings year-round without re-shooting every season.",
+          "Fashion labels capture lookbooks engineered from day one for runway, e-commerce, and reels.",
+          "Consumer brands maintain product systems that keep packaging, lifestyle, and campaign visuals perfectly in sync.",
+          "Education institutions document campus life and outcomes into evergreen stories that fuel admissions for years.",
+        ],
+      },
+      {
+        type: "p",
+        text: "In every case, the brands that treat content as infrastructure, not as a series of expenses, market faster, look sharper, and spend smarter.",
+      },
+      { type: "h2", text: "Building Your Content System" },
+      {
+        type: "p",
+        text: "A content library is not built by shooting more. It is built by shooting deliberately, with a strategy that anticipates how every frame will be reused. That requires a partner who can plan across disciplines and execute production and post-production as a single, coherent pipeline.",
+      },
+      {
+        type: "cta",
+        text: "Need a scalable content system for your brand? Let's talk.",
+        label: "Start a conversation",
+      },
+    ],
+  },
+
+  "how-professional-photography-influences-buying-decisions": {
+    slug: "how-professional-photography-influences-buying-decisions",
+    title: "How Professional Photography Influences Buying Decisions",
+    category: "Photography & Marketing",
+    date: "June 02, 2026",
+    readTime: "5 min read",
+    metaTitle: "How Professional Photography Influences Buying Decisions",
+    metaDescription:
+      "Professional photography shapes trust, perception, and purchasing decisions. Learn how brand and product imagery drives conversions across industries.",
+    keywords: [
+      "commercial photography",
+      "brand photography",
+      "product photography",
+      "hospitality photography",
+      "marketing photography",
+    ],
+    imageUrl: "/images/blog/how-professional-photography-influences-buying-decisions.jpg",
+    standfirst:
+      "Strong visual content does more than look good. It shapes trust, perception, and the purchasing decisions your customers make in a fraction of a second.",
+    blocks: [
+      {
+        type: "p",
+        text: "Before a customer reads a word of your copy, they have already judged your brand. In digital marketing, that judgment happens in milliseconds, and it is almost entirely visual. Professional photography is not decoration layered on top of a product. It is the first and often the deciding argument in whether someone trusts you enough to buy.",
+      },
+      {
+        type: "p",
+        text: "Across every industry we work in, the pattern repeats: better imagery does not just look more premium, it converts more reliably. Understanding why reveals one of the highest-leverage investments a brand can make.",
+      },
+      { type: "h2", text: "First Impressions Are Made in Milliseconds" },
+      {
+        type: "p",
+        text: "Research into online behaviour consistently shows that users form an opinion of a page almost instantly, long before they process any text. That snap judgment is dominated by imagery: its clarity, composition, lighting, and craft. A grainy, poorly lit photo signals risk. A considered, professionally produced image signals competence and care.",
+      },
+      {
+        type: "p",
+        text: "This is not vanity. It is cognitive shorthand. When customers cannot physically inspect a product or space, they use visual quality as a proxy for everything they cannot verify.",
+      },
+      { type: "h2", text: "Why Visual Quality Equals Credibility" },
+      {
+        type: "p",
+        text: "Trust is the currency of every transaction, and photography is one of its most efficient signals. Brand photography that is consistent, intentional, and high-craft tells the audience that the same standard runs through the product, the service, and the experience behind it.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Sharp, well-lit imagery reduces the perceived risk of buying.",
+          "Consistent style across touchpoints signals an established, dependable brand.",
+          "Authentic, well-directed images build emotional connection that stock imagery cannot.",
+        ],
+      },
+      { type: "h2", text: "Product Photography and Conversion Rates" },
+      {
+        type: "p",
+        text: "Nowhere is the link between imagery and revenue more direct than in e-commerce. Product photography is the closest a customer gets to holding the item. When it accurately and beautifully communicates material, scale, and detail, hesitation drops and conversion rises.",
+      },
+      {
+        type: "p",
+        text: "Multiple angles, lifestyle context, and consistent treatment do more than inform, they pre-empt the doubts that cause abandoned carts. A product shot is not a record of what you sell. It is a sales argument made in light.",
+      },
+      { type: "h2", text: "Hospitality Photography and Booking Decisions" },
+      {
+        type: "p",
+        text: "For hotels, resorts, and restaurants, the photograph is the product until the guest arrives. Hospitality photography sells an experience that cannot be sampled in advance, so the imagery has to carry the full weight of the promise.",
+      },
+      {
+        type: "p",
+        text: "A well-shot suite, a thoughtfully styled plate, a golden-hour view, these are not illustrations of the experience. They are the reason a guest chooses one property over a dozen others on the same booking page. Weak imagery does not just underperform here; it actively redirects revenue to competitors who invested in their visuals.",
+      },
+      { type: "h2", text: "Real Estate and Lifestyle Imagery" },
+      {
+        type: "p",
+        text: "The same principle governs real estate and lifestyle brands. Buyers and renters shortlist based on photographs long before a viewing. Imagery that captures space, light, and atmosphere generates more enquiries and frames the property at its true value. Lifestyle photography, meanwhile, lets audiences imagine themselves inside the brand, a far more persuasive position than simply describing features.",
+      },
+      { type: "h2", text: "Consistency Is a Competitive Advantage" },
+      {
+        type: "p",
+        text: "One excellent photo helps. A consistent body of work compounds. When every image, across the website, social channels, advertising, and sales materials, shares a deliberate visual language, the brand feels larger, more trustworthy, and more memorable than its actual size.",
+      },
+      {
+        type: "p",
+        text: "This consistency is difficult to achieve with ad-hoc production. It is the natural outcome of treating marketing photography as a planned, ongoing discipline rather than a series of disconnected shoots.",
+      },
+      { type: "h2", text: "Photography Is an Investment, Not an Expense" },
+      {
+        type: "p",
+        text: "The most useful reframe a marketing leader can make is to stop counting photography as a line-item cost and start treating it as an appreciating asset. A strong image library works for years, across campaigns, channels, and seasons. The return is measured not in the invoice, but in the trust earned and the decisions influenced every time the imagery is seen.",
+      },
+      {
+        type: "p",
+        text: "In a market where customers decide in milliseconds, the brands that win are the ones that make those milliseconds count.",
+      },
+      {
+        type: "cta",
+        text: "Looking to elevate your brand through photography? Let's create something exceptional.",
+        label: "Start a conversation",
+      },
+    ],
+  },
+
+  "the-rise-of-short-form-video-what-brands-need-to-know": {
+    slug: "the-rise-of-short-form-video-what-brands-need-to-know",
+    title: "The Rise of Short-Form Video: What Brands Need to Know",
+    category: "Social Media Marketing",
+    date: "May 26, 2026",
+    readTime: "6 min read",
+    metaTitle: "The Rise of Short-Form Video: What Brands Need to Know",
+    metaDescription:
+      "Short-form video drives engagement and brand growth. Learn how brands use Reels and Shorts—and why professional social content is worth the investment.",
+    keywords: [
+      "social media marketing",
+      "instagram reels agency",
+      "short form video production",
+      "content marketing agency",
+      "brand video content",
+    ],
+    imageUrl: "/images/blog/the-rise-of-short-form-video-what-brands-need-to-know.jpg",
+    standfirst:
+      "From Instagram Reels to YouTube Shorts, short-form video has become one of the most effective tools for audience engagement and brand growth. Here is how to use it well.",
+    blocks: [
+      {
+        type: "p",
+        text: "A few years ago, short-form video was treated as a novelty, a place for dance trends and quick laughs. Today it is the dominant format of the open internet and the single most efficient way for a brand to earn attention. Instagram Reels, YouTube Shorts, and their counterparts now shape how audiences discover, evaluate, and remember the brands they buy from.",
+      },
+      {
+        type: "p",
+        text: "For marketing leaders, the question is no longer whether to invest in short-form video, but how to do it in a way that builds the brand rather than just chasing the algorithm. Understanding the forces behind the format is the first step.",
+      },
+      { type: "h2", text: "Why Short-Form Content Dominates Social Media" },
+      {
+        type: "p",
+        text: "Platforms reward short-form video because it keeps people watching, and the feeds that surface it are engineered for discovery. Unlike a static post that mostly reaches existing followers, a strong reel can travel far beyond your audience, putting your brand in front of thousands of qualified strangers at near-zero distribution cost.",
+      },
+      {
+        type: "p",
+        text: "That discovery engine is why short-form has become the most powerful organic growth channel available to brands of any size.",
+      },
+      { type: "h2", text: "Attention Spans and Mobile-First Behaviour" },
+      {
+        type: "p",
+        text: "Audiences now consume content on phones, in motion, between tasks. Short-form video is built for exactly this context: vertical, sound-on, and immediate. The first second decides everything. A video that earns attention in that window can hold it for a full message; one that does not is scrolled past before it begins.",
+      },
+      {
+        type: "p",
+        text: "This mobile-first reality rewards craft. Pacing, framing, captions, and hook design are not stylistic choices, they are the difference between a video that performs and one that disappears.",
+      },
+      { type: "h2", text: "How Brands Use Reels for Awareness and Engagement" },
+      {
+        type: "p",
+        text: "The strongest brand accounts use short-form video as a layered system rather than a stream of one-offs:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Awareness content designed to reach new audiences through discovery feeds.",
+          "Engagement content that deepens the relationship with existing followers.",
+          "Conversion-minded content that connects the audience to a product, service, or booking.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Each layer plays a distinct role, and together they turn a social presence into a genuine growth channel rather than a vanity feed.",
+      },
+      { type: "h2", text: "Content Strategies by Industry" },
+      { type: "h3", text: "Hospitality" },
+      {
+        type: "p",
+        text: "Properties and restaurants use short-form to sell atmosphere, the texture of an experience that photographs alone cannot fully convey. Motion captures ambience, and ambience drives bookings.",
+      },
+      { type: "h3", text: "Fashion" },
+      {
+        type: "p",
+        text: "Fashion brands use reels to show movement, styling, and detail, turning a static lookbook into something that lives and breathes on the feed.",
+      },
+      { type: "h3", text: "Events" },
+      {
+        type: "p",
+        text: "Event companies build anticipation before, energy during, and proof after, a content arc that extends a single day into weeks of engagement.",
+      },
+      { type: "h3", text: "Consumer Products" },
+      {
+        type: "p",
+        text: "Product brands use short-form to demonstrate use, benefit, and personality, the kind of show-don't-tell that copy can never quite achieve.",
+      },
+      { type: "h2", text: "Consistency Versus Virality" },
+      {
+        type: "p",
+        text: "It is tempting to chase the viral hit, but virality is an unreliable strategy. The brands that win at short-form treat it as a consistent practice, not a lottery ticket. A steady cadence of well-made content compounds: it trains the algorithm, builds audience familiarity, and produces far more cumulative reach than the occasional spike.",
+      },
+      {
+        type: "p",
+        text: "Consistency also protects the brand. One viral video with off-brand production can do more harm than good. A reliable stream of polished content builds equity every time it appears.",
+      },
+      { type: "h2", text: "Building Trust Through Ongoing Content" },
+      {
+        type: "p",
+        text: "Trust is built through repetition and quality. When an audience sees a brand show up consistently with content that is useful, beautiful, or entertaining, familiarity turns into preference. Short-form video, produced regularly and to a high standard, is one of the most efficient trust-building tools a brand has.",
+      },
+      { type: "h2", text: "Why Brands Should Invest in Professional Social Content" },
+      {
+        type: "p",
+        text: "Phones can capture footage, but they cannot supply strategy, direction, editing craft, or consistency. The gap between content that merely exists and content that grows a brand is precisely the gap professional production fills, from concept and hooks to pacing, sound, and finish.",
+      },
+      {
+        type: "p",
+        text: "Treating short-form video as a core marketing channel, resourced and produced with the same seriousness as any other, is what separates the brands that grow on social from the ones that simply post.",
+      },
+      {
+        type: "cta",
+        text: "Ready to create content that keeps your audience engaged? Let's build your next campaign.",
+        label: "Start a conversation",
+      },
+    ],
+  },
+};
+
+export const BLOG_ARTICLE_LIST: BlogArticle[] = Object.values(BLOG_ARTICLES);

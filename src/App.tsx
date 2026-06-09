@@ -763,9 +763,10 @@ export default function App() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {BLOG_POSTS.map((post) => (
-                <article 
-                  key={post.id} 
-                  className="group flex flex-col justify-between bg-pure-white border border-soft-gray rounded-xl overflow-hidden shadow-sm hover:border-[#3079D8] hover:shadow-xl transition-all duration-300 animate-fadeInUp"
+                <a
+                  key={post.id}
+                  href={`/blog/${post.slug}/`}
+                  className="group flex flex-col justify-between bg-pure-white border border-soft-gray rounded-xl overflow-hidden shadow-sm hover:border-[#3079D8] hover:shadow-xl transition-all duration-300 animate-fadeInUp no-underline"
                 >
                   <div className="aspect-video w-full overflow-hidden bg-background-gray">
                     <img 
@@ -794,7 +795,7 @@ export default function App() {
                       </span>
                     </div>
                   </div>
-                </article>
+                </a>
               ))}
             </div>
           </div>
