@@ -331,20 +331,36 @@ export const PRESS_MENTIONS = [
 
 export const STUDIO_FAQS = [
   {
-    question: "How do you start a commercial engagement?",
-    answer: "We begin with a 1-on-1 creative discovery call to define the conceptual boundaries. We then deliver an interactive digital brief outline showing styling directions, lighting spectrums, and layout references before a camera ever turns on."
+    question: "What services does Neorama offer?",
+    answer: "Neorama is a multidisciplinary creative studio specializing in films, photography, social media content, branding, and design. From commercial campaigns and brand films to product photography, social content, and visual identity systems, we help brands communicate through compelling visual storytelling."
   },
   {
-    question: "Do you handle physical packaging and set buildouts?",
-    answer: "Yes. From modern architectural film sets using concrete textures and warm wood slats to brutalist cardboard custom packaging, we manage physical art direction with premium external builders."
+    question: "Do you handle both production and post-production?",
+    answer: "Yes. We manage the complete creative process—from concept development and planning to filming, photography, editing, motion graphics, color grading, and final delivery. This allows us to maintain consistency and quality across every project."
   },
   {
-    question: "What are your standard production timelines?",
-    answer: "Typical brand identity systems take 4-6 weeks. Custom cinematic visual stories with sound design mapping and editing require 6-10 weeks from final creative concept signoff."
+    question: "What types of clients do you work with?",
+    answer: "We work with brands, startups, hospitality companies, educational institutions, event agencies, nonprofits, and growing businesses across multiple industries. Whether it's a large-scale campaign or a focused content project, we tailor our approach to each client's objectives."
   },
   {
-    question: "Can we hire you for individual modules?",
-    answer: "While we deliver the highest value when directing both identity and campaign cinema together, we selectively partner with internal teams purely for advanced Cinematography or Interactive Frontends."
+    question: "Can you create ongoing social media content?",
+    answer: "Absolutely. We create platform-specific content including reels, short-form videos, photography, campaign assets, and content packages designed to help brands maintain a consistent and engaging digital presence."
+  },
+  {
+    question: "Do you travel for shoots?",
+    answer: "Yes. While we are based in India, we regularly travel for commercial productions, hospitality projects, events, and destination assignments across the country. Travel requirements are planned based on project scope and location."
+  },
+  {
+    question: "Can you handle photography and video together?",
+    answer: "Yes. Many of our projects combine photography and filmmaking to create a cohesive content library for websites, social media, advertising, and marketing campaigns. This approach maximizes efficiency while maintaining a unified visual language."
+  },
+  {
+    question: "Do you work with startups and smaller businesses?",
+    answer: "Yes. We work with both established brands and emerging businesses. Our focus is on understanding the story, audience, and goals behind each project to create content that delivers meaningful results."
+  },
+  {
+    question: "How do we get started?",
+    answer: "The process begins with a conversation about your goals, audience, timeline, and requirements. From there, we develop a tailored creative approach, provide a proposal, and build a production plan that aligns with your objectives."
   }
 ];
 

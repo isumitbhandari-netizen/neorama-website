@@ -637,7 +637,7 @@ export default function App() {
             <div className="border-t border-soft-gray/60 pt-16 max-w-4xl mx-auto space-y-10">
               <div className="text-center space-y-2">
                 <span className="font-mono text-xs text-[#3079D8] uppercase tracking-wider block">
-                  FAQ // DISCIPLINE INTEL
+                  FAQ // CLIENT QUESTIONS
                 </span>
                 <h3 className="font-display text-2xl md:text-3xl font-black text-on-surface tracking-tight">
                   Frequently Asked Questions
