@@ -61,8 +61,8 @@ export default function BlogArticlePage({ article }: { article: BlogArticle }) {
       {/* Header */}
       <header className="border-b border-soft-gray">
         <div className="max-w-[1100px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
-          <a href="/" className="font-display text-2xl font-black tracking-tighter text-on-surface">
-            NEORAMA
+          <a href="/" className="flex items-center">
+            <img src="/logo.png" alt="NEORAMA" className="h-16 w-auto object-contain" />
           </a>
           <a
             href="/#blog"
@@ -111,8 +111,8 @@ export default function BlogArticlePage({ article }: { article: BlogArticle }) {
       {/* Footer */}
       <footer className="border-t border-soft-gray">
         <div className="max-w-[1100px] mx-auto px-6 md:px-12 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <a href="/" className="font-display text-lg font-black tracking-tighter text-on-surface">
-            NEORAMA
+          <a href="/" className="flex items-center">
+            <img src="/logo.png" alt="NEORAMA" className="h-10 w-auto object-contain" />
           </a>
           <p className="font-mono text-[10px] text-[#727784] uppercase tracking-wider text-center">
             Contemporary Film &amp; Marketing Studio · Mumbai
