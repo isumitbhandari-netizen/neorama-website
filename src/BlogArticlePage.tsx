@@ -60,9 +60,14 @@ export default function BlogArticlePage({ article }: { article: BlogArticle }) {
     <div className="min-h-screen bg-pure-white text-on-surface">
       {/* Header */}
       <header className="border-b border-soft-gray">
-        <div className="max-w-[1100px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
-          <a href="/" className="flex items-center">
-            <img src="/logo.png" alt="NEORAMA" className="h-16 w-auto object-contain" />
+        <div className="flex justify-between items-center px-6 md:px-12 py-5 max-w-[1440px] mx-auto">
+          <a href="/" className="hover:scale-[1.02] transform transition-all duration-300 flex items-center">
+            <img
+              src="/logo.png"
+              alt="NEORAMA"
+              style={{ width: "320px", height: "100px" }}
+              className="object-contain"
+            />
           </a>
           <a
             href="/#blog"
