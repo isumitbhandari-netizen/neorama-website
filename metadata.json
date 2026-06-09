@@ -1,0 +1,6 @@
+{
+  "name": "Neorama Studio",
+  "description": "Minimalist landing page for Neorama, a contemporary film and marketing agency crafting high-end visual experiences for modern brands.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

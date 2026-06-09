@@ -1,0 +1,459 @@
+import { Project, Service } from "./types";
+// @ts-ignore
+import sumitPhoto from "./assets/images/regenerated_image_1780844825870.png";
+// @ts-ignore
+import chiragPhoto from "./assets/images/regenerated_image_1780845039621.jpg";
+// @ts-ignore
+import sidharthPhoto from "./assets/images/regenerated_image_1780845040950.jpg";
+// @ts-ignore
+import meetPhoto from "./assets/images/regenerated_image_1780845182309.jpg";
+// @ts-ignore
+import hiteshPhoto from "./assets/images/regenerated_image_1780845183576.jpg";
+// @ts-ignore
+import adityaPhoto from "./assets/images/regenerated_image_1780845184441.jpg";
+// @ts-ignore
+import samabeshPhoto from "./assets/images/regenerated_image_1780847173026.jpg";
+// @ts-ignore
+import kasturiPhoto from "./assets/images/regenerated_image_1780847173756.jpg";
+// @ts-ignore
+import kapilPhoto from "./assets/images/regenerated_image_1780847175062.jpg";
+// @ts-ignore
+import aakrutiPhoto from "./assets/images/regenerated_image_1780847372143.jpg";
+// @ts-ignore
+import duluxPhoto from "./assets/images/regenerated_image_1780848725172.png";
+// @ts-ignore
+import pataudiPhoto from "./assets/images/regenerated_image_1780850373289.png";
+// @ts-ignore
+import linenBrandPhoto from "./assets/images/regenerated_image_1780852616738.png";
+// @ts-ignore
+import linenFashionPhoto from "./assets/images/regenerated_image_1780852625637.png";
+// @ts-ignore
+import villaTesoroPhoto from "./assets/images/regenerated_image_1780853559429.jpg";
+// @ts-ignore
+import tataTrustsPhoto from "./assets/images/tata_trusts_film_1780854327377.png";
+// @ts-ignore
+import linenFactoryPhoto from "./assets/images/linen_factory_tour_1780902734823.png";
+// @ts-ignore
+import manikSchoolPhoto from "./assets/images/manik_school_film_1780903814735.png";
+// @ts-ignore
+import raniJewelleryPhoto from "./assets/images/rani_pink_jewellery_1780905915920.png";
+// @ts-ignore
+import linenPhotographyPhoto from "./assets/images/regenerated_image_1780844748489.jpg";
+// @ts-ignore
+import rawPresseryWebp from "./assets/images/regenerated_image_1780922541314.webp";
+// @ts-ignore
+import adidasCampaignPhoto from "./assets/images/regenerated_image_1780924734124.jpg";
+// @ts-ignore
+import stayVistaThumbPhoto from "./assets/images/stayvista_campaign_hero.jpg";
+// @ts-ignore
+import sanjEventsThumbPhoto from "./assets/images/sanj_events_campaign_thumb.jpg";
+// @ts-ignore
+import simhayanaKnottedThumbPhoto from "./assets/images/simhayana_knotted_thumb.jpg";
+// @ts-ignore
+import tatvaVedThumbPhoto from "./assets/images/tatva_ved_thumbnail.jpg";
+// @ts-ignore
+import mwbThumbPhoto from "./assets/images/mwb_thumbnail.png";
+
+export const PROJECTS: Project[] = [
+  {
+    id: "heritage-redefined",
+    title: "Myntra x House of Pataudi",
+    category: "Ad Films & Documentaries // Myntra x House of Pataudi",
+    tags: ["Ad Films & Documentaries", "Fashion Commercial", "Creative Production", "Cinematography"],
+    imageUrl: pataudiPhoto,
+    description: "A premium fashion campaign blending modern style with timeless Indian heritage.",
+    clientBrief: "A premium fashion campaign crafted for Myntra and House of Pataudi, blending modern style with timeless heritage. The film showcases the brand's signature ethnic wear collection through elegant visuals, refined art direction, and cinematic storytelling that celebrates contemporary Indian fashion.\n\nDesigned for digital-first audiences, the campaign highlights the sophistication, craftsmanship, and cultural richness that define the House of Pataudi brand. Through dynamic cinematography and a polished visual aesthetic, the film creates an aspirational yet authentic connection with fashion-conscious consumers.",
+    deliverables: "Creative Production, Cinematography, Direction, Post Production",
+    year: "2024",
+    vimeoIds: [
+      "1199198913"
+    ]
+  },
+  {
+    id: "dulux-simply-refresh",
+    title: "Dulux Simply Refresh",
+    category: "Ad Films & Documentaries // Dulux Simply Refresh",
+    tags: ["Ad Films & Documentaries", "Cinematography", "Creative Direction", "Color Psychology"],
+    imageUrl: duluxPhoto,
+    description: "A series of product-focused advertisements for the Simply Refresh range, demonstrating how homeowners can easily transform their spaces.",
+    clientBrief: "Neorama Studios partnered with Dulux to create a series of product-focused advertisements for the Simply Refresh range. From concept development to production and post-production, the campaign demonstrated how homeowners can easily transform their spaces with innovative DIY painting solutions for walls, furniture, wood, and metal surfaces.",
+    deliverables: "3x Ad Campaign Documentaries, How to Series Explainer Ads",
+    year: "2025",
+    vimeoIds: [
+      "1199192558",
+      "1199193474",
+      "1199194207"
+    ]
+  },
+  {
+    id: "linen-luxury-brand",
+    title: "Linen and Linens | Luxury Brand Film",
+    category: "Ad Films & Documentaries // Linen & Linens",
+    tags: ["Ad Films & Documentaries", "Brand Film", "Luxury Lifestyle", "Cinematography"],
+    imageUrl: linenBrandPhoto,
+    description: "A premium brand film created for Linen and Linens, crafted to communicate the brand’s vision, values, and commitment to quality.",
+    clientBrief: "A premium brand film created for Linen and Linens, crafted to communicate the brand’s vision, values, and commitment to quality. Through thoughtful storytelling and elegant visuals, the film explores the craftsmanship, attention to detail, and timeless design philosophy that define the brand.\n\nCombining authentic narratives with cinematic imagery, the film builds an emotional connection with the audience while reinforcing Linen and Linens’ position as a destination for refined living and contemporary luxury.",
+    deliverables: "Creative Direction, Film Production, Cinematography, Interviews, Post Production",
+    year: "2025",
+    youtubeIds: [
+      "l_t1MtvrxPY"
+    ]
+  },
+  {
+    id: "linen-fashion-campaign",
+    title: "Linen and Linens | Fashion Film Campaign",
+    category: "Ad Films & Documentaries // Linen & Linens",
+    tags: ["Ad Films & Documentaries", "Fashion Campaign", "Cinematography", "Styling"],
+    imageUrl: linenFashionPhoto,
+    description: "A visually driven fashion campaign highlighting elegance, texture, and sophistication.",
+    clientBrief: "A visually driven fashion film campaign designed to showcase the elegance, texture, and sophistication of the Linen and Linens collection. Through cinematic movement, carefully curated styling, and premium visual storytelling, the film highlights the beauty of the brand’s products in a contemporary lifestyle setting.\n\nCreated for digital and social platforms, the campaign focuses on creating an aspirational brand experience while celebrating timeless design, comfort, and craftsmanship through a modern fashion-forward lens.",
+    deliverables: "Creative Direction, Fashion Film Production, Cinematography, Styling, Post Production",
+    year: "2025",
+    youtubeIds: [
+      "8omyPaqb8JM"
+    ]
+  },
+  {
+    id: "villa-tesoro",
+    title: "StayVista's Villa Tesoro | Luxury Stay & Lifestyle Film",
+    category: "Ad Films & Documentaries // StayVista",
+    tags: ["Ad Films & Documentaries", "Luxury Stay", "Lifestyle Film", "Hospitality"],
+    imageUrl: villaTesoroPhoto,
+    description: "A luxury hospitality and lifestyle film created for Villa Tesoro by StayVista, designed to capture the essence of elevated travel and contemporary living.",
+    clientBrief: "A luxury hospitality and lifestyle film created for Villa Tesoro by StayVista, designed to capture the essence of elevated travel and contemporary living. Through cinematic storytelling and immersive visuals, the film showcases the unique experience of staying at the villa, highlighting its elegant architecture, thoughtfully curated interiors, and serene surroundings.\n\nBlending hospitality, design, and lifestyle, the film takes viewers on a visual journey through the property's inviting spaces, leisure amenities, and distinctive atmosphere. Every frame is crafted to reflect the comfort, exclusivity, and sophistication that define the StayVista experience.\n\nCreated for digital marketing and brand storytelling, the film serves as a compelling visual asset that inspires travellers while strengthening the property's premium positioning within the luxury vacation rental market.",
+    deliverables: "Lifestyle Filmmaking, Hospitality Content Production, Aerial Cinematography, Creative Direction, Post Production",
+    year: "2025",
+    youtubeIds: [
+      "3tNXrn10tmM"
+    ]
+  },
+  {
+    id: "tata-trusts-lumpy",
+    title: "Tata Trusts | Tackling Lumpy Skin Disease Outbreak, Together",
+    category: "Ad Films & Documentaries // Tata Trusts",
+    tags: ["Ad Films & Documentaries", "Documentary & Impact Film", "Social Impact", "Interviews"],
+    imageUrl: tataTrustsPhoto,
+    description: "A documentary and impact film created for Tata Trusts, highlighting efforts to address the Lumpy Skin Disease outbreak and support vulnerable livestock-dependent communities.",
+    clientBrief: "A documentary and impact film created for Tata Trusts, highlighting efforts to address the Lumpy Skin Disease outbreak and support vulnerable livestock-dependent communities. The film documents the collective response involving veterinary care, awareness initiatives, field interventions, and community participation aimed at mitigating the impact of the disease.\n\nThrough authentic stories from the ground, the project showcases how timely action, collaboration, and grassroots engagement can help protect livestock, strengthen rural livelihoods, and improve resilience in affected regions. The film serves as both a record of intervention and a powerful communication tool demonstrating the importance of sustainable rural development and animal health initiatives.",
+    deliverables: "Documentary Filmmaking, Field Production, Interviews, Impact Storytelling, Post Production",
+    year: "2024",
+    youtubeIds: [
+      "1xkkn2ZML3Q"
+    ]
+  },
+  {
+    id: "linen-factory-tour",
+    title: "Linen and Linens | Factory Tour Film",
+    category: "Ad Films & Documentaries // Linen & Linens",
+    tags: ["Ad Films & Documentaries", "Factory Tour", "Industrial Film", "Cinematography"],
+    imageUrl: linenFactoryPhoto,
+    description: "A behind-the-scenes factory tour film created for Linen and Linens, offering an inside look at the craftsmanship, processes, and people behind the brand.",
+    clientBrief: "A behind-the-scenes factory tour film created for Linen and Linens, offering an inside look at the craftsmanship, processes, and people behind the brand. The film takes viewers through the manufacturing journey, showcasing the attention to detail, quality standards, and expertise involved in creating premium textile products.\n\nThrough cinematic visuals and authentic storytelling, the film highlights the scale of operations, production techniques, and commitment to excellence that define the brand. From raw materials and skilled craftsmanship to finished products, the tour provides a transparent and engaging perspective on the making of Linen and Linens.\n\nCreated for brand communication and customer engagement, the film strengthens trust by showcasing the dedication, precision, and quality that drive every stage of production.",
+    deliverables: "Industrial Filmmaking, Corporate Storytelling, Cinematography, Production, Post Production",
+    year: "2025",
+    youtubeIds: [
+      "T9Nmmv7dspc"
+    ]
+  },
+  {
+    id: "manik-public-school",
+    title: "Manik Public School | Brand & Campus Experience Film",
+    category: "Ad Films & Documentaries // Manik Public School",
+    tags: ["Ad Films & Documentaries", "Educational Brand Film", "Campus Experience", "Aerial Filming"],
+    imageUrl: manikSchoolPhoto,
+    description: "A comprehensive brand and campus film created for Manik Public School, capturing the institution's commitment to academic excellence, holistic development, and value-based education.",
+    clientBrief: "A comprehensive brand and campus film created for Manik Public School, capturing the institution's commitment to academic excellence, holistic development, and value-based education.\n\nThrough cinematic storytelling and authentic moments from campus life, the film showcases the school's vibrant learning environment, modern infrastructure, co-curricular opportunities, and student experiences.\n\nDesigned to inspire prospective students and parents, the film offers an immersive look into the culture, facilities, and educational philosophy that have shaped generations of learners. By combining brand storytelling with a campus showcase, the project communicates the school's vision of nurturing confident, responsible, and future-ready individuals.",
+    deliverables: "Brand Storytelling, Campus Cinematography, Interviews, Aerial Filming, Post Production",
+    year: "2025",
+    youtubeIds: [
+      "J8Db5JIysls",
+      "J14oQ-9d6z0"
+    ]
+  },
+  {
+    id: "rani-pink-kirthi",
+    title: "Rani Pink x Kirthi Diamond Jewellery | Jewellery Advertisement",
+    category: "Ad Films & Documentaries // Rani Pink x Kirthi",
+    tags: ["Ad Films & Documentaries", "Jewellery Advertisement", "Fashion Campaign", "Commercial Production"],
+    imageUrl: raniJewelleryPhoto,
+    description: "A premium jewellery advertisement created for Rani Pink in collaboration with Kirthi Diamond Jewellery, designed to showcase the elegance, brilliance, and craftsmanship of the collection.",
+    clientBrief: "A premium jewellery advertisement created for Rani Pink in collaboration with Kirthi Diamond Jewellery, designed to showcase the elegance, brilliance, and craftsmanship of the collection. Through refined visuals, luxury styling, and cinematic storytelling, the film highlights the timeless appeal of fine diamond jewellery within a contemporary fashion setting.\n\nCrafted for digital audiences, the advertisement combines sophistication and aspiration, creating a memorable visual experience that celebrates both modern style and enduring craftsmanship.",
+    deliverables: "Commercial Production, Fashion Cinematography, Creative Direction, Post Production",
+    year: "2025",
+    youtubeIds: [
+      "ZA1dYAIg8IQ"
+    ]
+  },
+  {
+    id: "linen-editorial-photography",
+    title: "Linen and Linens | Summer & Festive Collection Photography",
+    category: "Fashion & Lifestyle Photography // Linen & Linens",
+    tags: ["Fashion Photography", "Lifestyle Photography", "Creative Direction", "Editorial Case-Study"],
+    imageUrl: linenPhotographyPhoto,
+    description: "A premium fashion and lifestyle photography project created for Linen and Linens, showcasing both the Summer and Festive Collections through elegant visual storytelling.",
+    clientBrief: "A premium fashion and lifestyle photography project created for Linen and Linens, showcasing both the Summer and Festive Collections through elegant visual storytelling. The shoot was designed to capture the versatility of the brand across seasons—highlighting the lightness, comfort, and effortless sophistication of the summer range alongside the warmth, richness, and celebratory spirit of the festive collection.\n\nThrough natural light, refined styling, thoughtful compositions, and attention to fabric textures, the imagery presents a cohesive brand narrative that balances contemporary living with timeless elegance. The photographs were created for use across digital platforms, marketing campaigns, social media, e-commerce, and brand communications.",
+    deliverables: "Fashion Photography, Lifestyle Photography, Marketing Assets, Social Media Content, E-commerce Imagery",
+    year: "2025"
+  },
+  {
+    id: "raw-pressery-commercial",
+    title: "Raw Pressery | Commercial Photography",
+    category: "Product & Lifestyle Photography // Raw Pressery",
+    tags: ["Product Photography", "Lifestyle Photography", "Commercial Portfolio", "Creative Campaign"],
+    imageUrl: rawPresseryWebp,
+    description: "A commercial photography project created for Raw Pressery, designed to showcase the brand's vibrant identity, premium product range, and refreshing lifestyle appeal.",
+    clientBrief: "A commercial photography project created for Raw Pressery, designed to showcase the brand's vibrant identity, premium product range, and refreshing lifestyle appeal. Through clean compositions, thoughtful styling, and attention to detail, the imagery highlights the quality, freshness, and visual character of the products while maintaining a modern and engaging aesthetic.\n\nThe photographs were created for digital marketing, social media, brand communication, and promotional campaigns, helping strengthen Raw Pressery's visual presence across multiple platforms.",
+    deliverables: "Product Photography, Lifestyle Photography, Commercial Portfolio, Marketing Assets, Social Media Content, Brand Photography",
+    year: "2025"
+  },
+  {
+    id: "adidas-bhavisha-kothari",
+    title: "Adidas | Sports & Lifestyle Photography",
+    category: "Sports & Lifestyle Photography // Adidas",
+    tags: ["Sports Photography", "Lifestyle Photography", "Campaign Imagery", "Adidas"],
+    imageUrl: adidasCampaignPhoto,
+    description: "A sports and lifestyle photography collaboration celebrating movement, performance, and determination through authentic athletic storytelling.",
+    clientBrief: "A sports and lifestyle photography collaboration created for Adidas featuring runner and fitness enthusiast Bhavisha Kothari. Designed to celebrate movement, performance, and determination, the shoot captures the energy and mindset of modern running culture through dynamic imagery and authentic storytelling.\n\nBlending athletic performance with lifestyle aesthetics, the photographs highlight the relationship between sport, individuality, and everyday discipline. Created for digital marketing, social media, brand storytelling, and athlete-focused content, the project showcases Adidas' commitment to empowering athletes through movement and self-expression.",
+    deliverables: "Marketing Assets, Social Media Content, Campaign Imagery",
+    year: "2026"
+  },
+  {
+    id: "stayvista-luxury-photography",
+    title: "StayVista | Luxury Stay & Villa Photography",
+    category: "Luxury Stay & Villa Photography // StayVista",
+    tags: ["Villa Photography", "Luxury Stay", "Hospitality Photography", "Architecture"],
+    imageUrl: stayVistaThumbPhoto,
+    description: "A premium luxury villa photography portfolio for StayVista, featuring five exclusive properties — Azure Bliss, Bayleaf Villa, Villa Tesoro, Esteria Enclave, and Villa Romania.",
+    year: "2025"
+  },
+  {
+    id: "sanj-events-photography",
+    title: "Sanj Events | Event Production Stories",
+    category: "Event & Experience Photography // Sanj Events",
+    tags: ["Event Photography", "Production Documentation", "Behind the Scenes", "Experience Design"],
+    imageUrl: sanjEventsThumbPhoto,
+    description: "A visual documentation project capturing the creativity, coordination, craftsmanship, and execution behind large-scale celebrations and immersive event experiences produced by Sanj Events.",
+    year: "2025"
+  },
+  {
+    id: "simhayana-knotted-photography",
+    title: "Simhayana & knotted.in | Influencer-Led Brand Photography",
+    category: "Fashion, Lifestyle & Creator Content Photography",
+    tags: ["Fashion Photography", "Creator Content", "Lifestyle Photography", "Brand Collaboration"],
+    imageUrl: simhayanaKnottedThumbPhoto,
+    description: "A fashion and lifestyle photography project in collaboration with Mahima Kothari for Simhayana and knotted.in — combining creator-led content with editorial photography across two distinct brand chapters.",
+    year: "2025"
+  },
+  {
+    id: "tatva-veda-branding",
+    title: "Tatva Ved | Brand Identity & Visual Design System",
+    category: "Branding & Identity Design // Tatva Ved",
+    tags: ["Brand Identity", "Visual Design", "Packaging Design", "Art Direction"],
+    imageUrl: tatvaVedThumbPhoto,
+    description: "A complete visual identity system encompassing brand identity, custom artwork, and branded applications for Tatva Ved — rooted in natural heritage and contemporary design.",
+    clientBrief: "A complete visual identity system developed for Tatva Ved, rooted in natural heritage and expressed through contemporary design language. The project spans logo design, brand mark, custom artwork collection, and a full range of brand applications.\n\nEvery element was developed to communicate authenticity, craftsmanship, and the brand's connection to natural origins — from the primary mark and supporting visual language through to packaging and print applications.",
+    deliverables: "Brand Identity, Visual Design System, Custom Artwork, Packaging Design, Brand Applications",
+    year: "2025"
+  },
+  {
+    id: "mwb-packaging-design",
+    title: "MW&B | Packaging Design Collection",
+    category: "Packaging Design // MW&B",
+    tags: ["Packaging Design", "Brand Identity", "Visual Design", "Art Direction"],
+    imageUrl: mwbThumbPhoto,
+    description: "A packaging design collection for MW&B featuring bold visual storytelling, vibrant illustration systems, and shelf-impact design across multiple product categories.",
+    clientBrief: "A packaging design project developed for MW&B, focused on creating distinctive product packaging through bold visual storytelling, vibrant illustration systems, and shelf-impact design.\n\nThe collection showcases multiple packaging concepts across different product categories while maintaining a consistent visual identity system. Each packaging concept was developed to command attention at point of sale, communicate brand values at a glance, and create a cohesive family across the full product range.",
+    deliverables: "Packaging Design System, Brand Applications, Mockup Visuals, Collection Design",
+    year: "2025"
+  }
+];
+
+export const SERVICES: Service[] = [
+  {
+    id: "cinematic-film",
+    title: "Cinematic Production & Film",
+    description: "We craft cinematic visual experiences with meticulous attention to styling, architectural symmetry, and emotive editorial lighting direction.",
+    features: [
+      "Brand Anthems & Visual Manifestos",
+      "Directional & High-Production Lighting",
+      "Dynamic Camera Choreography",
+      "Sartorial & Scenic Art Direction"
+    ],
+    iconName: "clapperboard"
+  },
+  {
+    id: "brand-identity",
+    title: "Brand Strategy & Identity",
+    description: "We translate abstract value structures into sharp design systems, utilizing strict grid systems, custom typography pairings, and memorable signature cues.",
+    features: [
+      "Comprehensive Typography Architecture",
+      "Uncompromising Signature Colorways",
+      "Brutalist & Minimalist Packaging Models",
+      "Detailed Digital Style Guidelines"
+    ],
+    iconName: "fingerprint"
+  },
+  {
+    id: "digital-campaigns",
+    title: "Creative Campaigns & Delivery",
+    description: "Dynamic digital layouts and modern, smooth web architectures that place high-quality immersive media at the focal point of the interaction.",
+    features: [
+      "Custom Micro-animated Websites",
+      "High-Conversion Immersive Layouts",
+      "Cross-channel Editorial Systems",
+      "Interactive Multi-sensory Frontends"
+    ],
+    iconName: "sparkles"
+  }
+];
+
+export const STUDIO_VALUES = [
+  {
+    number: "01",
+    title: "Aesthetics Meets Technology",
+    desc: "We refuse to optimize away soul. Every pixel and lighting angle is placed to connect deeply with the target audience."
+  },
+  {
+    number: "02",
+    title: "Uncompromising Precision",
+    desc: "We design on strict grids, but break them deliberately to create tension, energy, and rhythm."
+  },
+  {
+    number: "03",
+    title: "Atmosphere Centered Design",
+    desc: "A great brand is not a logo; it is a physical, warm, emotional space you enter."
+  }
+];
+
+export const PRESS_MENTIONS = [
+  "AdWeek", "Vogue Business", "DeZeen", "Creative Review", "Kore", "Eye Magazine"
+];
+
+export const STUDIO_FAQS = [
+  {
+    question: "How do you start a commercial engagement?",
+    answer: "We begin with a 1-on-1 creative discovery call to define the conceptual boundaries. We then deliver an interactive digital brief outline showing styling directions, lighting spectrums, and layout references before a camera ever turns on."
+  },
+  {
+    question: "Do you handle physical packaging and set buildouts?",
+    answer: "Yes. From modern architectural film sets using concrete textures and warm wood slats to brutalist cardboard custom packaging, we manage physical art direction with premium external builders."
+  },
+  {
+    question: "What are your standard production timelines?",
+    answer: "Typical brand identity systems take 4-6 weeks. Custom cinematic visual stories with sound design mapping and editing require 6-10 weeks from final creative concept signoff."
+  },
+  {
+    question: "Can we hire you for individual modules?",
+    answer: "While we deliver the highest value when directing both identity and campaign cinema together, we selectively partner with internal teams purely for advanced Cinematography or Interactive Frontends."
+  }
+];
+
+export const TEAM_MEMBERS = [
+  {
+    id: "chirag",
+    name: "Chirag Kochar",
+    role: "Director & Creative Head",
+    group: "core",
+    imageUrl: chiragPhoto,
+    bio: "Co-Founder. Visionary storyteller leading our overarching creative concepts, high-production commercial directions and scenic layout narratives."
+  },
+  {
+    id: "sumit",
+    name: "Sumit Bhandari",
+    role: "Creative Director & DOP",
+    group: "founders",
+    imageUrl: sumitPhoto,
+    bio: "Co-Founder. Director of photography, structuring meticulous architectural camera setups, anamorphic flare compositions, and high-contrast colorways."
+  },
+  {
+    id: "sidharth",
+    name: "Sidharth Sharma",
+    role: "Editor",
+    group: "core",
+    imageUrl: sidharthPhoto,
+    bio: "Pacing architect sculpting raw cinematic film takes, sound design rhythms, and digital-first narrative compositions."
+  },
+  {
+    id: "meet",
+    name: "Meet Bhatt",
+    role: "Cinematographer",
+    group: "core",
+    imageUrl: meetPhoto,
+    bio: "Choreographing fluid camerawork, focusing on high-production tracking shots and organic light captures."
+  },
+  {
+    id: "hitesh",
+    name: "Hitesh Agarwal",
+    role: "Director",
+    group: "core",
+    imageUrl: hiteshPhoto,
+    bio: "Directorial lead crafting dramatic scenes, subject blocking options, and raw atmospheric depth in film."
+  },
+  {
+    id: "aditya",
+    name: "Aditya Doshi",
+    role: "Designer & Brand Strategist",
+    group: "core",
+    imageUrl: adityaPhoto,
+    bio: "Constructing rigorous branding design grids, packaging systems, layout parameters, and editorial direction."
+  },
+  {
+    id: "samabesh",
+    name: "Samabesh Das",
+    role: "Writer",
+    group: "core",
+    imageUrl: samabeshPhoto,
+    bio: "Wordsmith writing creative treatments, branding logs, conceptual story structures, and verbal brand assets."
+  },
+  {
+    id: "kasturi",
+    name: "Kasturi Kaushik",
+    role: "Social Media & Marketing Head",
+    group: "core",
+    imageUrl: kasturiPhoto,
+    bio: "Directing public brand strategies, campaign ecosystems, modern audience distributions, and reach models."
+  },
+  {
+    id: "kapil",
+    name: "Kapil Tejwani",
+    role: "Photographer",
+    group: "core",
+    imageUrl: kapilPhoto,
+    bio: "Aesthetic lensman capturing vibrant lookbooks, interior layouts, structural accents and stills imagery."
+  },
+  {
+    id: "aakruti",
+    name: "Aakruti Lunia",
+    role: "Lead Designer",
+    group: "core",
+    imageUrl: aakrutiPhoto,
+    bio: "Directing typography pairings, web design stages, colorways and interactive physical-digital interfaces."
+  }
+];
+
+export const BLOG_POSTS = [
+  {
+    id: "anamorphic-trends",
+    title: "Anamorphic Textures in Brand Campaigns",
+    excerpt: "Why the clinical perfection of modern digital sensors is yielding to beautiful organic flaws, anamorphic flare spectrums, and raw lighting textures.",
+    date: "June 04, 2026",
+    readTime: "4 min read",
+    imageUrl: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id: "high-contrast-aesthetics",
+    title: "The Power of High-Contrast Canvas Layouts",
+    excerpt: "Exploring the aesthetic authority of heavy dark canvases and selective electric color pulses in contemporary premium brand positions.",
+    date: "May 28, 2026",
+    readTime: "5 min read",
+    imageUrl: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id: "spatial-audio-immersion",
+    title: "Sound Design: The Secret Force of Cinema",
+    excerpt: "How custom acoustic induction and microscopic sound signatures capture user focus far longer than generic silent landing maps.",
+    date: "April 15, 2026",
+    readTime: "6 min read",
+    imageUrl: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80"
+  }
+];
