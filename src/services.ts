@@ -145,6 +145,66 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       },
     ],
   },
+
+  "social-media-content-agency-mumbai": {
+    slug: "social-media-content-agency-mumbai",
+    eyebrow: "Social Media & Influencer Content · Mumbai",
+    h1: "Social Media & Influencer Content in Mumbai",
+    standfirst:
+      "Neorama Studios is a Mumbai-based creative agency producing scroll-stopping social media and influencer content — Reels, shorts, and campaigns built for startups and growing brands.",
+    metaTitle: "Social Media & Influencer Content Agency in Mumbai | Neorama Studios",
+    metaDescription:
+      "Neorama Studios is a Mumbai-based social media content agency creating Reels, short-form video, and influencer campaigns for startups and growing brands. Get a quote.",
+    serviceType: "Social Media Content Production",
+    keywords: [
+      "social media content agency mumbai",
+      "social media agency mumbai",
+      "influencer marketing agency mumbai",
+      "instagram reels agency mumbai",
+      "ugc content creators mumbai",
+    ],
+    imageUrl: "/og-image.jpg",
+    blocks: [
+      {
+        type: "p",
+        text: "Social media is where most people meet a brand for the first time, and the first second decides everything. Content that earns attention in that window builds a following; content that doesn't gets scrolled past before it begins. At Neorama Studios, we produce social media and influencer content for startups and growing brands that need to show up consistently, look professional, and actually grow — not just post for the sake of posting.",
+      },
+      {
+        type: "p",
+        text: "We are a Mumbai-based creative agency, so we shoot across the city and tap into a local network of creators and influencers without travel overheads. Whether you need a steady stream of in-house content or a coordinated influencer campaign, we handle concept, production, and edit so your feed stays active and on-brand.",
+      },
+      { type: "h2", text: "Social & Influencer Content We Produce" },
+      {
+        type: "ul",
+        items: [
+          "Instagram Reels & YouTube Shorts — vertical, sound-on, hook-led edits made for how people actually watch.",
+          "Monthly content packages — a consistent supply of photos and videos shot in focused sessions, ready to schedule.",
+          "Influencer & creator campaigns — matching your brand with the right creators in Mumbai and managing the collaboration end to end.",
+          "UGC-style content — authentic, creator-led videos built for paid ads and organic feeds.",
+          "Platform-native cuts — one shoot, repurposed into formats tuned for Instagram, YouTube, and LinkedIn.",
+        ],
+      },
+      { type: "h2", text: "How We Work" },
+      {
+        type: "p",
+        text: "We start with your audience and your goal — awareness, followers, leads, or sales — because that decides the format and the hook. From there we plan a content calendar, shoot efficiently in batches, and edit for each platform. For influencer campaigns, we identify creators whose audience matches yours, brief them properly, and keep the content aligned with your brand. You approve the plan up front, so nothing goes live that doesn't fit.",
+      },
+      {
+        type: "p",
+        text: "Because we work with startups and small to medium-sized brands, we scope content to a real budget. A single shoot day can produce weeks of social posts plus a few hero Reels — enough to keep your channels active without a full in-house team.",
+      },
+      { type: "h2", text: "Why Mumbai Brands Choose Neorama" },
+      {
+        type: "p",
+        text: "We are a full-spectrum studio: film, photography, social content, branding, and design all under one roof. That means your social media doesn't look disconnected from the rest of your brand — every Reel, post, and influencer collaboration pulls from the same visual language as your films, photography, and identity. The result is a brand that reads as one coherent voice wherever someone discovers you. If you are looking for a social media content agency in Mumbai that thinks about the whole brand, that is exactly how we work.",
+      },
+      {
+        type: "cta",
+        text: "Want social or influencer content that actually grows your brand? Tell us your goals and we'll come back with an approach and a quote.",
+        label: "Start a project",
+      },
+    ],
+  },
 };
 
 export const SERVICE_PAGE_LIST: ServicePage[] = Object.values(SERVICE_PAGES);
