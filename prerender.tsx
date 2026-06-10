@@ -13,7 +13,9 @@ import { renderToStaticMarkup } from "react-dom/server";
 import fs from "fs";
 import path from "path";
 import BlogArticlePage from "./src/BlogArticlePage";
+import ServicePage from "./src/ServicePage";
 import { BLOG_ARTICLE_LIST } from "./src/blogArticles";
+import { SERVICE_PAGE_LIST } from "./src/services";
 
 const BASE_URL = "https://www.neoramastudios.com";
 const DIST = path.resolve(process.cwd(), "dist");
@@ -53,6 +55,7 @@ function pageHtml(opts: {
   canonical: string;
   image: string;
   jsonLd: object;
+  ogType?: string;
 }) {
   return `<!doctype html>
 <html lang="en">
@@ -63,7 +66,7 @@ function pageHtml(opts: {
 <meta name="description" content="${esc(opts.description)}" />
 <meta name="keywords" content="${esc(opts.keywords.join(", "))}" />
 <link rel="canonical" href="${opts.canonical}" />
-<meta property="og:type" content="article" />
+<meta property="og:type" content="${opts.ogType ?? "article"}" />
 <meta property="og:title" content="${esc(opts.title)}" />
 <meta property="og:description" content="${esc(opts.description)}" />
 <meta property="og:url" content="${opts.canonical}" />
@@ -133,9 +136,77 @@ function run() {
     console.log(`  ✓ /blog/${article.slug}/`);
   }
 
+  // Service landing pages (top-level, e.g. /brand-films-mumbai/).
+  for (const service of SERVICE_PAGE_LIST) {
+    const canonical = `${BASE_URL}/${service.slug}/`;
+    const imageAbs = service.imageUrl.startsWith("http")
+      ? service.imageUrl
+      : `${BASE_URL}${service.imageUrl}`;
+
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          name: service.h1,
+          serviceType: service.serviceType,
+          description: service.metaDescription,
+          url: canonical,
+          areaServed: { "@type": "City", name: "Mumbai" },
+          provider: {
+            "@type": "ProfessionalService",
+            name: "Neorama Studios",
+            url: `${BASE_URL}/`,
+            telephone: "+91-9713102046",
+            email: "neoramastudios@gmail.com",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "906, 9th Floor, Dev Plaza, S V Road, Andheri West",
+              addressLocality: "Mumbai",
+              addressRegion: "Maharashtra",
+              postalCode: "400068",
+              addressCountry: "IN",
+            },
+            ...(logoUrl ? { logo: logoUrl } : {}),
+          },
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
+            { "@type": "ListItem", position: 2, name: service.h1, item: canonical },
+          ],
+        },
+      ],
+    };
+
+    const bodyMarkup = renderToStaticMarkup(<ServicePage service={service} />);
+
+    const html = pageHtml({
+      bodyMarkup,
+      cssHref,
+      title: service.metaTitle,
+      description: service.metaDescription,
+      keywords: service.keywords,
+      canonical,
+      image: imageAbs,
+      jsonLd,
+      ogType: "website",
+    });
+
+    const outDir = path.join(DIST, service.slug);
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(path.join(outDir, "index.html"), html, "utf-8");
+    console.log(`  ✓ /${service.slug}/`);
+  }
+
   // sitemap.xml
   const urls = [
     { loc: `${BASE_URL}/`, priority: "1.0" },
+    ...SERVICE_PAGE_LIST.map((s) => ({
+      loc: `${BASE_URL}/${s.slug}/`,
+      priority: "0.9",
+    })),
     ...BLOG_ARTICLE_LIST.map((a) => ({
       loc: `${BASE_URL}/blog/${a.slug}/`,
       priority: "0.8",
@@ -157,7 +228,7 @@ ${urls
   const robots = `User-agent: *\nAllow: /\n\nSitemap: ${BASE_URL}/sitemap.xml\n`;
   fs.writeFileSync(path.join(DIST, "robots.txt"), robots, "utf-8");
 
-  console.log(`  ✓ sitemap.xml + robots.txt`);
+  console.log(`  ✓ sitemap.xml (${urls.length} urls) + robots.txt`);
 }
 
 run();

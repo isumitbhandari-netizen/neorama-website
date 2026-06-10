@@ -945,6 +945,9 @@ export default function App() {
 
         {/* Right navigation links */}
         <nav className="order-2 md:order-3 flex flex-wrap justify-center items-center gap-6">
+          <a href="/brand-films-mumbai/" className="font-mono text-[11px] text-[#727784] hover:text-electric-blue transition-colors">
+            Brand Films Mumbai
+          </a>
           <a href="#" className="font-mono text-[11px] text-[#727784] hover:text-electric-blue transition-colors">
             Privacy Policy
           </a>
