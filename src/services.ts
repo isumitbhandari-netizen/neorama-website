@@ -22,6 +22,8 @@ export interface ServicePage {
   keywords: string[];
   /** Hero image (absolute path under /public). Replace placeholders with real stills. */
   imageUrl: string;
+  /** Descriptive alt text for the hero image (accessibility + image SEO). */
+  imageAlt: string;
   blocks: ArticleBlock[];
   /** FAQ entries — rendered visibly on the page and as FAQPage JSON-LD. */
   faqs: { q: string; a: string }[];
@@ -45,7 +47,8 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       "video production agency for d2c brands india",
       "brand film maker mumbai",
     ],
-    imageUrl: "/images/services/brand-films.png",
+    imageUrl: "/images/services/brand-film-production-mumbai.png",
+    imageAlt: "Neorama Studios brand film production on a shoot in Mumbai",
     blocks: [
       {
         type: "p",
@@ -123,7 +126,8 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       "explainer video production mumbai",
       "corporate film makers mumbai",
     ],
-    imageUrl: "/images/services/corporate-video.png",
+    imageUrl: "/images/services/corporate-video-production-mumbai.png",
+    imageAlt: "Corporate video production by Neorama Studios in Mumbai",
     blocks: [
       {
         type: "p",
@@ -201,7 +205,8 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       "instagram reels agency mumbai",
       "ugc content creators mumbai",
     ],
-    imageUrl: "/images/services/social-media.png",
+    imageUrl: "/images/services/social-media-content-mumbai.png",
+    imageAlt: "Social media and influencer content created by Neorama Studios in Mumbai",
     blocks: [
       {
         type: "p",
@@ -279,7 +284,8 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       "fashion photography mumbai",
       "ecommerce product photography mumbai",
     ],
-    imageUrl: "/images/services/commercial-photography.jpg",
+    imageUrl: "/images/services/commercial-photography-mumbai.jpg",
+    imageAlt: "Commercial product photography by Neorama Studios in Mumbai",
     blocks: [
       {
         type: "p",
@@ -357,7 +363,8 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       "logo design mumbai",
       "packaging design mumbai",
     ],
-    imageUrl: "/images/services/branding-design.jpg",
+    imageUrl: "/images/services/branding-design-mumbai.jpg",
+    imageAlt: "Brand identity and design work by Neorama Studios in Mumbai",
     blocks: [
       {
         type: "p",

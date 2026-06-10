@@ -96,7 +96,7 @@ export default function ServicePage({ service }: { service: ServicePageData }) {
         <div className="aspect-video w-full overflow-hidden rounded-2xl bg-background-gray my-10">
           <img
             src={service.imageUrl}
-            alt={service.h1}
+            alt={service.imageAlt}
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
