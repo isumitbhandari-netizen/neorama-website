@@ -954,6 +954,12 @@ export default function App() {
           <a href="/social-media-content-agency-mumbai/" className="font-mono text-[11px] text-[#727784] hover:text-electric-blue transition-colors">
             Social Media Mumbai
           </a>
+          <a href="/commercial-photography-mumbai/" className="font-mono text-[11px] text-[#727784] hover:text-electric-blue transition-colors">
+            Photography Mumbai
+          </a>
+          <a href="/branding-design-agency-mumbai/" className="font-mono text-[11px] text-[#727784] hover:text-electric-blue transition-colors">
+            Branding & Design Mumbai
+          </a>
           <a href="#" className="font-mono text-[11px] text-[#727784] hover:text-electric-blue transition-colors">
             Privacy Policy
           </a>

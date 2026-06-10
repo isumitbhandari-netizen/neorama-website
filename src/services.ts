@@ -205,6 +205,126 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       },
     ],
   },
+
+  "commercial-photography-mumbai": {
+    slug: "commercial-photography-mumbai",
+    eyebrow: "Commercial Photography · Mumbai",
+    h1: "Commercial Photography in Mumbai",
+    standfirst:
+      "Neorama Studios is a Mumbai-based creative agency producing commercial photography that makes products and brands look their best — for startups and growing companies.",
+    metaTitle: "Commercial Photography Studio in Mumbai | Neorama Studios",
+    metaDescription:
+      "Neorama Studios is a Mumbai-based commercial photography studio shooting product, fashion, food, and brand photography for startups and growing brands. Get a quote.",
+    serviceType: "Commercial Photography",
+    keywords: [
+      "commercial photography mumbai",
+      "product photography mumbai",
+      "fashion photography mumbai",
+      "food photography mumbai",
+      "advertising photographer mumbai",
+    ],
+    imageUrl: "/og-image.jpg",
+    blocks: [
+      {
+        type: "p",
+        text: "Photography is the first thing a customer judges a brand on. A product shot on a website, a dish on a menu, a model in a campaign — these images decide whether someone trusts you enough to buy. At Neorama Studios, we produce commercial photography for startups and growing brands that need images good enough to compete with much larger players, without a much larger budget.",
+      },
+      {
+        type: "p",
+        text: "We are a Mumbai-based creative agency, so we shoot on location across the city or in a controlled studio setup, whichever your product needs. From styling and lighting to direction and retouching, we manage the whole shoot so the final images are clean, consistent, and ready to publish everywhere.",
+      },
+      { type: "h2", text: "Commercial Photography We Produce" },
+      {
+        type: "ul",
+        items: [
+          "Product photography — clean, consistent shots for your website, marketplace listings, and ads.",
+          "Fashion & apparel photography — editorial and catalogue imagery that gives your label a point of view.",
+          "Food & beverage photography — appetising images for menus, packaging, delivery platforms, and social.",
+          "Brand & lifestyle photography — people-led imagery that shows your product in real context.",
+          "Campaign photography — a coordinated set of hero and supporting images for a launch or season.",
+        ],
+      },
+      { type: "h2", text: "How We Work" },
+      {
+        type: "p",
+        text: "Every shoot starts with the end use in mind — where the images will appear and what they need to do. We plan a shot list, handle styling and setup, and direct the session so we capture everything you need in the time booked. After the shoot, we edit and retouch to a consistent standard and deliver in the formats and crops you'll actually use. You see the direction before we shoot, so the results are predictable.",
+      },
+      {
+        type: "p",
+        text: "Because we work with startups and small to medium-sized brands, we scope each shoot to a realistic budget. A single focused session can cover a full product range plus a set of lifestyle images — a complete visual refresh without an enterprise spend.",
+      },
+      { type: "h2", text: "Why Mumbai Brands Choose Neorama" },
+      {
+        type: "p",
+        text: "We are a full-spectrum studio: film, photography, social content, branding, and design all under one roof. That means your photography shares a visual language with your video, your social media, and your identity — so your brand looks coherent everywhere a customer sees it. If you are looking for a commercial photography studio in Mumbai that understands the whole brand, not just the camera, that is exactly how we work.",
+      },
+      {
+        type: "cta",
+        text: "Need commercial photography in Mumbai? Tell us what you're shooting and we'll come back with an approach and a quote.",
+        label: "Start a project",
+      },
+    ],
+  },
+
+  "branding-design-agency-mumbai": {
+    slug: "branding-design-agency-mumbai",
+    eyebrow: "Branding & Design · Mumbai",
+    h1: "Branding & Design Agency in Mumbai",
+    standfirst:
+      "Neorama Studios is a Mumbai-based creative agency building brand identities and design systems that make young companies look established — for startups and growing brands.",
+    metaTitle: "Branding & Design Agency in Mumbai | Neorama Studios",
+    metaDescription:
+      "Neorama Studios is a Mumbai-based branding and design agency creating logos, brand identities, packaging, and design systems for startups and growing brands. Get a quote.",
+    serviceType: "Branding and Design",
+    keywords: [
+      "branding agency mumbai",
+      "design agency mumbai",
+      "brand identity design mumbai",
+      "logo design mumbai",
+      "packaging design mumbai",
+    ],
+    imageUrl: "/og-image.jpg",
+    blocks: [
+      {
+        type: "p",
+        text: "Branding is what makes a company recognisable and trusted before a single word is read. A considered identity tells customers you are serious, consistent, and worth their attention. At Neorama Studios, we build brands and design systems for startups and growing companies that need to look established from day one — and stay coherent as they scale.",
+      },
+      {
+        type: "p",
+        text: "We are a Mumbai-based creative agency, and branding is the layer that ties everything else together. Because we also produce film, photography, and social content, the identity we build is designed to work in motion and on camera — not just on a logo sheet.",
+      },
+      { type: "h2", text: "Branding & Design We Produce" },
+      {
+        type: "ul",
+        items: [
+          "Brand identity — logo, colour, typography, and the visual rules that hold a brand together.",
+          "Brand strategy & positioning — clarifying what you stand for and how you sound before the visuals begin.",
+          "Packaging design — shelf-ready, production-correct packaging that makes a product worth picking up.",
+          "Design systems & guidelines — a clear toolkit so your brand stays consistent across every team and channel.",
+          "Marketing & social design — templates, decks, and assets that keep day-to-day output on-brand.",
+        ],
+      },
+      { type: "h2", text: "How We Work" },
+      {
+        type: "p",
+        text: "We start with strategy — who you are, who you serve, and what makes you different — because design without that is just decoration. From there we develop identity directions, refine the one that fits, and build it out into a usable system with guidelines. You're involved at each decision point, so the final brand feels like yours, not a template.",
+      },
+      {
+        type: "p",
+        text: "Because we work with startups and small to medium-sized brands, we scope branding to where you are. A focused engagement can deliver a complete core identity and the essential assets to launch — a strong foundation you can build on as you grow.",
+      },
+      { type: "h2", text: "Why Mumbai Brands Choose Neorama" },
+      {
+        type: "p",
+        text: "We are a full-spectrum studio: branding, design, film, photography, and social content all under one roof. That means your identity isn't handed off and forgotten — it carries through into your films, your photography, and your social media, so your brand reads as one coherent voice everywhere. If you are looking for a branding and design agency in Mumbai that can also bring the brand to life across content, that is exactly how we work.",
+      },
+      {
+        type: "cta",
+        text: "Building or refreshing a brand in Mumbai? Tell us where you are and we'll come back with an approach and a quote.",
+        label: "Start a project",
+      },
+    ],
+  },
 };
 
 export const SERVICE_PAGE_LIST: ServicePage[] = Object.values(SERVICE_PAGES);
