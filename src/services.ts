@@ -43,7 +43,7 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       "corporate film makers mumbai",
       "video production company mumbai",
     ],
-    imageUrl: "/og-image.jpg",
+    imageUrl: "/images/services/brand-films.png",
     blocks: [
       {
         type: "p",
@@ -103,7 +103,7 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       "explainer video production mumbai",
       "corporate film makers mumbai",
     ],
-    imageUrl: "/og-image.jpg",
+    imageUrl: "/images/services/corporate-video.png",
     blocks: [
       {
         type: "p",
@@ -163,7 +163,7 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       "instagram reels agency mumbai",
       "ugc content creators mumbai",
     ],
-    imageUrl: "/og-image.jpg",
+    imageUrl: "/images/services/social-media.png",
     blocks: [
       {
         type: "p",
@@ -223,7 +223,7 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       "food photography mumbai",
       "advertising photographer mumbai",
     ],
-    imageUrl: "/og-image.jpg",
+    imageUrl: "/images/services/commercial-photography.jpg",
     blocks: [
       {
         type: "p",
@@ -283,7 +283,7 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       "logo design mumbai",
       "packaging design mumbai",
     ],
-    imageUrl: "/og-image.jpg",
+    imageUrl: "/images/services/branding-design.jpg",
     blocks: [
       {
         type: "p",
