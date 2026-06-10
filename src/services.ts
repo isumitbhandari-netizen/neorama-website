@@ -85,6 +85,66 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       },
     ],
   },
+
+  "corporate-video-production-mumbai": {
+    slug: "corporate-video-production-mumbai",
+    eyebrow: "Corporate Video Production · Mumbai",
+    h1: "Corporate Video Production in Mumbai",
+    standfirst:
+      "Neorama Studios is a Mumbai-based creative agency producing corporate videos that explain, train, and persuade — clear, professional, and on-brand for startups and growing companies.",
+    metaTitle: "Corporate Video Production Company in Mumbai | Neorama Studios",
+    metaDescription:
+      "Neorama Studios is a Mumbai-based corporate video production company making company profiles, explainer videos, testimonials, and event films for startups and growing brands.",
+    serviceType: "Corporate Video Production",
+    keywords: [
+      "corporate video production mumbai",
+      "corporate video company mumbai",
+      "company profile video mumbai",
+      "explainer video production mumbai",
+      "corporate film makers mumbai",
+    ],
+    imageUrl: "/og-image.jpg",
+    blocks: [
+      {
+        type: "p",
+        text: "A corporate video is how a company explains itself when there isn't time for a long meeting. Whether you are introducing your business to a new client, onboarding a team, or presenting to investors, a clear, well-produced video does the work of a dozen slides — and leaves a far stronger impression. At Neorama Studios, we produce corporate videos for startups and growing companies that need to look credible, organised, and easy to understand.",
+      },
+      {
+        type: "p",
+        text: "We are a Mumbai-based production company, so we shoot across offices, factories, and event venues throughout the city and the wider MMR region without travel overheads. From your Andheri or BKC office to an on-site shoot, we handle crew, lighting, sound, and direction — so the final video looks professional, not like a phone recording.",
+      },
+      { type: "h2", text: "Corporate Videos We Produce" },
+      {
+        type: "ul",
+        items: [
+          "Company profile videos — a polished overview of who you are, what you do, and why clients should trust you.",
+          "Explainer videos — breaking down a product, service, or process into something anyone can understand in under two minutes.",
+          "Customer & employee testimonials — real voices that build credibility with prospects and recruits.",
+          "Training & internal communication videos — consistent, repeatable content for onboarding and process documentation.",
+          "Event & conference films — coverage and highlight reels from launches, summits, and corporate functions.",
+        ],
+      },
+      { type: "h2", text: "How We Work" },
+      {
+        type: "p",
+        text: "Every project starts with a clear objective: who is watching this video, and what should they think or do afterwards. From there we move into scripting and a shot plan, then a professionally managed shoot, and finally edit, motion graphics, sound, and delivery in every format you need — from boardroom screens to LinkedIn. You approve the plan before we shoot and sign off at each stage, so the final video is exactly what you expected.",
+      },
+      {
+        type: "p",
+        text: "Because we work with startups and small to medium-sized companies, we scope each project to a realistic budget. A focused shoot can deliver a company profile plus a set of short cuts for social and sales use — professional production without enterprise-level cost.",
+      },
+      { type: "h2", text: "Why Mumbai Companies Choose Neorama" },
+      {
+        type: "p",
+        text: "We are a full-spectrum studio: film, photography, social content, branding, and design all under one roof. That means your corporate video shares a consistent visual language with the rest of your communication — your website, your decks, your social media. The result is a company that looks coherent and considered everywhere people encounter it. If you are looking for a corporate video production company in Mumbai that understands branding as well as cameras, that is exactly how we work.",
+      },
+      {
+        type: "cta",
+        text: "Need a corporate video in Mumbai? Tell us your goal and audience, and we'll come back with an approach and a quote.",
+        label: "Start a project",
+      },
+    ],
+  },
 };
 
 export const SERVICE_PAGE_LIST: ServicePage[] = Object.values(SERVICE_PAGES);
