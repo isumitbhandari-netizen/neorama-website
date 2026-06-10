@@ -177,6 +177,18 @@ function run() {
             { "@type": "ListItem", position: 2, name: service.h1, item: canonical },
           ],
         },
+        ...(service.faqs.length > 0
+          ? [
+              {
+                "@type": "FAQPage",
+                mainEntity: service.faqs.map((faq) => ({
+                  "@type": "Question",
+                  name: faq.q,
+                  acceptedAnswer: { "@type": "Answer", text: faq.a },
+                })),
+              },
+            ]
+          : []),
       ],
     };
 

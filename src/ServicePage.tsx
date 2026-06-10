@@ -107,6 +107,26 @@ export default function ServicePage({ service }: { service: ServicePageData }) {
             <Block key={i} block={block} />
           ))}
         </div>
+
+        {service.faqs.length > 0 && (
+          <section className="mt-16 pt-10 border-t border-soft-gray">
+            <h2 className="font-display text-2xl md:text-3xl font-black text-on-surface tracking-tight mb-8">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-8">
+              {service.faqs.map((faq, i) => (
+                <div key={i}>
+                  <h3 className="font-display text-lg md:text-xl font-extrabold text-on-surface tracking-tight mb-2">
+                    {faq.q}
+                  </h3>
+                  <p className="font-sans text-base text-on-surface-variant leading-relaxed">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
       </article>
 
       {/* Footer */}

@@ -23,6 +23,8 @@ export interface ServicePage {
   /** Hero image (absolute path under /public). Replace placeholders with real stills. */
   imageUrl: string;
   blocks: ArticleBlock[];
+  /** FAQ entries — rendered visibly on the page and as FAQPage JSON-LD. */
+  faqs: { q: string; a: string }[];
 }
 
 export const SERVICE_PAGES: Record<string, ServicePage> = {
@@ -37,17 +39,17 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       "Neorama Studios is a Mumbai-based brand film production agency creating brand story films, founder films, and product films for startups and growing brands. Get a quote.",
     serviceType: "Brand Film Production",
     keywords: [
+      "brand film production company mumbai",
       "brand film agency mumbai",
-      "brand film production mumbai",
       "brand video production mumbai",
-      "corporate film makers mumbai",
-      "video production company mumbai",
+      "video production agency for d2c brands india",
+      "brand film maker mumbai",
     ],
     imageUrl: "/images/services/brand-films.png",
     blocks: [
       {
         type: "p",
-        text: "A brand film is the fastest way for an audience to understand who you are and why you matter. In a market as crowded as Mumbai's, a well-made film does what a logo and a tagline cannot: it gives your brand a voice, a tone, and a feeling people remember. At Neorama Studios, we produce brand films for startups and growing companies that need to look established, trusted, and distinct from day one.",
+        text: "A brand film is the fastest way for an audience to understand who you are and why you matter. In a market as crowded as Mumbai's, a well-made film does what a logo and a tagline cannot: it gives your brand a voice, a tone, and a feeling people remember. As a brand film production company in Mumbai, Neorama Studios makes brand films for startups, growing companies, and D2C brands that need to look established, trusted, and distinct from day one.",
       },
       {
         type: "p",
@@ -82,6 +84,24 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
         type: "cta",
         text: "Planning a brand film in Mumbai? Tell us about your brand and we'll come back with an approach and a quote.",
         label: "Start a project",
+      },
+    ],
+    faqs: [
+      {
+        q: "How much does a brand film cost in India?",
+        a: "The cost of a brand film in India depends on scope — crew size, shoot days, locations, talent, and the level of post-production. A focused single-day shoot is the most budget-friendly starting point and can still deliver a polished brand film plus a set of social cuts. Because we work with startups and growing brands, we scope each project to a real budget. Share your brief and we'll come back with a clear, itemised quote.",
+      },
+      {
+        q: "How long does it take to produce a brand film?",
+        a: "Most brand films take two to four weeks end to end — roughly a week for scripting and treatment, the shoot itself, then one to two weeks for edit, sound, colour, and delivery. Tighter timelines are possible for simpler films; we'll confirm a schedule before we start.",
+      },
+      {
+        q: "Do you work with startups and small brands?",
+        a: "Yes — startups and small to medium-sized brands are who we are built for. We scope films to where you are, so you get production quality that competes with much larger players without an enterprise budget.",
+      },
+      {
+        q: "Do you make brand films for D2C brands?",
+        a: "Absolutely. We produce brand films and product films for D2C brands across India, engineered for landing pages, paid ads, and social — the places D2C brands actually convert customers.",
       },
     ],
   },
@@ -144,6 +164,24 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
         label: "Start a project",
       },
     ],
+    faqs: [
+      {
+        q: "How much does corporate video production cost in Mumbai?",
+        a: "Corporate video cost in Mumbai depends on the type of video, shoot days, locations, and post-production like motion graphics. A company profile shot in a single day is the most cost-effective starting point and can also yield short cuts for social and sales. We scope each project to a realistic budget — send your brief for an exact quote.",
+      },
+      {
+        q: "What types of corporate videos do you produce?",
+        a: "Company profile videos, explainer videos, customer and employee testimonials, training and internal communication videos, and event or conference films. If you're not sure which format fits your goal, tell us the audience and we'll recommend one.",
+      },
+      {
+        q: "Do you shoot at our office or on location?",
+        a: "Yes — we shoot at offices, factories, and event venues across Mumbai and the wider MMR region. We bring the crew, lighting, and sound so the result looks professional, wherever we film.",
+      },
+      {
+        q: "How long does a corporate video take?",
+        a: "Most corporate videos take two to three weeks from brief to final delivery, depending on scripting, shoot scale, and the amount of motion graphics involved.",
+      },
+    ],
   },
 
   "social-media-content-agency-mumbai": {
@@ -204,6 +242,24 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
         label: "Start a project",
       },
     ],
+    faqs: [
+      {
+        q: "How much does a social media content package cost in Mumbai?",
+        a: "It depends on how much content you need each month and whether it includes video, photography, or influencer collaborations. The most cost-effective approach is batching — shooting weeks of content in a single focused session. We scope packages to your budget, so tell us your goals and we'll come back with options and a quote.",
+      },
+      {
+        q: "How many Reels can you produce in one shoot?",
+        a: "A single, well-planned shoot day can produce several hero Reels plus weeks of supporting posts and photos. The exact number depends on the concepts, locations, and changes involved — we plan the shot list up front so you know what you're getting.",
+      },
+      {
+        q: "Do you manage influencer and creator collaborations?",
+        a: "Yes — we identify creators in Mumbai whose audience matches yours, brief them properly, and manage the collaboration end to end so the content stays aligned with your brand.",
+      },
+      {
+        q: "Which platforms do you create content for?",
+        a: "Primarily Instagram Reels and YouTube Shorts, plus platform-native cuts for LinkedIn and other channels. One shoot is repurposed into formats tuned for each platform.",
+      },
+    ],
   },
 
   "commercial-photography-mumbai": {
@@ -217,17 +273,17 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       "Neorama Studios is a Mumbai-based commercial photography studio shooting product, fashion, food, and brand photography for startups and growing brands. Get a quote.",
     serviceType: "Commercial Photography",
     keywords: [
+      "commercial photographer mumbai",
+      "product photographer mumbai",
       "commercial photography mumbai",
-      "product photography mumbai",
       "fashion photography mumbai",
-      "food photography mumbai",
-      "advertising photographer mumbai",
+      "ecommerce product photography mumbai",
     ],
     imageUrl: "/images/services/commercial-photography.jpg",
     blocks: [
       {
         type: "p",
-        text: "Photography is the first thing a customer judges a brand on. A product shot on a website, a dish on a menu, a model in a campaign — these images decide whether someone trusts you enough to buy. At Neorama Studios, we produce commercial photography for startups and growing brands that need images good enough to compete with much larger players, without a much larger budget.",
+        text: "Photography is the first thing a customer judges a brand on. A product shot on a website, a dish on a menu, a model in a campaign — these images decide whether someone trusts you enough to buy. As a commercial photographer in Mumbai, Neorama Studios produces photography for startups and growing brands that need images good enough to compete with much larger players, without a much larger budget.",
       },
       {
         type: "p",
@@ -264,6 +320,24 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
         label: "Start a project",
       },
     ],
+    faqs: [
+      {
+        q: "How much does commercial photography cost in Mumbai?",
+        a: "Commercial photography cost depends on the number of products or looks, whether it's studio or on-location, and the level of styling and retouching. A single focused session is the most cost-effective way to cover a full product range plus lifestyle images. We scope each shoot to your budget — share what you're shooting and we'll send a quote.",
+      },
+      {
+        q: "Do you shoot product photography for ecommerce and D2C brands?",
+        a: "Yes — we shoot clean, consistent product photography for websites, marketplace listings, and ads, which is exactly what ecommerce and D2C brands need to convert. We deliver in the crops and formats each platform requires.",
+      },
+      {
+        q: "Do you shoot in a studio or on location?",
+        a: "Both — whichever your product needs. We use a controlled studio setup for clean product shots and shoot on location across Mumbai for lifestyle and brand imagery.",
+      },
+      {
+        q: "How quickly do we get the final images?",
+        a: "Edited and retouched images are typically delivered within one to two weeks of the shoot, depending on volume. We can prioritise a smaller hero set sooner if you have a launch deadline.",
+      },
+    ],
   },
 
   "branding-design-agency-mumbai": {
@@ -277,8 +351,8 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       "Neorama Studios is a Mumbai-based branding and design agency creating logos, brand identities, packaging, and design systems for startups and growing brands. Get a quote.",
     serviceType: "Branding and Design",
     keywords: [
+      "branding agency for startups mumbai",
       "branding agency mumbai",
-      "design agency mumbai",
       "brand identity design mumbai",
       "logo design mumbai",
       "packaging design mumbai",
@@ -316,12 +390,30 @@ export const SERVICE_PAGES: Record<string, ServicePage> = {
       { type: "h2", text: "Why Mumbai Brands Choose Neorama" },
       {
         type: "p",
-        text: "We are a full-spectrum studio: branding, design, film, photography, and social content all under one roof. That means your identity isn't handed off and forgotten — it carries through into your films, your photography, and your social media, so your brand reads as one coherent voice everywhere. If you are looking for a branding and design agency in Mumbai that can also bring the brand to life across content, that is exactly how we work.",
+        text: "We are a full-spectrum studio: branding, design, film, photography, and social content all under one roof. That means your identity isn't handed off and forgotten — it carries through into your films, your photography, and your social media, so your brand reads as one coherent voice everywhere. If you are looking for a branding agency for startups in Mumbai that can also bring the brand to life across content, that is exactly how we work.",
       },
       {
         type: "cta",
         text: "Building or refreshing a brand in Mumbai? Tell us where you are and we'll come back with an approach and a quote.",
         label: "Start a project",
+      },
+    ],
+    faqs: [
+      {
+        q: "How much does branding cost for a startup in Mumbai?",
+        a: "Branding cost depends on scope — a core identity (logo, colour, typography) costs less than a full programme with strategy, packaging, and a complete design system. For startups we scope a focused engagement that delivers the essentials to launch, then build from there as you grow. Tell us your stage and we'll send a quote.",
+      },
+      {
+        q: "What's included in a brand identity?",
+        a: "A typical identity includes your logo, colour palette, typography, and the visual rules that hold everything together — usually with brand guidelines so your team stays consistent. Depending on scope we also cover strategy and positioning, packaging, and marketing templates.",
+      },
+      {
+        q: "How long does a branding project take?",
+        a: "A core identity usually takes three to five weeks — strategy, identity directions, refinement, and build-out into a usable system. Larger programmes with packaging or a full design system take longer; we'll confirm a timeline up front.",
+      },
+      {
+        q: "Do you work with early-stage startups?",
+        a: "Yes — early-stage startups are a core part of who we work with. We scope branding to where you are so you can look established from day one without overcommitting budget before you've launched.",
       },
     ],
   },
