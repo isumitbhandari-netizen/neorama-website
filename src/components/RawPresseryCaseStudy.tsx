@@ -25,11 +25,11 @@ import regeneratedRow4_2Image from "../assets/images/regenerated_image_178092320
 // @ts-ignore
 import regeneratedRow4_3Image from "../assets/images/regenerated_image_1780923205617.webp";
 // @ts-ignore
-import relatedLinenThumb from "../assets/images/regenerated_image_1780844748489.jpg";
+import relatedLinenThumb from "../assets/images/regenerated_image_1780844748489.webp";
 // @ts-ignore
-import relatedAdidasThumb from "../assets/images/regenerated_image_1780924734124.jpg";
+import relatedAdidasThumb from "../assets/images/regenerated_image_1780924734124.webp";
 // @ts-ignore
-import relatedSimhayanaThumb from "../assets/images/simhayana_knotted_thumb.jpg";
+import relatedSimhayanaThumb from "../assets/images/simhayana_knotted_thumb.webp";
 
 // Curated high-fidelity Unsplash images representing Raw Pressery's vibrant commercial campaign
 const IMAGES = {

@@ -1,29 +1,29 @@
 import React, { useEffect, useRef } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 // @ts-ignore
-import relMWBThumb from "../assets/images/mwb_thumbnail.png";
+import relMWBThumb from "../assets/images/mwb_thumbnail.webp";
 // @ts-ignore
-import relLinenThumb from "../assets/images/regenerated_image_1780852616738.png";
+import relLinenThumb from "../assets/images/regenerated_image_1780852616738.webp";
 // @ts-ignore
-import relPataudiThumb from "../assets/images/regenerated_image_1780850373289.png";
+import relPataudiThumb from "../assets/images/regenerated_image_1780850373289.webp";
 // @ts-ignore
-import TV_V1 from "../assets/images/tatva_ved_v1.jpg";
+import TV_V1 from "../assets/images/tatva_ved_v1.webp";
 // @ts-ignore
-import TV_V2 from "../assets/images/tatva_ved_v2.jpg";
+import TV_V2 from "../assets/images/tatva_ved_v2.webp";
 // @ts-ignore
-import TV_V3 from "../assets/images/tatva_ved_v3.jpg";
+import TV_V3 from "../assets/images/tatva_ved_v3.webp";
 // @ts-ignore
-import TV_V4 from "../assets/images/tatva_ved_v4.jpg";
+import TV_V4 from "../assets/images/tatva_ved_v4.webp";
 // @ts-ignore
-import TV_V5 from "../assets/images/tatva_ved_v5.jpg";
+import TV_V5 from "../assets/images/tatva_ved_v5.webp";
 // @ts-ignore
-import TV_V6 from "../assets/images/tatva_ved_v6.jpg";
+import TV_V6 from "../assets/images/tatva_ved_v6.webp";
 // @ts-ignore
-import TV_V7 from "../assets/images/tatva_ved_v7.jpg";
+import TV_V7 from "../assets/images/tatva_ved_v7.webp";
 // @ts-ignore
-import TV_H1 from "../assets/images/tatva_ved_h1.jpg";
+import TV_H1 from "../assets/images/tatva_ved_h1.webp";
 // @ts-ignore
-import TV_H2 from "../assets/images/tatva_ved_h2.jpg";
+import TV_H2 from "../assets/images/tatva_ved_h2.webp";
 
 // ─── Gradients ───────────────────────────────────────────────────────────────
 const G_WARM  = "linear-gradient(145deg,#2e1608 0%,#7a3c18 50%,#c47840 100%)";

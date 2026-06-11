@@ -15,7 +15,7 @@ import MWBCaseStudy from "./components/MWBCaseStudy";
 import SocialMediaGallery from "./components/SocialMediaGallery";
 import ServicesShowcase from "./components/ServicesShowcase";
 // @ts-ignore
-import neoramaLogo from "./assets/images/neorama_logo_1780850974615.png";
+import neoramaLogo from "./assets/images/neorama_logo_1780850974615.webp";
 import FAQAccordion from "./components/FAQAccordion";
 import { 
   ArrowRight, 

@@ -1,23 +1,23 @@
 import React, { useEffect, useRef } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 // @ts-ignore
-import relTatvaVedThumb from "../assets/images/tatva_ved_thumbnail.jpg";
+import relTatvaVedThumb from "../assets/images/tatva_ved_thumbnail.webp";
 // @ts-ignore
-import relLinenThumb from "../assets/images/regenerated_image_1780852616738.png";
+import relLinenThumb from "../assets/images/regenerated_image_1780852616738.webp";
 // @ts-ignore
 import relRawThumb from "../assets/images/regenerated_image_1780922541314.webp";
 // @ts-ignore
-import MWB_V1 from "../assets/images/mwb_v1.png";
+import MWB_V1 from "../assets/images/mwb_v1.webp";
 // @ts-ignore
-import MWB_V2 from "../assets/images/mwb_v2.png";
+import MWB_V2 from "../assets/images/mwb_v2.webp";
 // @ts-ignore
-import MWB_V3 from "../assets/images/mwb_v3.png";
+import MWB_V3 from "../assets/images/mwb_v3.webp";
 // @ts-ignore
-import MWB_H1 from "../assets/images/mwb_h1.png";
+import MWB_H1 from "../assets/images/mwb_h1.webp";
 // @ts-ignore
-import MWB_H2 from "../assets/images/mwb_h2.png";
+import MWB_H2 from "../assets/images/mwb_h2.webp";
 // @ts-ignore
-import MWB_H3 from "../assets/images/mwb_h3.png";
+import MWB_H3 from "../assets/images/mwb_h3.webp";
 
 // ─── Gradients ───────────────────────────────────────────────────────────────
 const G_NAVY  = "linear-gradient(145deg,#060c1e 0%,#0e1e42 50%,#182e60 100%)";

@@ -4,45 +4,45 @@ import { ArrowLeft, ChevronLeft, ChevronRight, X, Maximize2, ArrowRight } from "
 
 // ─── Images ───────────────────────────────────────────────────────────────────
 // @ts-ignore
-import simhayanaKnottedThumb from "../assets/images/simhayana_knotted_thumb.jpg";
+import simhayanaKnottedThumb from "../assets/images/simhayana_knotted_thumb.webp";
 // @ts-ignore
-import relatedLinenThumb from "../assets/images/regenerated_image_1780844748489.jpg";
+import relatedLinenThumb from "../assets/images/regenerated_image_1780844748489.webp";
 // @ts-ignore
 import relatedRawPresseryThumb from "../assets/images/regenerated_image_1780922541314.webp";
 // @ts-ignore
-import relatedAdidasThumb from "../assets/images/regenerated_image_1780924734124.jpg";
+import relatedAdidasThumb from "../assets/images/regenerated_image_1780924734124.webp";
 // @ts-ignore
-import _S1_H1 from "../assets/images/simhayana_s1_h1.jpg";
+import _S1_H1 from "../assets/images/simhayana_s1_h1.webp";
 // @ts-ignore
-import _S1_V1 from "../assets/images/simhayana_s1_v1.jpg";
+import _S1_V1 from "../assets/images/simhayana_s1_v1.webp";
 // @ts-ignore
-import _S1_V2 from "../assets/images/simhayana_s1_v2.jpg";
+import _S1_V2 from "../assets/images/simhayana_s1_v2.webp";
 // @ts-ignore
-import _S1_V3 from "../assets/images/simhayana_s1_v3.jpg";
+import _S1_V3 from "../assets/images/simhayana_s1_v3.webp";
 // @ts-ignore
-import _S1_V4 from "../assets/images/simhayana_s1_v4.jpg";
+import _S1_V4 from "../assets/images/simhayana_s1_v4.webp";
 // @ts-ignore
-import _S1_V5 from "../assets/images/simhayana_s1_v5.jpg";
+import _S1_V5 from "../assets/images/simhayana_s1_v5.webp";
 // @ts-ignore
-import _S2_H1 from "../assets/images/simhayana_s2_h1.jpg";
+import _S2_H1 from "../assets/images/simhayana_s2_h1.webp";
 // @ts-ignore
-import _S2_H2 from "../assets/images/simhayana_s2_h2.jpg";
+import _S2_H2 from "../assets/images/simhayana_s2_h2.webp";
 // @ts-ignore
-import _S2_V1 from "../assets/images/simhayana_s2_v1.jpg";
+import _S2_V1 from "../assets/images/simhayana_s2_v1.webp";
 // @ts-ignore
-import _S2_V2 from "../assets/images/simhayana_s2_v2.jpg";
+import _S2_V2 from "../assets/images/simhayana_s2_v2.webp";
 // @ts-ignore
-import _K1_H1 from "../assets/images/knotted_k1_h1.jpg";
+import _K1_H1 from "../assets/images/knotted_k1_h1.webp";
 // @ts-ignore
-import _K1_H2 from "../assets/images/knotted_k1_h2.jpg";
+import _K1_H2 from "../assets/images/knotted_k1_h2.webp";
 // @ts-ignore
-import _K2_H1 from "../assets/images/knotted_k2_h1.jpg";
+import _K2_H1 from "../assets/images/knotted_k2_h1.webp";
 // @ts-ignore
-import _K2_V1 from "../assets/images/knotted_k2_v1.jpg";
+import _K2_V1 from "../assets/images/knotted_k2_v1.webp";
 // @ts-ignore
-import _K3_V1 from "../assets/images/knotted_k3_v1.jpg";
+import _K3_V1 from "../assets/images/knotted_k3_v1.webp";
 // @ts-ignore
-import _K3_V2 from "../assets/images/knotted_k3_v2.jpg";
+import _K3_V2 from "../assets/images/knotted_k3_v2.webp";
 
 const HERO_IMG: string = simhayanaKnottedThumb;
 

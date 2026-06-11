@@ -13,35 +13,35 @@ import {
 } from "lucide-react";
 
 // @ts-ignore
-import adidasCampaignPhoto from "../assets/images/regenerated_image_1780924734124.jpg";
+import adidasCampaignPhoto from "../assets/images/regenerated_image_1780924734124.webp";
 // @ts-ignore
 import relatedRawPresseryThumb from "../assets/images/regenerated_image_1780922541314.webp";
 // @ts-ignore
-import relatedLinenThumb from "../assets/images/regenerated_image_1780844748489.jpg";
+import relatedLinenThumb from "../assets/images/regenerated_image_1780844748489.webp";
 // @ts-ignore
-import relatedSimhayanaThumb from "../assets/images/simhayana_knotted_thumb.jpg";
+import relatedSimhayanaThumb from "../assets/images/simhayana_knotted_thumb.webp";
 // @ts-ignore
-import row1_1_img from "../assets/images/regenerated_image_1780925148500.jpg";
+import row1_1_img from "../assets/images/regenerated_image_1780925148500.webp";
 // @ts-ignore
-import row1_2_img from "../assets/images/regenerated_image_1780925151098.png";
+import row1_2_img from "../assets/images/regenerated_image_1780925151098.webp";
 // @ts-ignore
-import row1_3_img from "../assets/images/regenerated_image_1780925160236.jpg";
+import row1_3_img from "../assets/images/regenerated_image_1780925160236.webp";
 // @ts-ignore
-import row2_feat_img from "../assets/images/regenerated_image_1780925280133.jpg";
+import row2_feat_img from "../assets/images/regenerated_image_1780925280133.webp";
 // @ts-ignore
-import row3_1_img from "../assets/images/regenerated_image_1780925437323.jpg";
+import row3_1_img from "../assets/images/regenerated_image_1780925437323.webp";
 // @ts-ignore
-import row3_2_img from "../assets/images/regenerated_image_1780925439543.jpg";
+import row3_2_img from "../assets/images/regenerated_image_1780925439543.webp";
 // @ts-ignore
-import row4_land_img from "../assets/images/regenerated_image_1780925813789.jpg";
+import row4_land_img from "../assets/images/regenerated_image_1780925813789.webp";
 // @ts-ignore
-import row5_1_img from "../assets/images/regenerated_image_1780925816430.jpg";
+import row5_1_img from "../assets/images/regenerated_image_1780925816430.webp";
 // @ts-ignore
-import row5_2_img from "../assets/images/regenerated_image_1780926071809.jpg";
+import row5_2_img from "../assets/images/regenerated_image_1780926071809.webp";
 // @ts-ignore
-import row5_3_img from "../assets/images/regenerated_image_1780926073591.jpg";
+import row5_3_img from "../assets/images/regenerated_image_1780926073591.webp";
 // @ts-ignore
-import row6_closing_img from "../assets/images/regenerated_image_1780926080619.jpg";
+import row6_closing_img from "../assets/images/regenerated_image_1780926080619.webp";
 
 const IMAGES = {
   hero: adidasCampaignPhoto,

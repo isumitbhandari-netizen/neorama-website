@@ -17,35 +17,35 @@ import { Project } from "../types";
 
 // Local lookbook images representing the luxurious Linen & Linens Summer Collection photoshoot
 // @ts-ignore
-import summerImg1 from "../assets/images/regenerated_image_1780844703349.jpg";
+import summerImg1 from "../assets/images/regenerated_image_1780844703349.webp";
 // @ts-ignore
-import summerImg2 from "../assets/images/regenerated_image_1780844704935.jpg";
+import summerImg2 from "../assets/images/regenerated_image_1780844704935.webp";
 // @ts-ignore
-import summerImg3 from "../assets/images/regenerated_image_1780844705740.jpg";
+import summerImg3 from "../assets/images/regenerated_image_1780844705740.webp";
 // @ts-ignore
-import summerImg4 from "../assets/images/regenerated_image_1780844706891.jpg";
+import summerImg4 from "../assets/images/regenerated_image_1780844706891.webp";
 // @ts-ignore
-import summerImg5 from "../assets/images/regenerated_image_1780844707557.jpg";
+import summerImg5 from "../assets/images/regenerated_image_1780844707557.webp";
 // @ts-ignore
-import summerImg6 from "../assets/images/regenerated_image_1780844708249.jpg";
+import summerImg6 from "../assets/images/regenerated_image_1780844708249.webp";
 // @ts-ignore
-import summerImg7 from "../assets/images/regenerated_image_1780844708882.jpg";
+import summerImg7 from "../assets/images/regenerated_image_1780844708882.webp";
 // @ts-ignore
-import summerImg8 from "../assets/images/regenerated_image_1780844748489.jpg";
+import summerImg8 from "../assets/images/regenerated_image_1780844748489.webp";
 // @ts-ignore
-import festiveHeroImg from "../assets/images/regenerated_image_1780920612209.jpg";
+import festiveHeroImg from "../assets/images/regenerated_image_1780920612209.webp";
 // @ts-ignore
-import festiveLeftImg from "../assets/images/regenerated_image_1780920784625.jpg";
+import festiveLeftImg from "../assets/images/regenerated_image_1780920784625.webp";
 // @ts-ignore
-import festiveRightImg from "../assets/images/regenerated_image_1780920788786.jpg";
+import festiveRightImg from "../assets/images/regenerated_image_1780920788786.webp";
 // @ts-ignore
-import festiveGrid1Img from "../assets/images/regenerated_image_1780921091119.jpg";
+import festiveGrid1Img from "../assets/images/regenerated_image_1780921091119.webp";
 // @ts-ignore
-import festiveGrid2Img from "../assets/images/regenerated_image_1780921094066.jpg";
+import festiveGrid2Img from "../assets/images/regenerated_image_1780921094066.webp";
 // @ts-ignore
-import festiveGrid3Img from "../assets/images/regenerated_image_1780921100290.jpg";
+import festiveGrid3Img from "../assets/images/regenerated_image_1780921100290.webp";
 // @ts-ignore
-import festiveClosingImg from "../assets/images/regenerated_image_1780921103002.jpg";
+import festiveClosingImg from "../assets/images/regenerated_image_1780921103002.webp";
 
 const IMAGES = {
   hero: summerImg8, // Best choice for Hero: stunning portrait/setting frame with highest definition

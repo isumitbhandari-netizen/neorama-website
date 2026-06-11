@@ -2,115 +2,115 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft, ChevronLeft, ChevronRight, X, Maximize2, ChevronDown, ArrowRight } from "lucide-react";
 // @ts-ignore
-import sanjEventsCampaignThumb from "../assets/images/sanj_events_campaign_thumb.jpg";
+import sanjEventsCampaignThumb from "../assets/images/sanj_events_campaign_thumb.webp";
 // @ts-ignore
-import sanjEventsStory01Thumb from "../assets/images/sanj_events_story01_thumb.jpg";
+import sanjEventsStory01Thumb from "../assets/images/sanj_events_story01_thumb.webp";
 // @ts-ignore
-import sanjEventsStory02Thumb from "../assets/images/sanj_events_story02_thumb.jpg";
+import sanjEventsStory02Thumb from "../assets/images/sanj_events_story02_thumb.webp";
 // @ts-ignore
-import sanjStory02_01 from "../assets/images/sanj_events_story02_01.jpg";
+import sanjStory02_01 from "../assets/images/sanj_events_story02_01.webp";
 // @ts-ignore
-import sanjStory02_02 from "../assets/images/sanj_events_story02_02.jpg";
+import sanjStory02_02 from "../assets/images/sanj_events_story02_02.webp";
 // @ts-ignore
-import sanjStory02_03 from "../assets/images/sanj_events_story02_03.jpg";
+import sanjStory02_03 from "../assets/images/sanj_events_story02_03.webp";
 // @ts-ignore
-import sanjStory02_04 from "../assets/images/sanj_events_story02_04.jpg";
+import sanjStory02_04 from "../assets/images/sanj_events_story02_04.webp";
 // @ts-ignore
-import sanjStory02_05 from "../assets/images/sanj_events_story02_05.jpg";
+import sanjStory02_05 from "../assets/images/sanj_events_story02_05.webp";
 // @ts-ignore
-import sanjStory02_06 from "../assets/images/sanj_events_story02_06.jpg";
+import sanjStory02_06 from "../assets/images/sanj_events_story02_06.webp";
 // @ts-ignore
-import sanjStory02_07 from "../assets/images/sanj_events_story02_07.jpg";
+import sanjStory02_07 from "../assets/images/sanj_events_story02_07.webp";
 // @ts-ignore
-import sanjStory02_08 from "../assets/images/sanj_events_story02_08.jpg";
+import sanjStory02_08 from "../assets/images/sanj_events_story02_08.webp";
 // @ts-ignore
-import sanjStory02_09 from "../assets/images/sanj_events_story02_09.jpg";
+import sanjStory02_09 from "../assets/images/sanj_events_story02_09.webp";
 // @ts-ignore
-import sanjStory02_10 from "../assets/images/sanj_events_story02_10.jpg";
+import sanjStory02_10 from "../assets/images/sanj_events_story02_10.webp";
 // @ts-ignore
-import sanjStory02_11 from "../assets/images/sanj_events_story02_11.jpg";
+import sanjStory02_11 from "../assets/images/sanj_events_story02_11.webp";
 // @ts-ignore
-import sanjStory02_12 from "../assets/images/sanj_events_story02_12.jpg";
+import sanjStory02_12 from "../assets/images/sanj_events_story02_12.webp";
 // @ts-ignore
-import sanjStory02_13 from "../assets/images/sanj_events_story02_13.jpg";
+import sanjStory02_13 from "../assets/images/sanj_events_story02_13.webp";
 // @ts-ignore
-import sanjStory02_14 from "../assets/images/sanj_events_story02_14.jpg";
+import sanjStory02_14 from "../assets/images/sanj_events_story02_14.webp";
 // @ts-ignore
-import sanjStory02_15 from "../assets/images/sanj_events_story02_15.jpg";
+import sanjStory02_15 from "../assets/images/sanj_events_story02_15.webp";
 // @ts-ignore
-import sanjStory02_16 from "../assets/images/sanj_events_story02_16.jpg";
+import sanjStory02_16 from "../assets/images/sanj_events_story02_16.webp";
 // @ts-ignore
-import sanjStory02_17 from "../assets/images/sanj_events_story02_17.jpg";
+import sanjStory02_17 from "../assets/images/sanj_events_story02_17.webp";
 // @ts-ignore
-import sanjStory02_18 from "../assets/images/sanj_events_story02_18.jpg";
+import sanjStory02_18 from "../assets/images/sanj_events_story02_18.webp";
 // @ts-ignore
-import sanjStory02_19 from "../assets/images/sanj_events_story02_19.jpg";
+import sanjStory02_19 from "../assets/images/sanj_events_story02_19.webp";
 // @ts-ignore
-import sanjStory02_20 from "../assets/images/sanj_events_story02_20.jpg";
+import sanjStory02_20 from "../assets/images/sanj_events_story02_20.webp";
 // @ts-ignore
-import sanjStory02_21 from "../assets/images/sanj_events_story02_21.jpg";
+import sanjStory02_21 from "../assets/images/sanj_events_story02_21.webp";
 // @ts-ignore
-import sanjStory02_22 from "../assets/images/sanj_events_story02_22.jpg";
+import sanjStory02_22 from "../assets/images/sanj_events_story02_22.webp";
 // @ts-ignore
-import sanjStory02_23 from "../assets/images/sanj_events_story02_23.jpg";
+import sanjStory02_23 from "../assets/images/sanj_events_story02_23.webp";
 // @ts-ignore
-import sanjStory02_24 from "../assets/images/sanj_events_story02_24.jpg";
+import sanjStory02_24 from "../assets/images/sanj_events_story02_24.webp";
 // @ts-ignore
-import sanjStory02_25 from "../assets/images/sanj_events_story02_25.jpg";
+import sanjStory02_25 from "../assets/images/sanj_events_story02_25.webp";
 // @ts-ignore
-import sanjStory02_26 from "../assets/images/sanj_events_story02_26.jpg";
+import sanjStory02_26 from "../assets/images/sanj_events_story02_26.webp";
 // @ts-ignore
-import sanjStory02_27 from "../assets/images/sanj_events_story02_27.jpg";
+import sanjStory02_27 from "../assets/images/sanj_events_story02_27.webp";
 // @ts-ignore
-import sanjStory02_28 from "../assets/images/sanj_events_story02_28.jpg";
+import sanjStory02_28 from "../assets/images/sanj_events_story02_28.webp";
 // @ts-ignore
-import sanjStory01_01 from "../assets/images/sanj_events_story01_01.jpg";
+import sanjStory01_01 from "../assets/images/sanj_events_story01_01.webp";
 // @ts-ignore
-import sanjStory01_02 from "../assets/images/sanj_events_story01_02.jpg";
+import sanjStory01_02 from "../assets/images/sanj_events_story01_02.webp";
 // @ts-ignore
-import sanjStory01_03 from "../assets/images/sanj_events_story01_03.jpg";
+import sanjStory01_03 from "../assets/images/sanj_events_story01_03.webp";
 // @ts-ignore
-import sanjStory01_04 from "../assets/images/sanj_events_story01_04.jpg";
+import sanjStory01_04 from "../assets/images/sanj_events_story01_04.webp";
 // @ts-ignore
-import sanjStory01_05 from "../assets/images/sanj_events_story01_05.jpg";
+import sanjStory01_05 from "../assets/images/sanj_events_story01_05.webp";
 // @ts-ignore
-import sanjStory01_06 from "../assets/images/sanj_events_story01_06.jpg";
+import sanjStory01_06 from "../assets/images/sanj_events_story01_06.webp";
 // @ts-ignore
-import sanjStory01_07 from "../assets/images/sanj_events_story01_07.jpg";
+import sanjStory01_07 from "../assets/images/sanj_events_story01_07.webp";
 // @ts-ignore
-import sanjStory01_08 from "../assets/images/sanj_events_story01_08.jpg";
+import sanjStory01_08 from "../assets/images/sanj_events_story01_08.webp";
 // @ts-ignore
-import sanjStory01_09 from "../assets/images/sanj_events_story01_09.jpg";
+import sanjStory01_09 from "../assets/images/sanj_events_story01_09.webp";
 // @ts-ignore
-import sanjStory01_10 from "../assets/images/sanj_events_story01_10.jpg";
+import sanjStory01_10 from "../assets/images/sanj_events_story01_10.webp";
 // @ts-ignore
-import sanjStory01_11 from "../assets/images/sanj_events_story01_11.jpg";
+import sanjStory01_11 from "../assets/images/sanj_events_story01_11.webp";
 // @ts-ignore
-import sanjStory01_12 from "../assets/images/sanj_events_story01_12.jpg";
+import sanjStory01_12 from "../assets/images/sanj_events_story01_12.webp";
 // @ts-ignore
-import sanjStory01_13 from "../assets/images/sanj_events_story01_13.jpg";
+import sanjStory01_13 from "../assets/images/sanj_events_story01_13.webp";
 // @ts-ignore
-import sanjStory01_14 from "../assets/images/sanj_events_story01_14.jpg";
+import sanjStory01_14 from "../assets/images/sanj_events_story01_14.webp";
 // @ts-ignore
-import sanjStory01_15 from "../assets/images/sanj_events_story01_15.jpg";
+import sanjStory01_15 from "../assets/images/sanj_events_story01_15.webp";
 // @ts-ignore
-import sanjStory01_16 from "../assets/images/sanj_events_story01_16.jpg";
+import sanjStory01_16 from "../assets/images/sanj_events_story01_16.webp";
 // @ts-ignore
-import sanjStory01_17 from "../assets/images/sanj_events_story01_17.jpg";
+import sanjStory01_17 from "../assets/images/sanj_events_story01_17.webp";
 // @ts-ignore
-import sanjStory01_18 from "../assets/images/sanj_events_story01_18.jpg";
+import sanjStory01_18 from "../assets/images/sanj_events_story01_18.webp";
 // @ts-ignore
-import sanjStory01_19 from "../assets/images/sanj_events_story01_19.jpg";
+import sanjStory01_19 from "../assets/images/sanj_events_story01_19.webp";
 // @ts-ignore
-import sanjStory01_20 from "../assets/images/sanj_events_story01_20.jpg";
+import sanjStory01_20 from "../assets/images/sanj_events_story01_20.webp";
 // @ts-ignore
-import sanjStory01_21 from "../assets/images/sanj_events_story01_21.jpg";
+import sanjStory01_21 from "../assets/images/sanj_events_story01_21.webp";
 // @ts-ignore
-import sanjStory01_22 from "../assets/images/sanj_events_story01_22.jpg";
+import sanjStory01_22 from "../assets/images/sanj_events_story01_22.webp";
 // @ts-ignore
-import sanjStory01_23 from "../assets/images/sanj_events_story01_23.jpg";
+import sanjStory01_23 from "../assets/images/sanj_events_story01_23.webp";
 // @ts-ignore
-import sanjStory01_24 from "../assets/images/sanj_events_story01_24.jpg";
+import sanjStory01_24 from "../assets/images/sanj_events_story01_24.webp";
 
 const PLACEHOLDER_COUNT = 24;
 

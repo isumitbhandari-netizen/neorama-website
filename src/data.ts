@@ -1,58 +1,58 @@
 import { Project, Service } from "./types";
 // @ts-ignore
-import sumitPhoto from "./assets/images/regenerated_image_1780844825870.png";
+import sumitPhoto from "./assets/images/regenerated_image_1780844825870.webp";
 // @ts-ignore
-import chiragPhoto from "./assets/images/regenerated_image_1780845039621.jpg";
+import chiragPhoto from "./assets/images/regenerated_image_1780845039621.webp";
 // @ts-ignore
-import sidharthPhoto from "./assets/images/regenerated_image_1780845040950.jpg";
+import sidharthPhoto from "./assets/images/regenerated_image_1780845040950.webp";
 // @ts-ignore
-import meetPhoto from "./assets/images/regenerated_image_1780845182309.jpg";
+import meetPhoto from "./assets/images/regenerated_image_1780845182309.webp";
 // @ts-ignore
-import hiteshPhoto from "./assets/images/regenerated_image_1780845183576.jpg";
+import hiteshPhoto from "./assets/images/regenerated_image_1780845183576.webp";
 // @ts-ignore
-import adityaPhoto from "./assets/images/regenerated_image_1780845184441.jpg";
+import adityaPhoto from "./assets/images/regenerated_image_1780845184441.webp";
 // @ts-ignore
-import samabeshPhoto from "./assets/images/regenerated_image_1780847173026.jpg";
+import samabeshPhoto from "./assets/images/regenerated_image_1780847173026.webp";
 // @ts-ignore
-import kasturiPhoto from "./assets/images/regenerated_image_1780847173756.jpg";
+import kasturiPhoto from "./assets/images/regenerated_image_1780847173756.webp";
 // @ts-ignore
-import kapilPhoto from "./assets/images/regenerated_image_1780847175062.jpg";
+import kapilPhoto from "./assets/images/regenerated_image_1780847175062.webp";
 // @ts-ignore
-import aakrutiPhoto from "./assets/images/regenerated_image_1780847372143.jpg";
+import aakrutiPhoto from "./assets/images/regenerated_image_1780847372143.webp";
 // @ts-ignore
-import duluxPhoto from "./assets/images/regenerated_image_1780848725172.png";
+import duluxPhoto from "./assets/images/regenerated_image_1780848725172.webp";
 // @ts-ignore
-import pataudiPhoto from "./assets/images/regenerated_image_1780850373289.png";
+import pataudiPhoto from "./assets/images/regenerated_image_1780850373289.webp";
 // @ts-ignore
-import linenBrandPhoto from "./assets/images/regenerated_image_1780852616738.png";
+import linenBrandPhoto from "./assets/images/regenerated_image_1780852616738.webp";
 // @ts-ignore
-import linenFashionPhoto from "./assets/images/regenerated_image_1780852625637.png";
+import linenFashionPhoto from "./assets/images/regenerated_image_1780852625637.webp";
 // @ts-ignore
-import villaTesoroPhoto from "./assets/images/regenerated_image_1780853559429.jpg";
+import villaTesoroPhoto from "./assets/images/regenerated_image_1780853559429.webp";
 // @ts-ignore
-import tataTrustsPhoto from "./assets/images/tata_trusts_film_1780854327377.png";
+import tataTrustsPhoto from "./assets/images/tata_trusts_film_1780854327377.webp";
 // @ts-ignore
-import linenFactoryPhoto from "./assets/images/linen_factory_tour_1780902734823.png";
+import linenFactoryPhoto from "./assets/images/linen_factory_tour_1780902734823.webp";
 // @ts-ignore
-import manikSchoolPhoto from "./assets/images/manik_school_film_1780903814735.png";
+import manikSchoolPhoto from "./assets/images/manik_school_film_1780903814735.webp";
 // @ts-ignore
-import raniJewelleryPhoto from "./assets/images/rani_pink_jewellery_1780905915920.png";
+import raniJewelleryPhoto from "./assets/images/rani_pink_jewellery_1780905915920.webp";
 // @ts-ignore
-import linenPhotographyPhoto from "./assets/images/regenerated_image_1780844748489.jpg";
+import linenPhotographyPhoto from "./assets/images/regenerated_image_1780844748489.webp";
 // @ts-ignore
 import rawPresseryWebp from "./assets/images/regenerated_image_1780922541314.webp";
 // @ts-ignore
-import adidasCampaignPhoto from "./assets/images/regenerated_image_1780924734124.jpg";
+import adidasCampaignPhoto from "./assets/images/regenerated_image_1780924734124.webp";
 // @ts-ignore
-import stayVistaThumbPhoto from "./assets/images/stayvista_campaign_hero.jpg";
+import stayVistaThumbPhoto from "./assets/images/stayvista_campaign_hero.webp";
 // @ts-ignore
-import sanjEventsThumbPhoto from "./assets/images/sanj_events_campaign_thumb.jpg";
+import sanjEventsThumbPhoto from "./assets/images/sanj_events_campaign_thumb.webp";
 // @ts-ignore
-import simhayanaKnottedThumbPhoto from "./assets/images/simhayana_knotted_thumb.jpg";
+import simhayanaKnottedThumbPhoto from "./assets/images/simhayana_knotted_thumb.webp";
 // @ts-ignore
-import tatvaVedThumbPhoto from "./assets/images/tatva_ved_thumbnail.jpg";
+import tatvaVedThumbPhoto from "./assets/images/tatva_ved_thumbnail.webp";
 // @ts-ignore
-import mwbThumbPhoto from "./assets/images/mwb_thumbnail.png";
+import mwbThumbPhoto from "./assets/images/mwb_thumbnail.webp";
 
 export const PROJECTS: Project[] = [
   {

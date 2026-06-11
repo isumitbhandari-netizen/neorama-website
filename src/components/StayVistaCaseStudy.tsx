@@ -2,183 +2,183 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft, ChevronLeft, ChevronRight, X, Maximize2, MapPin, ChevronDown, ArrowRight } from "lucide-react";
 // @ts-ignore
-import stayVistaCampaignHero from "../assets/images/stayvista_campaign_hero.jpg";
+import stayVistaCampaignHero from "../assets/images/stayvista_campaign_hero.webp";
 // @ts-ignore
-import azureBlissThumb from "../assets/images/stayvista_azure_bliss_thumb.jpg";
+import azureBlissThumb from "../assets/images/stayvista_azure_bliss_thumb.webp";
 // @ts-ignore
-import bayleafVillaThumb from "../assets/images/stayvista_bayleaf_villa_thumb.jpg";
+import bayleafVillaThumb from "../assets/images/stayvista_bayleaf_villa_thumb.webp";
 // @ts-ignore
-import villaTeseroThumb from "../assets/images/stayvista_villa_tesoro_thumb.jpg";
+import villaTeseroThumb from "../assets/images/stayvista_villa_tesoro_thumb.webp";
 // @ts-ignore
-import esteriaEnclaveThumb from "../assets/images/stayvista_esteria_enclave_thumb.jpg";
+import esteriaEnclaveThumb from "../assets/images/stayvista_esteria_enclave_thumb.webp";
 // @ts-ignore
 import villaRomaniaThumb from "../assets/images/stayvista_villa_romania_thumb.webp";
 // @ts-ignore
-import azureBlissFeature from "../assets/images/stayvista_azure_bliss_feature.jpg";
+import azureBlissFeature from "../assets/images/stayvista_azure_bliss_feature.webp";
 // @ts-ignore
-import azureBliss01 from "../assets/images/stayvista_azure_bliss_01.jpg";
+import azureBliss01 from "../assets/images/stayvista_azure_bliss_01.webp";
 // @ts-ignore
-import azureBliss02 from "../assets/images/stayvista_azure_bliss_02.jpg";
+import azureBliss02 from "../assets/images/stayvista_azure_bliss_02.webp";
 // @ts-ignore
-import azureBliss03 from "../assets/images/stayvista_azure_bliss_03.jpg";
+import azureBliss03 from "../assets/images/stayvista_azure_bliss_03.webp";
 // @ts-ignore
-import azureBliss04 from "../assets/images/stayvista_azure_bliss_04.jpg";
+import azureBliss04 from "../assets/images/stayvista_azure_bliss_04.webp";
 // @ts-ignore
-import azureBliss05 from "../assets/images/stayvista_azure_bliss_05.jpg";
+import azureBliss05 from "../assets/images/stayvista_azure_bliss_05.webp";
 // @ts-ignore
-import azureBliss06 from "../assets/images/stayvista_azure_bliss_06.jpg";
+import azureBliss06 from "../assets/images/stayvista_azure_bliss_06.webp";
 // @ts-ignore
-import azureBliss07 from "../assets/images/stayvista_azure_bliss_07.jpg";
+import azureBliss07 from "../assets/images/stayvista_azure_bliss_07.webp";
 // @ts-ignore
-import azureBliss08 from "../assets/images/stayvista_azure_bliss_08.jpg";
+import azureBliss08 from "../assets/images/stayvista_azure_bliss_08.webp";
 // @ts-ignore
-import azureBliss09 from "../assets/images/stayvista_azure_bliss_09.jpg";
+import azureBliss09 from "../assets/images/stayvista_azure_bliss_09.webp";
 // @ts-ignore
-import azureBliss10 from "../assets/images/stayvista_azure_bliss_10.jpg";
+import azureBliss10 from "../assets/images/stayvista_azure_bliss_10.webp";
 // @ts-ignore
-import azureBliss11 from "../assets/images/stayvista_azure_bliss_11.jpg";
+import azureBliss11 from "../assets/images/stayvista_azure_bliss_11.webp";
 // @ts-ignore
-import azureBliss12 from "../assets/images/stayvista_azure_bliss_12.jpg";
+import azureBliss12 from "../assets/images/stayvista_azure_bliss_12.webp";
 // @ts-ignore
-import azureBliss13 from "../assets/images/stayvista_azure_bliss_13.jpg";
+import azureBliss13 from "../assets/images/stayvista_azure_bliss_13.webp";
 // @ts-ignore
-import azureBliss14 from "../assets/images/stayvista_azure_bliss_14.jpg";
+import azureBliss14 from "../assets/images/stayvista_azure_bliss_14.webp";
 // @ts-ignore
-import azureBliss15 from "../assets/images/stayvista_azure_bliss_15.jpg";
+import azureBliss15 from "../assets/images/stayvista_azure_bliss_15.webp";
 // @ts-ignore
-import bayleafFeature from "../assets/images/stayvista_bayleaf_feature.jpg";
+import bayleafFeature from "../assets/images/stayvista_bayleaf_feature.webp";
 // @ts-ignore
-import bayleaf01 from "../assets/images/stayvista_bayleaf_01.jpg";
+import bayleaf01 from "../assets/images/stayvista_bayleaf_01.webp";
 // @ts-ignore
-import bayleaf02 from "../assets/images/stayvista_bayleaf_02.jpg";
+import bayleaf02 from "../assets/images/stayvista_bayleaf_02.webp";
 // @ts-ignore
-import bayleaf03 from "../assets/images/stayvista_bayleaf_03.jpg";
+import bayleaf03 from "../assets/images/stayvista_bayleaf_03.webp";
 // @ts-ignore
-import bayleaf04 from "../assets/images/stayvista_bayleaf_04.jpg";
+import bayleaf04 from "../assets/images/stayvista_bayleaf_04.webp";
 // @ts-ignore
-import bayleaf05 from "../assets/images/stayvista_bayleaf_05.jpg";
+import bayleaf05 from "../assets/images/stayvista_bayleaf_05.webp";
 // @ts-ignore
-import bayleaf06 from "../assets/images/stayvista_bayleaf_06.jpg";
+import bayleaf06 from "../assets/images/stayvista_bayleaf_06.webp";
 // @ts-ignore
-import bayleaf07 from "../assets/images/stayvista_bayleaf_07.jpg";
+import bayleaf07 from "../assets/images/stayvista_bayleaf_07.webp";
 // @ts-ignore
-import bayleaf08 from "../assets/images/stayvista_bayleaf_08.jpg";
+import bayleaf08 from "../assets/images/stayvista_bayleaf_08.webp";
 // @ts-ignore
-import bayleaf09 from "../assets/images/stayvista_bayleaf_09.jpg";
+import bayleaf09 from "../assets/images/stayvista_bayleaf_09.webp";
 // @ts-ignore
-import bayleaf10 from "../assets/images/stayvista_bayleaf_10.jpg";
+import bayleaf10 from "../assets/images/stayvista_bayleaf_10.webp";
 // @ts-ignore
-import bayleaf11 from "../assets/images/stayvista_bayleaf_11.jpg";
+import bayleaf11 from "../assets/images/stayvista_bayleaf_11.webp";
 // @ts-ignore
-import bayleaf12 from "../assets/images/stayvista_bayleaf_12.jpg";
+import bayleaf12 from "../assets/images/stayvista_bayleaf_12.webp";
 // @ts-ignore
-import bayleaf13 from "../assets/images/stayvista_bayleaf_13.jpg";
+import bayleaf13 from "../assets/images/stayvista_bayleaf_13.webp";
 // @ts-ignore
-import bayleaf14 from "../assets/images/stayvista_bayleaf_14.jpg";
+import bayleaf14 from "../assets/images/stayvista_bayleaf_14.webp";
 // @ts-ignore
-import bayleaf15 from "../assets/images/stayvista_bayleaf_15.jpg";
+import bayleaf15 from "../assets/images/stayvista_bayleaf_15.webp";
 // @ts-ignore
-import teseroFeature from "../assets/images/stayvista_tesoro_feature.jpg";
+import teseroFeature from "../assets/images/stayvista_tesoro_feature.webp";
 // @ts-ignore
-import tesero01 from "../assets/images/stayvista_tesoro_01.jpg";
+import tesero01 from "../assets/images/stayvista_tesoro_01.webp";
 // @ts-ignore
-import tesero02 from "../assets/images/stayvista_tesoro_02.jpg";
+import tesero02 from "../assets/images/stayvista_tesoro_02.webp";
 // @ts-ignore
-import tesero03 from "../assets/images/stayvista_tesoro_03.jpg";
+import tesero03 from "../assets/images/stayvista_tesoro_03.webp";
 // @ts-ignore
-import tesero04 from "../assets/images/stayvista_tesoro_04.jpg";
+import tesero04 from "../assets/images/stayvista_tesoro_04.webp";
 // @ts-ignore
-import tesero05 from "../assets/images/stayvista_tesoro_05.jpg";
+import tesero05 from "../assets/images/stayvista_tesoro_05.webp";
 // @ts-ignore
-import tesero06 from "../assets/images/stayvista_tesoro_06.jpg";
+import tesero06 from "../assets/images/stayvista_tesoro_06.webp";
 // @ts-ignore
-import tesero07 from "../assets/images/stayvista_tesoro_07.jpg";
+import tesero07 from "../assets/images/stayvista_tesoro_07.webp";
 // @ts-ignore
-import tesero08 from "../assets/images/stayvista_tesoro_08.jpg";
+import tesero08 from "../assets/images/stayvista_tesoro_08.webp";
 // @ts-ignore
-import tesero09 from "../assets/images/stayvista_tesoro_09.jpg";
+import tesero09 from "../assets/images/stayvista_tesoro_09.webp";
 // @ts-ignore
-import tesero10 from "../assets/images/stayvista_tesoro_10.jpg";
+import tesero10 from "../assets/images/stayvista_tesoro_10.webp";
 // @ts-ignore
-import tesero11 from "../assets/images/stayvista_tesoro_11.jpg";
+import tesero11 from "../assets/images/stayvista_tesoro_11.webp";
 // @ts-ignore
-import tesero12 from "../assets/images/stayvista_tesoro_12.jpg";
+import tesero12 from "../assets/images/stayvista_tesoro_12.webp";
 // @ts-ignore
-import tesero13 from "../assets/images/stayvista_tesoro_13.jpg";
+import tesero13 from "../assets/images/stayvista_tesoro_13.webp";
 // @ts-ignore
-import tesero14 from "../assets/images/stayvista_tesoro_14.jpg";
+import tesero14 from "../assets/images/stayvista_tesoro_14.webp";
 // @ts-ignore
-import tesero15 from "../assets/images/stayvista_tesoro_15.jpg";
+import tesero15 from "../assets/images/stayvista_tesoro_15.webp";
 // @ts-ignore
-import tesero16 from "../assets/images/stayvista_tesoro_16.jpg";
+import tesero16 from "../assets/images/stayvista_tesoro_16.webp";
 // @ts-ignore
-import tesero17 from "../assets/images/stayvista_tesoro_17.jpg";
+import tesero17 from "../assets/images/stayvista_tesoro_17.webp";
 // @ts-ignore
-import tesero18 from "../assets/images/stayvista_tesoro_18.jpg";
+import tesero18 from "../assets/images/stayvista_tesoro_18.webp";
 // @ts-ignore
-import esteriaFeature from "../assets/images/stayvista_esteria_feature.jpg";
+import esteriaFeature from "../assets/images/stayvista_esteria_feature.webp";
 // @ts-ignore
-import esteria01 from "../assets/images/stayvista_esteria_01.jpg";
+import esteria01 from "../assets/images/stayvista_esteria_01.webp";
 // @ts-ignore
-import esteria02 from "../assets/images/stayvista_esteria_02.jpg";
+import esteria02 from "../assets/images/stayvista_esteria_02.webp";
 // @ts-ignore
-import esteria03 from "../assets/images/stayvista_esteria_03.jpg";
+import esteria03 from "../assets/images/stayvista_esteria_03.webp";
 // @ts-ignore
-import esteria04 from "../assets/images/stayvista_esteria_04.jpg";
+import esteria04 from "../assets/images/stayvista_esteria_04.webp";
 // @ts-ignore
-import esteria05 from "../assets/images/stayvista_esteria_05.jpg";
+import esteria05 from "../assets/images/stayvista_esteria_05.webp";
 // @ts-ignore
-import esteria06 from "../assets/images/stayvista_esteria_06.jpg";
+import esteria06 from "../assets/images/stayvista_esteria_06.webp";
 // @ts-ignore
-import esteria07 from "../assets/images/stayvista_esteria_07.jpg";
+import esteria07 from "../assets/images/stayvista_esteria_07.webp";
 // @ts-ignore
-import esteria08 from "../assets/images/stayvista_esteria_08.jpg";
+import esteria08 from "../assets/images/stayvista_esteria_08.webp";
 // @ts-ignore
-import esteria09 from "../assets/images/stayvista_esteria_09.jpg";
+import esteria09 from "../assets/images/stayvista_esteria_09.webp";
 // @ts-ignore
-import esteria10 from "../assets/images/stayvista_esteria_10.jpg";
+import esteria10 from "../assets/images/stayvista_esteria_10.webp";
 // @ts-ignore
-import esteria11 from "../assets/images/stayvista_esteria_11.jpg";
+import esteria11 from "../assets/images/stayvista_esteria_11.webp";
 // @ts-ignore
-import esteria12 from "../assets/images/stayvista_esteria_12.jpg";
+import esteria12 from "../assets/images/stayvista_esteria_12.webp";
 // @ts-ignore
-import esteria13 from "../assets/images/stayvista_esteria_13.jpg";
+import esteria13 from "../assets/images/stayvista_esteria_13.webp";
 // @ts-ignore
-import esteria14 from "../assets/images/stayvista_esteria_14.jpg";
+import esteria14 from "../assets/images/stayvista_esteria_14.webp";
 // @ts-ignore
-import esteria15 from "../assets/images/stayvista_esteria_15.jpg";
+import esteria15 from "../assets/images/stayvista_esteria_15.webp";
 // @ts-ignore
-import romaniaFeature from "../assets/images/stayvista_romania_feature.jpg";
+import romaniaFeature from "../assets/images/stayvista_romania_feature.webp";
 // @ts-ignore
-import romania01 from "../assets/images/stayvista_romania_01.jpg";
+import romania01 from "../assets/images/stayvista_romania_01.webp";
 // @ts-ignore
-import romania02 from "../assets/images/stayvista_romania_02.jpg";
+import romania02 from "../assets/images/stayvista_romania_02.webp";
 // @ts-ignore
-import romania03 from "../assets/images/stayvista_romania_03.jpg";
+import romania03 from "../assets/images/stayvista_romania_03.webp";
 // @ts-ignore
-import romania04 from "../assets/images/stayvista_romania_04.jpg";
+import romania04 from "../assets/images/stayvista_romania_04.webp";
 // @ts-ignore
-import romania05 from "../assets/images/stayvista_romania_05.jpg";
+import romania05 from "../assets/images/stayvista_romania_05.webp";
 // @ts-ignore
-import romania06 from "../assets/images/stayvista_romania_06.jpg";
+import romania06 from "../assets/images/stayvista_romania_06.webp";
 // @ts-ignore
-import romania07 from "../assets/images/stayvista_romania_07.jpg";
+import romania07 from "../assets/images/stayvista_romania_07.webp";
 // @ts-ignore
-import romania08 from "../assets/images/stayvista_romania_08.jpg";
+import romania08 from "../assets/images/stayvista_romania_08.webp";
 // @ts-ignore
-import romania09 from "../assets/images/stayvista_romania_09.jpg";
+import romania09 from "../assets/images/stayvista_romania_09.webp";
 // @ts-ignore
 import romania10 from "../assets/images/stayvista_romania_10.webp";
 // @ts-ignore
-import romania11 from "../assets/images/stayvista_romania_11.jpg";
+import romania11 from "../assets/images/stayvista_romania_11.webp";
 // @ts-ignore
-import romania12 from "../assets/images/stayvista_romania_12.jpg";
+import romania12 from "../assets/images/stayvista_romania_12.webp";
 // @ts-ignore
-import romania13 from "../assets/images/stayvista_romania_13.jpg";
+import romania13 from "../assets/images/stayvista_romania_13.webp";
 // @ts-ignore
-import romania14 from "../assets/images/stayvista_romania_14.jpg";
+import romania14 from "../assets/images/stayvista_romania_14.webp";
 // @ts-ignore
-import romania15 from "../assets/images/stayvista_romania_15.jpg";
+import romania15 from "../assets/images/stayvista_romania_15.webp";
 
 // ─── Villa definitions ────────────────────────────────────────────────────────
 // hero and images will be populated once the client provides final photography.
