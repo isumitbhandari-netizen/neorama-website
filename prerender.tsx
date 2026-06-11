@@ -48,19 +48,22 @@ function getScriptSrc(): string {
   return match[1];
 }
 
-// Copy a source image to a stable, scraper-friendly public path and return its
-// absolute URL. Returns null if the source file is missing.
+// Copy the pre-generated, right-sized JPEG share-preview thumbnail to a stable
+// public path and return its absolute URL. The thumbnails live in
+// src/assets/og-thumbs (named by the source image's basename, always .jpg) and
+// are produced locally — the build only copies, never converts (Vercel is
+// Linux without image tooling). Returns null if the thumbnail is missing.
 function copyOgImage(fileName: string, outName: string): string | null {
-  const src = path.join(process.cwd(), "src", "assets", "images", fileName);
+  const base = fileName.replace(/\.[^.]+$/, "");
+  const src = path.join(process.cwd(), "src", "assets", "og-thumbs", `${base}.jpg`);
   if (!fs.existsSync(src)) {
-    console.warn(`  ! OG image missing, skipping: ${fileName}`);
+    console.warn(`  ! OG thumbnail missing, skipping: ${base}.jpg`);
     return null;
   }
-  const ext = path.extname(fileName);
   const outDir = path.join(DIST, "og", "projects");
   fs.mkdirSync(outDir, { recursive: true });
-  fs.copyFileSync(src, path.join(outDir, `${outName}${ext}`));
-  return `${BASE_URL}/og/projects/${outName}${ext}`;
+  fs.copyFileSync(src, path.join(outDir, `${outName}.jpg`));
+  return `${BASE_URL}/og/projects/${outName}.jpg`;
 }
 
 // Static HTML for a project/story page: per-page share meta in the HEAD, plus
@@ -109,7 +112,8 @@ function appShellHtml(opts: {
 function ensureLogo(): string | null {
   const assetsDir = path.join(process.cwd(), "src", "assets", "images");
   if (!fs.existsSync(assetsDir)) return null;
-  const logo = fs.readdirSync(assetsDir).find((f) => /neorama_logo/i.test(f));
+  // Prefer the real PNG (a .webp sibling now also exists from the image pipeline).
+  const logo = fs.readdirSync(assetsDir).find((f) => /neorama_logo.*\.png$/i.test(f));
   if (!logo) return null;
   fs.copyFileSync(path.join(assetsDir, logo), path.join(DIST, "logo.png"));
   return `${BASE_URL}/logo.png`;
