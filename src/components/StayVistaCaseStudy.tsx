@@ -289,10 +289,14 @@ const VILLAS: Villa[] = [
 interface Props {
   onClose: () => void;
   onSelectProjectById: (id: string) => void;
+  // Villa slug to open on mount / when the URL changes (null = project landing).
+  initialStory?: string | null;
+  // Notify the parent so it can keep the shareable URL in sync.
+  onStoryChange?: (storySlug: string | null) => void;
 }
 
-export default function StayVistaCaseStudy({ onClose }: Props) {
-  const [activeVilla, setActiveVilla] = useState<string | null>(null);
+export default function StayVistaCaseStudy({ onClose, initialStory, onStoryChange }: Props) {
+  const [activeVilla, setActiveVilla] = useState<string | null>(initialStory ?? null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const [scrollY, setScrollY] = useState(0);
@@ -302,6 +306,11 @@ export default function StayVistaCaseStudy({ onClose }: Props) {
   const currentVilla = VILLAS.find(v => v.id === activeVilla) ?? null;
   const galleryImages = currentVilla ? currentVilla.images : [];
   const relatedVillas = activeVilla ? VILLAS.filter(v => v.id !== activeVilla) : [];
+
+  // Follow URL-driven villa changes (deep links + browser Back/Forward).
+  useEffect(() => {
+    setActiveVilla(initialStory ?? null);
+  }, [initialStory]);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -321,7 +330,7 @@ export default function StayVistaCaseStudy({ onClose }: Props) {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         if (lightboxOpen) { setLightboxOpen(false); return; }
-        if (activeVilla) { setActiveVilla(null); scrollToTop(); return; }
+        if (activeVilla) { setActiveVilla(null); onStoryChange?.(null); scrollToTop(); return; }
         onClose();
       }
       if (!lightboxOpen) return;
@@ -352,12 +361,13 @@ export default function StayVistaCaseStudy({ onClose }: Props) {
 
   const selectVilla = (id: string) => {
     setActiveVilla(id);
+    onStoryChange?.(id);
     setPhotoIndex(0);
     scrollToTop();
   };
 
   const handleBack = () => {
-    if (activeVilla) { setActiveVilla(null); scrollToTop(); }
+    if (activeVilla) { setActiveVilla(null); onStoryChange?.(null); scrollToTop(); }
     else onClose();
   };
 

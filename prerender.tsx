@@ -16,6 +16,7 @@ import BlogArticlePage from "./src/BlogArticlePage";
 import ServicePage from "./src/ServicePage";
 import { BLOG_ARTICLE_LIST } from "./src/blogArticles";
 import { SERVICE_PAGE_LIST } from "./src/services";
+import { PROJECT_ROUTES } from "./src/projectRoutes";
 
 const BASE_URL = "https://www.neoramastudios.com";
 const DIST = path.resolve(process.cwd(), "dist");
@@ -34,6 +35,73 @@ function getCssHref(): string {
   const match = indexHtml.match(/href="(\/assets\/[^"]+\.css)"/);
   if (!match) throw new Error("Could not locate built CSS bundle in dist/index.html");
   return match[1];
+}
+
+// Pull the hashed JS entry bundle Vite injected, so prerendered project pages
+// boot the full React app (interactive case studies) after the share-card meta
+// has already been read by crawlers/scrapers from the static HEAD.
+function getScriptSrc(): string {
+  const indexHtml = fs.readFileSync(path.join(DIST, "index.html"), "utf-8");
+  const match = indexHtml.match(/<script[^>]+type="module"[^>]+src="([^"]+)"/);
+  if (!match) throw new Error("Could not locate built JS bundle in dist/index.html");
+  return match[1];
+}
+
+// Copy a source image to a stable, scraper-friendly public path and return its
+// absolute URL. Returns null if the source file is missing.
+function copyOgImage(fileName: string, outName: string): string | null {
+  const src = path.join(process.cwd(), "src", "assets", "images", fileName);
+  if (!fs.existsSync(src)) {
+    console.warn(`  ! OG image missing, skipping: ${fileName}`);
+    return null;
+  }
+  const ext = path.extname(fileName);
+  const outDir = path.join(DIST, "og", "projects");
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.copyFileSync(src, path.join(outDir, `${outName}${ext}`));
+  return `${BASE_URL}/og/projects/${outName}${ext}`;
+}
+
+// Static HTML for a project/story page: per-page share meta in the HEAD, plus
+// the CSS + JS bundles so the page hydrates into the live, interactive SPA.
+function appShellHtml(opts: {
+  cssHref: string;
+  scriptSrc: string;
+  title: string;
+  description: string;
+  canonical: string;
+  image: string;
+  jsonLd: object;
+}) {
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>${esc(opts.title)}</title>
+<meta name="description" content="${esc(opts.description)}" />
+<link rel="canonical" href="${opts.canonical}" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Neorama Studios" />
+<meta property="og:title" content="${esc(opts.title)}" />
+<meta property="og:description" content="${esc(opts.description)}" />
+<meta property="og:url" content="${opts.canonical}" />
+<meta property="og:image" content="${esc(opts.image)}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="${esc(opts.title)}" />
+<meta name="twitter:description" content="${esc(opts.description)}" />
+<meta name="twitter:image" content="${esc(opts.image)}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="${opts.cssHref}" />
+<script type="application/ld+json">${JSON.stringify(opts.jsonLd)}</script>
+</head>
+<body>
+<div id="root"></div>
+<script type="module" crossorigin src="${opts.scriptSrc}"></script>
+</body>
+</html>`;
 }
 
 // Copy the brand logo to a stable public path for OG / schema publisher logo.
@@ -89,6 +157,7 @@ ${opts.bodyMarkup}
 
 function run() {
   const cssHref = getCssHref();
+  const scriptSrc = getScriptSrc();
   const logoUrl = ensureLogo();
 
   for (const article of BLOG_ARTICLE_LIST) {
@@ -212,6 +281,105 @@ function run() {
     console.log(`  ✓ /${service.slug}/`);
   }
 
+  // Portfolio project pages (shareable deep links) + nested story pages.
+  // Each is a static, crawlable HTML shell that boots the interactive SPA.
+  const projectUrls: { loc: string; priority: string }[] = [];
+
+  for (const project of PROJECT_ROUTES) {
+    const basePath = `/projects/${project.category}/${project.slug}`;
+    const canonical = `${BASE_URL}${basePath}`;
+    const image =
+      copyOgImage(project.ogImageFile, project.slug) ?? `${BASE_URL}/og-image.jpg`;
+
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CreativeWork",
+          name: project.title,
+          description: project.description,
+          url: canonical,
+          image,
+          creator: { "@type": "Organization", name: "Neorama Studios", url: `${BASE_URL}/` },
+          ...(logoUrl
+            ? { publisher: { "@type": "Organization", name: "Neorama Studios", logo: { "@type": "ImageObject", url: logoUrl } } }
+            : {}),
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
+            { "@type": "ListItem", position: 2, name: "Projects", item: `${BASE_URL}/#projects` },
+            { "@type": "ListItem", position: 3, name: project.title, item: canonical },
+          ],
+        },
+      ],
+    };
+
+    const html = appShellHtml({
+      cssHref,
+      scriptSrc,
+      title: project.title,
+      description: project.description,
+      canonical,
+      image,
+      jsonLd,
+    });
+
+    const outDir = path.join(DIST, basePath);
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(path.join(outDir, "index.html"), html, "utf-8");
+    projectUrls.push({ loc: canonical, priority: "0.8" });
+    console.log(`  ✓ ${basePath}/`);
+
+    for (const story of project.stories ?? []) {
+      const storyPath = `${basePath}/${story.slug}`;
+      const storyCanonical = `${BASE_URL}${storyPath}`;
+      const storyImage =
+        copyOgImage(story.ogImageFile, `${project.slug}-${story.slug}`) ?? image;
+
+      const storyJsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "CreativeWork",
+            name: story.title,
+            description: story.description,
+            url: storyCanonical,
+            image: storyImage,
+            isPartOf: { "@type": "CreativeWork", name: project.title, url: canonical },
+            creator: { "@type": "Organization", name: "Neorama Studios", url: `${BASE_URL}/` },
+          },
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
+              { "@type": "ListItem", position: 2, name: "Projects", item: `${BASE_URL}/#projects` },
+              { "@type": "ListItem", position: 3, name: project.title, item: canonical },
+              { "@type": "ListItem", position: 4, name: story.title, item: storyCanonical },
+            ],
+          },
+        ],
+      };
+
+      const storyHtml = appShellHtml({
+        cssHref,
+        scriptSrc,
+        title: story.title,
+        description: story.description,
+        canonical: storyCanonical,
+        image: storyImage,
+        jsonLd: storyJsonLd,
+      });
+
+      const storyOutDir = path.join(DIST, storyPath);
+      fs.mkdirSync(storyOutDir, { recursive: true });
+      fs.writeFileSync(path.join(storyOutDir, "index.html"), storyHtml, "utf-8");
+      projectUrls.push({ loc: storyCanonical, priority: "0.7" });
+      console.log(`  ✓ ${storyPath}/`);
+    }
+  }
+
   // sitemap.xml
   const urls = [
     { loc: `${BASE_URL}/`, priority: "1.0" },
@@ -224,6 +392,7 @@ function run() {
       priority: "0.8",
       lastmod: new Date(a.date).toISOString().slice(0, 10),
     })),
+    ...projectUrls,
   ];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

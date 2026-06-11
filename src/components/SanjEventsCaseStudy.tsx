@@ -175,14 +175,18 @@ const EVENT_STORIES: EventStory[] = [
 interface Props {
   onClose: () => void;
   onSelectProjectById: (id: string) => void;
+  // Story slug to open on mount / when the URL changes (null = project landing).
+  initialStory?: string | null;
+  // Notify the parent so it can keep the shareable URL in sync.
+  onStoryChange?: (storySlug: string | null) => void;
 }
 
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "instant" });
 }
 
-export default function SanjEventsCaseStudy({ onClose }: Props) {
-  const [activeStory, setActiveStory] = useState<string | null>(null);
+export default function SanjEventsCaseStudy({ onClose, initialStory, onStoryChange }: Props) {
+  const [activeStory, setActiveStory] = useState<string | null>(initialStory ?? null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const [scrollTop, setScrollTop] = useState(0);
@@ -191,6 +195,11 @@ export default function SanjEventsCaseStudy({ onClose }: Props) {
 
   const currentStory = EVENT_STORIES.find(s => s.id === activeStory) ?? null;
   const galleryImages = currentStory ? currentStory.images : [];
+
+  // Follow URL-driven story changes (deep links + browser Back/Forward).
+  useEffect(() => {
+    setActiveStory(initialStory ?? null);
+  }, [initialStory]);
 
   useEffect(() => {
     const el = wrapperRef.current;
@@ -209,7 +218,7 @@ export default function SanjEventsCaseStudy({ onClose }: Props) {
         return;
       }
       if (e.key === "Escape") {
-        if (activeStory) { setActiveStory(null); scrollToTop(); return; }
+        if (activeStory) { setActiveStory(null); onStoryChange?.(null); scrollToTop(); return; }
         onClose();
       }
     };
@@ -234,12 +243,13 @@ export default function SanjEventsCaseStudy({ onClose }: Props) {
 
   const selectStory = (id: string) => {
     setActiveStory(id);
+    onStoryChange?.(id);
     if (wrapperRef.current) wrapperRef.current.scrollTo({ top: 0, behavior: "instant" });
   };
 
   const handleBack = () => {
     if (lightboxOpen) { setLightboxOpen(false); return; }
-    if (activeStory) { setActiveStory(null); if (wrapperRef.current) wrapperRef.current.scrollTo({ top: 0, behavior: "instant" }); return; }
+    if (activeStory) { setActiveStory(null); onStoryChange?.(null); if (wrapperRef.current) wrapperRef.current.scrollTo({ top: 0, behavior: "instant" }); return; }
     onClose();
   };
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { PROJECTS, PRESS_MENTIONS, TEAM_MEMBERS, BLOG_POSTS } from "./data";
 import { Project } from "./types";
+import { projectPath, parseProjectPath } from "./projectRoutes";
 import ProjectDetail from "./components/ProjectDetail";
 import PhotographyCaseStudy from "./components/PhotographyCaseStudy";
 import RawPresseryCaseStudy from "./components/RawPresseryCaseStudy";
@@ -118,6 +119,67 @@ export default function App() {
 
   // Modals state
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  // When a project has nested stories (e.g. Sanj Events), the story slug a deep
+  // link / internal navigation should open. null = project landing, no story.
+  const [initialStory, setInitialStory] = useState<string | null>(null);
+
+  // Open a project (and optionally one of its stories) as a shareable URL.
+  const openProject = (proj: Project, storySlug?: string | null) => {
+    setSelectedProject(proj);
+    setInitialStory(storySlug ?? null);
+    const base = projectPath(proj.id);
+    if (base) {
+      const url = storySlug ? `${base}/${storySlug}` : base;
+      if (window.location.pathname !== url) {
+        window.history.pushState({}, "", url);
+      }
+    }
+  };
+
+  // Close the active project overlay and restore the projects URL.
+  const closeProject = () => {
+    setSelectedProject(null);
+    setInitialStory(null);
+    if (window.location.pathname.startsWith("/projects/")) {
+      window.history.pushState({}, "", "/");
+      requestAnimationFrame(() => {
+        document
+          .getElementById("projects")
+          ?.scrollIntoView({ behavior: "auto", block: "start" });
+      });
+    }
+  };
+
+  // Sync the URL when navigating between a project and its nested stories.
+  const handleStoryChange = (projId: string) => (storySlug: string | null) => {
+    setInitialStory(storySlug);
+    const base = projectPath(projId);
+    if (base) {
+      window.history.pushState({}, "", storySlug ? `${base}/${storySlug}` : base);
+    }
+  };
+
+  // Open the project / story encoded in the current URL path, and respond to
+  // the browser Back/Forward buttons. Runs once on mount + on popstate.
+  useEffect(() => {
+    const syncFromPath = () => {
+      const match = parseProjectPath(window.location.pathname);
+      if (match) {
+        const proj = PROJECTS.find((p) => p.id === match.id);
+        if (proj) {
+          setSelectedProject(proj);
+          setInitialStory(match.storySlug ?? null);
+          return;
+        }
+      }
+      // Not a project URL — make sure no overlay stays open (e.g. after Back).
+      setSelectedProject(null);
+      setInitialStory(null);
+    };
+    syncFromPath();
+    window.addEventListener("popstate", syncFromPath);
+    return () => window.removeEventListener("popstate", syncFromPath);
+  }, []);
 
   // Portfolio local filter state
   const [projectFilter, setProjectFilter] = useState<"all" | "cinematography" | "photography" | "campaign" | "brand">("all");
@@ -491,7 +553,7 @@ export default function App() {
                 return (
                   <article 
                     key={proj.id}
-                    onClick={() => setSelectedProject(proj)}
+                    onClick={() => openProject(proj)}
                     className="md:col-span-8 md:row-span-2 group relative rounded-xl overflow-hidden cursor-pointer fade-in-up flex flex-col justify-end min-h-[350px] shadow border border-soft-gray/50"
                     id={`project-card-${proj.id}`}
                   >
@@ -532,7 +594,7 @@ export default function App() {
                 return (
                   <article 
                     key={proj.id}
-                    onClick={() => setSelectedProject(proj)}
+                    onClick={() => openProject(proj)}
                     className="md:col-span-4 md:row-span-2 group relative rounded-xl overflow-hidden cursor-pointer fade-in-up flex flex-col justify-end min-h-[350px] shadow border border-soft-gray/50"
                     id={`project-card-${proj.id}`}
                   >
@@ -566,7 +628,7 @@ export default function App() {
                 return (
                   <article 
                     key={proj.id}
-                    onClick={() => setSelectedProject(proj)}
+                    onClick={() => openProject(proj)}
                     className="md:col-span-6 md:row-span-1 group relative rounded-xl overflow-hidden cursor-pointer h-full fade-in-up flex flex-col justify-end min-h-[300px] shadow border border-soft-gray/50 animate-fadeInUp"
                     id={`project-card-${proj.id}`}
                   >
@@ -981,88 +1043,92 @@ export default function App() {
       {/* MODAL & DRAWER PORTAL ATTACHMENTS */}
       {selectedProject?.id === "simhayana-knotted-photography" ? (
         <SimhayanaKnottedCaseStudy
-          onClose={() => setSelectedProject(null)}
+          onClose={closeProject}
           onSelectProjectById={(id) => {
             const relProj = PROJECTS.find(p => p.id === id);
             if (relProj) {
-              setSelectedProject(relProj);
+              openProject(relProj);
             }
           }}
         />
       ) : selectedProject?.id === "linen-editorial-photography" ? (
         <PhotographyCaseStudy
-          onClose={() => setSelectedProject(null)}
+          onClose={closeProject}
           onSelectProjectById={(id) => {
             const relProj = PROJECTS.find(p => p.id === id);
             if (relProj) {
-              setSelectedProject(relProj);
+              openProject(relProj);
             }
           }}
         />
       ) : selectedProject?.id === "raw-pressery-commercial" ? (
         <RawPresseryCaseStudy
-          onClose={() => setSelectedProject(null)}
+          onClose={closeProject}
           onSelectProjectById={(id) => {
             const relProj = PROJECTS.find(p => p.id === id);
             if (relProj) {
-              setSelectedProject(relProj);
+              openProject(relProj);
             }
           }}
         />
       ) : selectedProject?.id === "adidas-bhavisha-kothari" ? (
         <AdidasCaseStudy
-          onClose={() => setSelectedProject(null)}
+          onClose={closeProject}
           onSelectProjectById={(id) => {
             const relProj = PROJECTS.find(p => p.id === id);
             if (relProj) {
-              setSelectedProject(relProj);
+              openProject(relProj);
             }
           }}
         />
       ) : selectedProject?.id === "stayvista-luxury-photography" ? (
         <StayVistaCaseStudy
-          onClose={() => setSelectedProject(null)}
+          onClose={closeProject}
+          initialStory={initialStory}
+          onStoryChange={handleStoryChange("stayvista-luxury-photography")}
           onSelectProjectById={(id) => {
             const relProj = PROJECTS.find(p => p.id === id);
             if (relProj) {
-              setSelectedProject(relProj);
+              openProject(relProj);
             }
           }}
         />
       ) : selectedProject?.id === "sanj-events-photography" ? (
         <SanjEventsCaseStudy
-          onClose={() => setSelectedProject(null)}
+          onClose={closeProject}
+          initialStory={initialStory}
+          onStoryChange={handleStoryChange("sanj-events-photography")}
           onSelectProjectById={(id) => {
             const relProj = PROJECTS.find(p => p.id === id);
             if (relProj) {
-              setSelectedProject(relProj);
+              openProject(relProj);
             }
           }}
         />
       ) : selectedProject?.id === "tatva-veda-branding" ? (
         <TatvaVedaCaseStudy
-          onClose={() => setSelectedProject(null)}
+          onClose={closeProject}
           onSelectProjectById={(id) => {
             const relProj = PROJECTS.find(p => p.id === id);
             if (relProj) {
-              setSelectedProject(relProj);
+              openProject(relProj);
             }
           }}
         />
       ) : selectedProject?.id === "mwb-packaging-design" ? (
         <MWBCaseStudy
-          onClose={() => setSelectedProject(null)}
+          onClose={closeProject}
           onSelectProjectById={(id) => {
             const relProj = PROJECTS.find(p => p.id === id);
             if (relProj) {
-              setSelectedProject(relProj);
+              openProject(relProj);
             }
           }}
         />
       ) : (
         <ProjectDetail
           project={selectedProject}
-          onClose={() => setSelectedProject(null)}
+          onClose={closeProject}
         />
       )}
 
