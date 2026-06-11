@@ -16,7 +16,8 @@ import BlogArticlePage from "./src/BlogArticlePage";
 import ServicePage from "./src/ServicePage";
 import { BLOG_ARTICLE_LIST } from "./src/blogArticles";
 import { SERVICE_PAGE_LIST } from "./src/services";
-import { PROJECT_ROUTES } from "./src/projectRoutes";
+import { PROJECT_ROUTES, CATEGORY_ROUTES, REEL_CATEGORIES } from "./src/projectRoutes";
+import { SOCIAL_REELS } from "./src/socialReels";
 
 const BASE_URL = "https://www.neoramastudios.com";
 const DIST = path.resolve(process.cwd(), "dist");
@@ -378,6 +379,106 @@ function run() {
       projectUrls.push({ loc: storyCanonical, priority: "0.7" });
       console.log(`  ✓ ${storyPath}/`);
     }
+  }
+
+  const defaultOg = `${BASE_URL}/og-image.jpg`;
+
+  // Shorthand: write a shareable shell page + record it for the sitemap.
+  const writeSectionPage = (
+    routePath: string,
+    title: string,
+    description: string,
+    image: string,
+    priority: string
+  ) => {
+    const canonical = `${BASE_URL}${routePath}`;
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          name: title,
+          description,
+          url: canonical,
+          isPartOf: { "@type": "WebSite", name: "Neorama Studios", url: `${BASE_URL}/` },
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
+            { "@type": "ListItem", position: 2, name: "Projects", item: `${BASE_URL}/projects` },
+            { "@type": "ListItem", position: 3, name: title, item: canonical },
+          ],
+        },
+      ],
+    };
+    const html = appShellHtml({ cssHref, scriptSrc, title, description, canonical, image, jsonLd });
+    const outDir = path.join(DIST, routePath);
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(path.join(outDir, "index.html"), html, "utf-8");
+    projectUrls.push({ loc: canonical, priority });
+    console.log(`  ✓ ${routePath}/`);
+  };
+
+  // Portfolio filter sections (Ad Films, Photography, Social Media, Branding) + "all".
+  writeSectionPage(
+    "/projects",
+    "Selected Projects — Portfolio | Neorama Studios",
+    "Selected film, photography, social media and branding work by Neorama Studios, a Mumbai-based creative agency.",
+    defaultOg,
+    "0.8"
+  );
+  for (const cat of CATEGORY_ROUTES) {
+    writeSectionPage(`/projects/${cat.slug}`, cat.title, cat.description, defaultOg, "0.8");
+  }
+
+  // Reel sub-categories inside Social Media & Marketing.
+  for (const rc of REEL_CATEGORIES) {
+    const sample = SOCIAL_REELS.find((r) => r.category === rc.category);
+    const image = sample ? `${BASE_URL}${sample.thumbnail}` : defaultOg;
+    writeSectionPage(
+      `/projects/campaigns/${rc.slug}`,
+      `${rc.category} Reels — Social Media & Marketing | Neorama Studios`,
+      `Short-form ${rc.category} social media reels and campaign content produced by Neorama Studios, Mumbai.`,
+      image,
+      "0.7"
+    );
+  }
+
+  // Individual social reels.
+  for (const reel of SOCIAL_REELS) {
+    const routePath = `/projects/campaigns/${reel.id}`;
+    const canonical = `${BASE_URL}${routePath}`;
+    const image = `${BASE_URL}${reel.thumbnail}`;
+    const title = `${reel.client} — ${reel.title} | Social Media Reel — Neorama Studios`;
+    const description = `A ${reel.category} social media reel produced by Neorama Studios for ${reel.client}.`;
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CreativeWork",
+          name: title,
+          description,
+          url: canonical,
+          image,
+          creator: { "@type": "Organization", name: "Neorama Studios", url: `${BASE_URL}/` },
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
+            { "@type": "ListItem", position: 2, name: "Social Media & Marketing", item: `${BASE_URL}/projects/campaigns` },
+            { "@type": "ListItem", position: 3, name: `${reel.client} — ${reel.title}`, item: canonical },
+          ],
+        },
+      ],
+    };
+    const html = appShellHtml({ cssHref, scriptSrc, title, description, canonical, image, jsonLd });
+    const outDir = path.join(DIST, routePath);
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(path.join(outDir, "index.html"), html, "utf-8");
+    projectUrls.push({ loc: canonical, priority: "0.6" });
+    console.log(`  ✓ ${routePath}/`);
   }
 
   // sitemap.xml

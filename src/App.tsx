@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { PROJECTS, PRESS_MENTIONS, TEAM_MEMBERS, BLOG_POSTS } from "./data";
 import { Project } from "./types";
-import { projectPath, parseProjectPath } from "./projectRoutes";
+import { projectPath, categoryPath, parseRoute, type PortfolioFilter } from "./projectRoutes";
+import { type SocialReelCategory } from "./socialReels";
 import ProjectDetail from "./components/ProjectDetail";
 import PhotographyCaseStudy from "./components/PhotographyCaseStudy";
 import RawPresseryCaseStudy from "./components/RawPresseryCaseStudy";
@@ -117,16 +118,47 @@ export default function App() {
     };
   }, [viewMode]);
 
-  // Modals state
+  // Modals + routing state
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  // When a project has nested stories (e.g. Sanj Events), the story slug a deep
-  // link / internal navigation should open. null = project landing, no story.
+  // Story/villa slug a deep link or internal navigation should open in a project.
   const [initialStory, setInitialStory] = useState<string | null>(null);
+  // Social reel a deep link / internal navigation should open in the gallery.
+  const [initialReelId, setInitialReelId] = useState<string | null>(null);
+  // Reel sub-category (Fashion, Lifestyle, …) the gallery should filter to.
+  const [initialReelCategory, setInitialReelCategory] = useState<SocialReelCategory | null>(null);
+  // Portfolio filter section (also reflected in the URL).
+  const [projectFilter, setProjectFilter] = useState<PortfolioFilter>("all");
+
+  // Bring the projects section into view (deep link / Back navigation). Deferred
+  // so the section has rendered first.
+  const scrollToProjects = () => {
+    setTimeout(() => {
+      document.getElementById("projects")?.scrollIntoView({ behavior: "auto", block: "start" });
+    }, 80);
+  };
+
+  // Apply a campaigns sub-route (reel / reel-category / campaigns landing) to state.
+  // A reel deliberately leaves the active sub-category in place, so closing it
+  // returns to the right filtered view.
+  const applyCampaignSub = (match: ReturnType<typeof parseRoute>) => {
+    setProjectFilter("campaign");
+    if (match?.kind === "reel") {
+      setInitialReelId(match.reelId);
+    } else if (match?.kind === "reelCategory") {
+      setInitialReelCategory(match.reelCategory);
+      setInitialReelId(null);
+    } else {
+      setInitialReelCategory(null);
+      setInitialReelId(null);
+    }
+  };
 
   // Open a project (and optionally one of its stories) as a shareable URL.
   const openProject = (proj: Project, storySlug?: string | null) => {
     setSelectedProject(proj);
     setInitialStory(storySlug ?? null);
+    setInitialReelId(null);
+    setInitialReelCategory(null);
     const base = projectPath(proj.id);
     if (base) {
       const url = storySlug ? `${base}/${storySlug}` : base;
@@ -159,30 +191,71 @@ export default function App() {
     }
   };
 
-  // Open the project / story encoded in the current URL path, and respond to
-  // the browser Back/Forward buttons. Runs once on mount + on popstate.
+  // Sync the URL from inside the reel gallery (sub-segment = "", a reel-category
+  // slug, or a reel id) and keep state in step so Back/Forward stay correct.
+  const handleCampaignNav = (subSegment: string) => {
+    const url = subSegment ? `/projects/campaigns/${subSegment}` : "/projects/campaigns";
+    window.history.pushState({}, "", url);
+    applyCampaignSub(parseRoute(url));
+  };
+
+  // Select a portfolio filter section and reflect it as a shareable URL.
+  const selectFilter = (cat: PortfolioFilter) => {
+    setProjectFilter(cat);
+    setInitialReelId(null);
+    setInitialReelCategory(null);
+    const url = categoryPath(cat);
+    if (window.location.pathname !== url) {
+      window.history.pushState({}, "", url);
+    }
+  };
+
+  // Resolve the current URL to the right project / story / reel / section, and
+  // respond to browser Back/Forward. Runs once on mount + on every popstate.
   useEffect(() => {
     const syncFromPath = () => {
-      const match = parseProjectPath(window.location.pathname);
-      if (match) {
+      const match = parseRoute(window.location.pathname);
+
+      if (match?.kind === "project") {
         const proj = PROJECTS.find((p) => p.id === match.id);
         if (proj) {
           setSelectedProject(proj);
           setInitialStory(match.storySlug ?? null);
+          setInitialReelId(null);
+          setInitialReelCategory(null);
           return;
         }
       }
-      // Not a project URL — make sure no overlay stays open (e.g. after Back).
+
+      // Every non-project route closes the project overlay.
       setSelectedProject(null);
       setInitialStory(null);
+
+      if (match?.kind === "reel" || match?.kind === "reelCategory") {
+        applyCampaignSub(match);
+        scrollToProjects();
+        return;
+      }
+      if (match?.kind === "category") {
+        if (match.filter === "campaign") {
+          applyCampaignSub(match);
+        } else {
+          setProjectFilter(match.filter);
+          setInitialReelId(null);
+          setInitialReelCategory(null);
+        }
+        scrollToProjects();
+        return;
+      }
+
+      setInitialReelId(null);
+      setInitialReelCategory(null);
     };
+
     syncFromPath();
     window.addEventListener("popstate", syncFromPath);
     return () => window.removeEventListener("popstate", syncFromPath);
   }, []);
-
-  // Portfolio local filter state
-  const [projectFilter, setProjectFilter] = useState<"all" | "cinematography" | "photography" | "campaign" | "brand">("all");
 
   // Contact form submission state
   const [contactName, setContactName] = useState("");
@@ -520,7 +593,7 @@ export default function App() {
                 {(["all", "cinematography", "photography", "campaign", "brand"] as const).map((cat) => (
                   <button
                     key={cat}
-                    onClick={() => setProjectFilter(cat)}
+                    onClick={() => selectFilter(cat)}
                     className={`px-4 py-2 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] cursor-pointer ${
                       projectFilter === cat 
                         ? "bg-[#3079D8] text-pure-white shadow-sm" 
@@ -668,7 +741,13 @@ export default function App() {
           )}
 
           {/* Social Media Content Gallery — shown inside the campaign filter */}
-          {projectFilter === "campaign" && <SocialMediaGallery />}
+          {projectFilter === "campaign" && (
+            <SocialMediaGallery
+              initialReelId={initialReelId}
+              initialReelCategory={initialReelCategory}
+              onCampaignNav={handleCampaignNav}
+            />
+          )}
         </section>
       )}
 

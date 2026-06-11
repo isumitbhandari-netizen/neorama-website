@@ -16,7 +16,12 @@
  * project that drives the (interactive) case-study overlay.
  */
 
+import { SOCIAL_REELS, CATEGORY_ORDER, type SocialReelCategory } from "./socialReels";
+
 export type ProjectCategorySlug = "films" | "photography" | "campaigns" | "branding";
+
+// Matches the portfolio filter state in App.tsx.
+export type PortfolioFilter = "all" | "cinematography" | "photography" | "campaign" | "brand";
 
 export interface StoryRoute {
   slug: string;
@@ -249,7 +254,77 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
   },
 ];
 
+// ── Category landing pages (the portfolio filter "sections") ────────────────
+export interface CategoryRoute {
+  slug: ProjectCategorySlug;
+  filter: Exclude<PortfolioFilter, "all">;
+  title: string;
+  description: string;
+}
+
+export const CATEGORY_ROUTES: CategoryRoute[] = [
+  {
+    slug: "films",
+    filter: "cinematography",
+    title: "Ad Films & Documentaries — Portfolio | Neorama Studios",
+    description:
+      "Brand films, ad campaigns and documentaries produced by Neorama Studios, a Mumbai-based creative agency.",
+  },
+  {
+    slug: "photography",
+    filter: "photography",
+    title: "Photography — Portfolio | Neorama Studios",
+    description:
+      "Fashion, product, lifestyle, sports and luxury stay photography by Neorama Studios, Mumbai.",
+  },
+  {
+    slug: "campaigns",
+    filter: "campaign",
+    title: "Social Media & Marketing — Portfolio | Neorama Studios",
+    description:
+      "Short-form social media reels and marketing content produced by Neorama Studios for brands across fashion, food, lifestyle, hospitality and events.",
+  },
+  {
+    slug: "branding",
+    filter: "brand",
+    title: "Branding & Design — Portfolio | Neorama Studios",
+    description:
+      "Brand identity, packaging and visual design systems by Neorama Studios, Mumbai.",
+  },
+];
+
+// ── Reel sub-category slugs (the gallery's pills inside Social Media) ────────
+export const REEL_CATEGORY_SLUGS: Record<SocialReelCategory, string> = {
+  Fashion: "fashion",
+  Lifestyle: "lifestyle",
+  "Food & Beverage": "food-beverage",
+  Events: "events",
+  Hospitality: "hospitality",
+};
+
+// Ordered list (mirrors the pill order) for prerendering + iteration.
+export const REEL_CATEGORIES: { category: SocialReelCategory; slug: string }[] =
+  CATEGORY_ORDER.map((category) => ({ category, slug: REEL_CATEGORY_SLUGS[category] }));
+
 const BY_ID = new Map(PROJECT_ROUTES.map((r) => [r.id, r]));
+const CATEGORY_BY_SLUG = new Map(CATEGORY_ROUTES.map((c) => [c.slug, c]));
+const CATEGORY_BY_FILTER = new Map(CATEGORY_ROUTES.map((c) => [c.filter, c]));
+const REEL_IDS = new Set(SOCIAL_REELS.map((r) => r.id));
+const REEL_CATEGORY_BY_SLUG = new Map(
+  (Object.entries(REEL_CATEGORY_SLUGS) as [SocialReelCategory, string][]).map(
+    ([cat, slug]) => [slug, cat]
+  )
+);
+
+/** Slug for a reel sub-category, e.g. "Food & Beverage" → "food-beverage". */
+export function reelCategorySlug(cat: SocialReelCategory): string {
+  return REEL_CATEGORY_SLUGS[cat];
+}
+
+/** Path for a reel sub-category, e.g. "/projects/campaigns/fashion". */
+export function reelCategoryPath(cat: SocialReelCategory): string {
+  return `/projects/campaigns/${REEL_CATEGORY_SLUGS[cat]}`;
+}
 
 /** Path for a project, e.g. "/projects/photography/sanj-events". */
 export function projectPath(id: string): string | null {
@@ -263,22 +338,61 @@ export function storyPath(id: string, storySlug: string): string | null {
   return base ? `${base}/${storySlug}` : null;
 }
 
+/** Path for a portfolio filter section, e.g. "/projects/photography" ("all" → "/projects"). */
+export function categoryPath(filter: PortfolioFilter): string {
+  if (filter === "all") return "/projects";
+  const c = CATEGORY_BY_FILTER.get(filter);
+  return c ? `/projects/${c.slug}` : "/projects";
+}
+
+/** Path for an individual social reel, e.g. "/projects/campaigns/azul-social". */
+export function reelPath(reelId: string): string {
+  return `/projects/campaigns/${reelId}`;
+}
+
+export type RouteMatch =
+  | { kind: "project"; id: string; storySlug?: string }
+  | { kind: "reel"; reelId: string }
+  | { kind: "reelCategory"; reelCategory: SocialReelCategory }
+  | { kind: "category"; filter: PortfolioFilter }
+  | null;
+
 /**
- * Parse a pathname into the project (and optional story) it refers to.
- * Returns null for any path that is not a known project route. An unknown
- * story slug under a known project falls back to the project itself.
+ * Resolve any /projects URL to what it should render:
+ *   /projects                              → category (filter "all")
+ *   /projects/<category>                   → category section
+ *   /projects/campaigns/<reel-id>          → an individual reel
+ *   /projects/<category>/<project-slug>    → a project
+ *   /projects/<category>/<slug>/<story>    → a story inside a project
+ * Unknown slugs under a valid category fall back to that category section.
+ * Returns null for anything that is not a /projects route.
  */
-export function parseProjectPath(
-  pathname: string
-): { id: string; storySlug?: string } | null {
-  const clean = pathname.replace(/\/+$/, "");
-  const m = clean.match(/^\/projects\/([^/]+)\/([^/]+)(?:\/([^/]+))?$/);
-  if (!m) return null;
-  const [, category, slug, storySlug] = m;
-  const r = PROJECT_ROUTES.find((x) => x.category === category && x.slug === slug);
-  if (!r) return null;
-  if (storySlug && r.stories?.some((s) => s.slug === storySlug)) {
-    return { id: r.id, storySlug };
+export function parseRoute(pathname: string): RouteMatch {
+  const segs = pathname.replace(/\/+$/, "").split("/").filter(Boolean);
+  if (segs[0] !== "projects") return null;
+  if (segs.length === 1) return { kind: "category", filter: "all" };
+
+  const cat = CATEGORY_BY_SLUG.get(segs[1] as ProjectCategorySlug);
+  if (!cat) return null;
+  if (segs.length === 2) return { kind: "category", filter: cat.filter };
+
+  const slug = segs[2];
+  const storySlug = segs[3];
+
+  if (cat.slug === "campaigns") {
+    if (REEL_IDS.has(slug)) return { kind: "reel", reelId: slug };
+    const reelCat = REEL_CATEGORY_BY_SLUG.get(slug);
+    if (reelCat) return { kind: "reelCategory", reelCategory: reelCat };
+    return { kind: "category", filter: cat.filter };
   }
-  return { id: r.id };
+
+  const proj = PROJECT_ROUTES.find((x) => x.category === cat.slug && x.slug === slug);
+  if (proj) {
+    if (storySlug && proj.stories?.some((s) => s.slug === storySlug)) {
+      return { kind: "project", id: proj.id, storySlug };
+    }
+    return { kind: "project", id: proj.id };
+  }
+
+  return { kind: "category", filter: cat.filter };
 }

@@ -8,7 +8,9 @@ import {
   CATEGORY_COLORS,
   CATEGORY_ORDER,
   type SocialReel,
+  type SocialReelCategory,
 } from "../socialReels";
+import { reelCategorySlug } from "../projectRoutes";
 
 // ─── Reel Data ────────────────────────────────────────────────────────────────
 // Reels now stream from Vimeo. All content lives in ../socialReels.ts —
@@ -265,15 +267,51 @@ function VideoModal({
 }
 
 // ─── Main Component ───────────────────────────────────────────────────────────
-export default function SocialMediaGallery() {
-  const [activeFilter, setActiveFilter] = useState<FilterOption>("All");
-  const [openReel, setOpenReel] = useState<SocialReel | null>(null);
+interface Props {
+  // Reel to open on mount / when the URL changes (null = none open).
+  initialReelId?: string | null;
+  // Reel sub-category to filter to on mount / URL change (null = "All").
+  initialReelCategory?: SocialReelCategory | null;
+  // Report the current campaigns sub-segment ("" = all, a category slug, or a
+  // reel id) so the parent can keep the shareable URL in sync.
+  onCampaignNav?: (subSegment: string) => void;
+}
+
+export default function SocialMediaGallery({ initialReelId, initialReelCategory, onCampaignNav }: Props) {
+  const [activeFilter, setActiveFilter] = useState<FilterOption>(initialReelCategory ?? "All");
+  const [openReel, setOpenReel] = useState<SocialReel | null>(
+    () => REELS.find(r => r.id === initialReelId) ?? null
+  );
 
   const filtered = activeFilter === "All" ? REELS : REELS.filter(r => r.category === activeFilter);
 
   const openIndex = openReel ? filtered.findIndex(r => r.id === openReel.id) : -1;
-  const goPrev = useCallback(() => { if (openIndex > 0) setOpenReel(filtered[openIndex - 1]); }, [openIndex, filtered]);
-  const goNext = useCallback(() => { if (openIndex < filtered.length - 1) setOpenReel(filtered[openIndex + 1]); }, [openIndex, filtered]);
+
+  // The current campaigns sub-segment for the URL: a reel id wins, else the
+  // active sub-category slug, else "" (the campaigns landing).
+  const currentSubSegment = (reel: SocialReel | null, filter: FilterOption) =>
+    reel ? reel.id : filter === "All" ? "" : reelCategorySlug(filter);
+
+  const selectReel = (reel: SocialReel | null) => {
+    setOpenReel(reel);
+    onCampaignNav?.(currentSubSegment(reel, activeFilter));
+  };
+
+  const selectFilter = (f: FilterOption) => {
+    setActiveFilter(f);
+    onCampaignNav?.(f === "All" ? "" : reelCategorySlug(f));
+  };
+
+  const goPrev = useCallback(() => { if (openIndex > 0) selectReel(filtered[openIndex - 1]); }, [openIndex, filtered, activeFilter]);
+  const goNext = useCallback(() => { if (openIndex < filtered.length - 1) selectReel(filtered[openIndex + 1]); }, [openIndex, filtered, activeFilter]);
+
+  // Follow URL-driven changes (deep links + browser Back/Forward).
+  useEffect(() => {
+    setActiveFilter(initialReelCategory ?? "All");
+  }, [initialReelCategory]);
+  useEffect(() => {
+    setOpenReel(initialReelId ? REELS.find(r => r.id === initialReelId) ?? null : null);
+  }, [initialReelId]);
 
   // Close modal if active reel filtered out
   useEffect(() => {
@@ -307,7 +345,7 @@ export default function SocialMediaGallery() {
             return (
               <button
                 key={f}
-                onClick={() => setActiveFilter(f)}
+                onClick={() => selectFilter(f)}
                 className={`px-4 py-2 rounded-full font-mono text-[10px] uppercase tracking-widest font-bold transition-all duration-300 cursor-pointer flex items-center gap-2 ${
                   isActive
                     ? "bg-[#3079D8] text-pure-white shadow-sm scale-[1.02]"
@@ -333,7 +371,7 @@ export default function SocialMediaGallery() {
               <React.Fragment key={reel.id}>
                 <ReelCard
                   reel={reel}
-                  onClick={() => setOpenReel(reel)}
+                  onClick={() => selectReel(reel)}
                 />
               </React.Fragment>
             ))}
@@ -354,7 +392,7 @@ export default function SocialMediaGallery() {
           {openReel && (
             <VideoModal
               reel={openReel}
-              onClose={() => setOpenReel(null)}
+              onClose={() => selectReel(null)}
               onPrev={goPrev}
               onNext={goNext}
               hasPrev={openIndex > 0}
