@@ -69,10 +69,7 @@ export default function App() {
           window.scrollTo({ top: 0 });
         } else {
           // scrolling mode: smoothly scroll to element
-          const element = document.getElementById(hash);
-          if (element) {
-            element.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
+          scrollToSection(hash);
         }
       } else if (!hash) {
         setCurrentPage("home");
@@ -128,6 +125,30 @@ export default function App() {
   const [initialReelCategory, setInitialReelCategory] = useState<SocialReelCategory | null>(null);
   // Portfolio filter section (also reflected in the URL).
   const [projectFilter, setProjectFilter] = useState<PortfolioFilter>("all");
+
+  // Smoothly scroll a section into view, re-aligning for a short window after.
+  // Web fonts (display=swap) and unsized images finish loading after the first
+  // paint, which shifts a section's position while the initial smooth scroll is
+  // still animating — on the very first click that left us landing short, inside
+  // the previous section (e.g. clicking "services" stopped inside "projects").
+  // We nudge it back to the top a few times until it settles.
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    let tries = 0;
+    const realign = () => {
+      if (tries >= 4) return;
+      tries++;
+      // Once the section sits at the top (~0) there's nothing to correct.
+      if (Math.abs(el.getBoundingClientRect().top) > 2) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      setTimeout(realign, 200);
+    };
+    setTimeout(realign, 200);
+  };
 
   // Bring the projects section into view (deep link / Back navigation). Deferred
   // so the section has rendered first.
@@ -342,10 +363,7 @@ export default function App() {
                   if (viewMode === "scroll") {
                     e.preventDefault();
                     setCurrentPage(page);
-                    const element = document.getElementById(page);
-                    if (element) {
-                      element.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }
+                    scrollToSection(page);
                     window.location.hash = page;
                   }
                 }}
@@ -445,10 +463,7 @@ export default function App() {
                     if (viewMode === "scroll") {
                       e.preventDefault();
                       setCurrentPage(page);
-                      const element = document.getElementById(page);
-                      if (element) {
-                        element.scrollIntoView({ behavior: "smooth", block: "start" });
-                      }
+                      scrollToSection(page);
                       window.location.hash = page;
                     }
                   }}

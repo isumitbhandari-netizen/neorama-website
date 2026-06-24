@@ -449,6 +449,30 @@ export const TEAM_MEMBERS = [
 
 export const BLOG_POSTS = [
   {
+    id: "reels-that-sell-short-form-video-full-funnel-2026",
+    slug: "reels-that-sell-short-form-video-full-funnel-2026",
+    title: "Reels That Sell: How Indian Brands Use Short-Form Video Across the Funnel in 2026",
+    category: "Social Media Marketing",
+    excerpt: "Reels are no longer just for awareness. Here's how leading Indian brands use short-form video across discovery, consideration, and conversion—and what makes a reel actually sell.",
+    date: "June 23, 2026",
+    readTime: "7 min read",
+    metaTitle: "Reels That Sell: Full-Funnel Short-Form Video for Indian Brands (2026) | Neorama",
+    metaDescription: "Reels are India's default discovery format. Learn how brands use short-form video across awareness, consideration, and conversion—and what makes a reel actually sell.",
+    imageUrl: "/images/blog/reels-that-sell-short-form-video-full-funnel-2026.jpg"
+  },
+  {
+    id: "regional-language-video-marketing-india-2026",
+    slug: "regional-language-video-marketing-india-2026",
+    title: "Speaking to the Next 200 Million: Why Regional-Language Video Is India's Smartest Brand Bet",
+    category: "Video Marketing Strategy",
+    excerpt: "India's next 200 million users come from Tier 2, Tier 3, and rural markets—and they watch in their own languages. Why regional-language video is the smartest brand investment of 2026.",
+    date: "June 16, 2026",
+    readTime: "7 min read",
+    metaTitle: "Regional-Language Video Marketing in India: The 2026 Growth Bet | Neorama",
+    metaDescription: "India's next 200 million users come from Tier 2, Tier 3, and rural markets—and they watch in their own languages. Why regional-language video is the smartest brand investment of 2026.",
+    imageUrl: "/images/blog/regional-language-video-marketing-india-2026.jpg"
+  },
+  {
     id: "why-every-brand-needs-a-content-library-2026",
     slug: "why-every-brand-needs-a-content-library-2026",
     title: "Why Every Brand Needs a Content Library in 2026",
