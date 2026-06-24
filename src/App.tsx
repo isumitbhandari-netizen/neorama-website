@@ -619,7 +619,7 @@ export default function App() {
                     {cat === "all" 
                       ? "All" 
                       : cat === "cinematography" 
-                      ? "Ad Films & Documentaries" 
+                      ? "Ads & Corporate Films"
                       : cat === "photography" 
                       ? "Photography" 
                       : cat === "campaign" 

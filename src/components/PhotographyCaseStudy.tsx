@@ -703,7 +703,7 @@ export default function PhotographyCaseStudy({ onClose, onSelectProjectById }: P
               {
                 id: "linen-luxury-brand",
                 title: "Linen & Linens | Luxury Brand Film",
-                category: "Ad Films & Documentaries",
+                category: "Ads & Corporate Films",
                 desc: "Cinematic narrative exploring material honesty & weavers craft.",
                 tag: "Brand Film",
                 img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80"
@@ -711,7 +711,7 @@ export default function PhotographyCaseStudy({ onClose, onSelectProjectById }: P
               {
                 id: "linen-fashion-campaign",
                 title: "Linen & Linens | Fashion Film Campaign",
-                category: "Ad Films & Documentaries",
+                category: "Ads & Corporate Films",
                 desc: "A rhythmic digital cinema sequence showcasing textile drapes.",
                 tag: "Fashion Campaign",
                 img: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80"
@@ -719,7 +719,7 @@ export default function PhotographyCaseStudy({ onClose, onSelectProjectById }: P
               {
                 id: "rani-pink-kirthi",
                 title: "Rani Pink x Kirthi Diamond Jewellery",
-                category: "Ad Films & Documentaries",
+                category: "Ads & Corporate Films",
                 desc: "Luxury ornament campaign celebrating hand-sourced stones.",
                 tag: "Jewellery Film",
                 img: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80"
