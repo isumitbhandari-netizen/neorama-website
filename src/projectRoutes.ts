@@ -18,7 +18,7 @@
 
 import { SOCIAL_REELS, CATEGORY_ORDER, type SocialReelCategory } from "./socialReels";
 
-export type ProjectCategorySlug = "films" | "photography" | "campaigns" | "branding";
+export type ProjectCategorySlug = "films" | "photography" | "social-media" | "branding";
 
 // Matches the portfolio filter state in App.tsx.
 export type PortfolioFilter = "all" | "cinematography" | "photography" | "campaign" | "brand";
@@ -278,7 +278,7 @@ export const CATEGORY_ROUTES: CategoryRoute[] = [
       "Fashion, product, lifestyle, sports and luxury stay photography by Neorama Studios, Mumbai.",
   },
   {
-    slug: "campaigns",
+    slug: "social-media",
     filter: "campaign",
     title: "Social Media & Marketing — Portfolio | Neorama Studios",
     description:
@@ -321,9 +321,9 @@ export function reelCategorySlug(cat: SocialReelCategory): string {
   return REEL_CATEGORY_SLUGS[cat];
 }
 
-/** Path for a reel sub-category, e.g. "/projects/campaigns/fashion". */
+/** Path for a reel sub-category, e.g. "/projects/social-media/fashion". */
 export function reelCategoryPath(cat: SocialReelCategory): string {
-  return `/projects/campaigns/${REEL_CATEGORY_SLUGS[cat]}`;
+  return `/projects/social-media/${REEL_CATEGORY_SLUGS[cat]}`;
 }
 
 /** Path for a project, e.g. "/projects/photography/sanj-events". */
@@ -345,9 +345,9 @@ export function categoryPath(filter: PortfolioFilter): string {
   return c ? `/projects/${c.slug}` : "/projects";
 }
 
-/** Path for an individual social reel, e.g. "/projects/campaigns/azul-social". */
+/** Path for an individual social reel, e.g. "/projects/social-media/azul-social". */
 export function reelPath(reelId: string): string {
-  return `/projects/campaigns/${reelId}`;
+  return `/projects/social-media/${reelId}`;
 }
 
 export type RouteMatch =
@@ -361,7 +361,7 @@ export type RouteMatch =
  * Resolve any /projects URL to what it should render:
  *   /projects                              → category (filter "all")
  *   /projects/<category>                   → category section
- *   /projects/campaigns/<reel-id>          → an individual reel
+ *   /projects/social-media/<reel-id>       → an individual reel
  *   /projects/<category>/<project-slug>    → a project
  *   /projects/<category>/<slug>/<story>    → a story inside a project
  * Unknown slugs under a valid category fall back to that category section.
@@ -372,14 +372,17 @@ export function parseRoute(pathname: string): RouteMatch {
   if (segs[0] !== "projects") return null;
   if (segs.length === 1) return { kind: "category", filter: "all" };
 
-  const cat = CATEGORY_BY_SLUG.get(segs[1] as ProjectCategorySlug);
+  // "campaigns" is the legacy slug for the social-media section; keep old
+  // /projects/campaigns/... links working by aliasing it to the new slug.
+  const catSeg = segs[1] === "campaigns" ? "social-media" : segs[1];
+  const cat = CATEGORY_BY_SLUG.get(catSeg as ProjectCategorySlug);
   if (!cat) return null;
   if (segs.length === 2) return { kind: "category", filter: cat.filter };
 
   const slug = segs[2];
   const storySlug = segs[3];
 
-  if (cat.slug === "campaigns") {
+  if (cat.slug === "social-media") {
     if (REEL_IDS.has(slug)) return { kind: "reel", reelId: slug };
     const reelCat = REEL_CATEGORY_BY_SLUG.get(slug);
     if (reelCat) return { kind: "reelCategory", reelCategory: reelCat };

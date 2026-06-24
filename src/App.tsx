@@ -215,7 +215,7 @@ export default function App() {
   // Sync the URL from inside the reel gallery (sub-segment = "", a reel-category
   // slug, or a reel id) and keep state in step so Back/Forward stay correct.
   const handleCampaignNav = (subSegment: string) => {
-    const url = subSegment ? `/projects/campaigns/${subSegment}` : "/projects/campaigns";
+    const url = subSegment ? `/projects/social-media/${subSegment}` : "/projects/social-media";
     window.history.pushState({}, "", url);
     applyCampaignSub(parseRoute(url));
   };

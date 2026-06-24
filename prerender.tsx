@@ -441,7 +441,7 @@ function run() {
     const sample = SOCIAL_REELS.find((r) => r.category === rc.category);
     const image = sample ? `${BASE_URL}${sample.thumbnail}` : defaultOg;
     writeSectionPage(
-      `/projects/campaigns/${rc.slug}`,
+      `/projects/social-media/${rc.slug}`,
       `${rc.category} Reels — Social Media & Marketing | Neorama Studios`,
       `Short-form ${rc.category} social media reels and campaign content produced by Neorama Studios, Mumbai.`,
       image,
@@ -451,7 +451,7 @@ function run() {
 
   // Individual social reels.
   for (const reel of SOCIAL_REELS) {
-    const routePath = `/projects/campaigns/${reel.id}`;
+    const routePath = `/projects/social-media/${reel.id}`;
     const canonical = `${BASE_URL}${routePath}`;
     const image = `${BASE_URL}${reel.thumbnail}`;
     const title = `${reel.client} — ${reel.title} | Social Media Reel — Neorama Studios`;
@@ -471,7 +471,7 @@ function run() {
           "@type": "BreadcrumbList",
           itemListElement: [
             { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
-            { "@type": "ListItem", position: 2, name: "Social Media & Marketing", item: `${BASE_URL}/projects/campaigns` },
+            { "@type": "ListItem", position: 2, name: "Social Media & Marketing", item: `${BASE_URL}/projects/social-media` },
             { "@type": "ListItem", position: 3, name: `${reel.client} — ${reel.title}`, item: canonical },
           ],
         },
