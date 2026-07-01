@@ -891,6 +891,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick }) =>
           <h3 className="font-display text-lg md:text-xl font-black text-white uppercase tracking-tight leading-none">
             {project.name}
           </h3>
+          {project.designStudio && (
+            <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-white/60 mt-1.5 font-bold">
+              Design // {project.designStudio}
+            </p>
+          )}
         </div>
         <div className="absolute bottom-5 right-5 p-2 rounded-full bg-white text-neutral-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <Maximize2 size={13} />
@@ -902,11 +907,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick }) =>
           View Gallery <ArrowRight size={10} />
         </span>
       </div>
-      {project.designStudio && (
-        <p className="font-mono text-[9px] text-neutral-400 uppercase tracking-widest -mt-2">
-          Design // <span className="text-neutral-700 font-bold">{project.designStudio}</span>
-        </p>
-      )}
     </motion.div>
   );
 };
