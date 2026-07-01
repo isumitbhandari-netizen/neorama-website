@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft, ChevronLeft, ChevronRight, X, Maximize2, ChevronDown, ArrowRight } from "lucide-react";
+import { PROJECT_ROUTES } from "../projectRoutes";
 
 // @ts-ignore
 import fbHero from "../assets/images/fb_campaign_hero.webp";
@@ -469,6 +470,8 @@ const BRANDS: FBBrand[] = [
   },
 ];
 
+const FAQS = PROJECT_ROUTES.find((p) => p.id === "food-beverage-photography")?.faqs ?? [];
+
 // ─── Editorial layout ────────────────────────────────────────────────────────
 // Arrange a brand's shots into a magazine rhythm driven by orientation:
 //   hero feature → full-width bands for horizontals → paired columns for
@@ -682,6 +685,30 @@ export default function FoodBeverageCaseStudy({ onClose, onRequestContact, initi
                 </div>
               </div>
             </section>
+
+            {/* FAQ */}
+            {FAQS.length > 0 && (
+              <section className="bg-white py-16 md:py-24 px-6 md:px-12 border-t border-neutral-100">
+                <div className="max-w-3xl mx-auto">
+                  <div className="text-center space-y-3 mb-10">
+                    <span className="font-mono text-[10px] text-neutral-400 uppercase tracking-[0.3em] font-black block">FAQ</span>
+                    <h3 className="font-display text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-neutral-900">Common Questions</h3>
+                    <div className="w-16 h-[2px] bg-neutral-900 mx-auto" />
+                  </div>
+                  <div className="divide-y divide-neutral-200 border-y border-neutral-200">
+                    {FAQS.map((f, i) => (
+                      <details key={i} className="group py-5">
+                        <summary className="flex items-center justify-between cursor-pointer list-none font-sans font-bold text-sm md:text-base text-neutral-900">
+                          {f.q}
+                          <ChevronDown size={18} className="text-neutral-400 group-open:rotate-180 transition-transform shrink-0 ml-4" />
+                        </summary>
+                        <p className="mt-3 font-sans text-sm text-neutral-600 leading-relaxed max-w-2xl">{f.a}</p>
+                      </details>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
 
             {/* CTA */}
             <section className="bg-neutral-950 text-white py-24 md:py-32 px-6 border-t border-neutral-900/60">

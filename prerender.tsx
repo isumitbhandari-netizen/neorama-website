@@ -340,6 +340,18 @@ function run() {
             { "@type": "ListItem", position: 3, name: project.title, item: canonical },
           ],
         },
+        ...(project.faqs && project.faqs.length > 0
+          ? [
+              {
+                "@type": "FAQPage",
+                mainEntity: project.faqs.map((f) => ({
+                  "@type": "Question",
+                  name: f.q,
+                  acceptedAnswer: { "@type": "Answer", text: f.a },
+                })),
+              },
+            ]
+          : []),
       ],
     };
 

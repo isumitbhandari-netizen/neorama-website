@@ -42,6 +42,9 @@ export interface ProjectRoute {
   description: string;
   ogImageFile: string;
   stories?: StoryRoute[];
+  // Answer-first FAQs — rendered visibly and emitted as FAQPage JSON-LD by the
+  // prerender step (helps answer engines quote the page and win rich results).
+  faqs?: { q: string; a: string }[];
 }
 
 export const PROJECT_ROUTES: ProjectRoute[] = [
@@ -235,6 +238,24 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
     description:
       "Professional architectural and interior photography by Neorama Studios, Mumbai — helping architects and interior designers showcase their built projects. Portfolio: Aravali Parisar, Goldmine Project Consultants, PACA Office and Storey Studio.",
     ogImageFile: "arch_campaign_hero.jpg",
+    faqs: [
+      {
+        q: "Do you offer architecture and interior photography for architects and designers?",
+        a: "Yes. Neorama Studios shoots architectural and interior photography for architects, interior designers and developers across Mumbai and India — capturing built projects for portfolios, design awards, websites and marketing.",
+      },
+      {
+        q: "What does an architecture and interior photography shoot include?",
+        a: "A typical shoot covers exteriors, interior spaces, and material and detail studies, captured in the right natural and artificial light, then edited to a consistent, publication-ready standard and delivered in web and print formats.",
+      },
+      {
+        q: "How much does architecture photography cost in Mumbai?",
+        a: "Cost depends on the size of the project, the number of spaces and the shoot time required. We scope each shoot to the project — share the location and brief and we'll send a clear quote.",
+      },
+      {
+        q: "How do I book an architecture or interior shoot?",
+        a: "Tell us about your project through the contact form on neoramastudios.com or send a DM on Instagram (@neoramastudios), and we'll come back with availability, an approach and a quote.",
+      },
+    ],
     stories: [
       {
         slug: "aravali-parisar",
@@ -279,6 +300,24 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
     description:
       "Professional food and beverage photography by Neorama Studios, Mumbai — menu, product and social shoots for restaurants, cafés, bars and pubs, bakeries, patisseries and dessert shops, and packaged food & beverage brands. Portfolio: Boom Burger, Costa Coffee, French Affair, Irish House, Mad Over Donuts, Mushmerry, Pizza Express, Raw Pressery and Sakheti.",
     ogImageFile: "fb_campaign_hero.jpg",
+    faqs: [
+      {
+        q: "Do you photograph food for restaurants, cafés and cloud kitchens?",
+        a: "Yes. Neorama Studios shoots food and beverage photography for restaurants, cafés, bars and pubs, bakeries, dessert shops and packaged food & beverage brands across Mumbai — for menus, delivery platforms, e-commerce and social media.",
+      },
+      {
+        q: "What's included in a food photography shoot?",
+        a: "Menu and hero dishes, drinks, packaging and lifestyle frames — styled and lit in-studio or on location, then edited to a consistent, appetite-led standard in the crops each platform needs.",
+      },
+      {
+        q: "How much does food photography cost in Mumbai?",
+        a: "It depends on the number of dishes, studio versus on-location, and the level of styling. A focused single-day shoot can cover a full menu section plus social content. Share your menu and we'll send a quote.",
+      },
+      {
+        q: "Do you shoot for delivery apps like Zomato and Swiggy?",
+        a: "Yes — we deliver images in the formats and crops delivery platforms require, alongside cuts for your own menu, website and social channels.",
+      },
+    ],
     stories: [
       {
         slug: "boom-burger",
