@@ -249,7 +249,7 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
         slug: "aravali-parisar",
         title: "Aravali Parisar — Architectural & Interior Photography | Neorama Studios",
         description:
-          "Architectural and interior photography of Aravali Parisar by Neorama Studios, Mumbai — professional project photography for architects and interior designers.",
+          "Architectural and interior photography of Aravali Parisar, designed by Locus Design Works, captured by Neorama Studios, Mumbai — professional project photography for architects and interior designers.",
         ogImageFile: "arch_aravali_thumb.jpg",
         imagePrefix: "arch_aravali",
       },
@@ -265,7 +265,7 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
         slug: "paca-office",
         title: "PACA Office — Interior & Architectural Photography | Neorama Studios",
         description:
-          "Interior and architectural photography of PACA Office by Neorama Studios, Mumbai — professional workspace and project photography for architects and interior designers.",
+          "Interior and architectural photography of PACA Office, designed by Locus Design Works, captured by Neorama Studios, Mumbai — professional workspace and project photography for architects and interior designers.",
         ogImageFile: "arch_paca_thumb.jpg",
         imagePrefix: "arch_paca",
       },

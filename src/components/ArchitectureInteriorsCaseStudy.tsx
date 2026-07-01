@@ -241,6 +241,7 @@ interface ArchProject {
   id: string;
   name: string;
   descriptor: string;
+  designStudio?: string;
   gradient: string;
   thumb: string;
   hero: string;
@@ -252,6 +253,7 @@ const PROJECTS: ArchProject[] = [
     id: "aravali-parisar",
     name: "Aravali Parisar",
     descriptor: "Architecture & Interiors",
+    designStudio: "Locus Design Works",
     gradient: "linear-gradient(145deg, #efe6d8 0%, #cbb48f 45%, #977a4e 100%)",
     thumb: aravaliThumb,
     hero: aravaliThumb,
@@ -270,6 +272,7 @@ const PROJECTS: ArchProject[] = [
     id: "paca-office",
     name: "PACA Office",
     descriptor: "Office Interior Photography",
+    designStudio: "Locus Design Works",
     gradient: "linear-gradient(145deg, #dfe4e6 0%, #a9b6bd 45%, #6a7880 100%)",
     thumb: pacaThumb,
     hero: pacaThumb,
@@ -619,11 +622,17 @@ export default function ArchitectureInteriorsCaseStudy({ onClose, onRequestConta
                     {current.name}
                   </h2>
                 </div>
-                <div className="grid grid-cols-2 gap-8 shrink-0">
+                <div className={`grid ${current.designStudio ? "grid-cols-3" : "grid-cols-2"} gap-8 shrink-0`}>
                   <div>
                     <p className="font-mono text-[9px] text-neutral-400 uppercase tracking-widest font-black">Discipline //</p>
                     <p className="font-sans text-xs font-bold text-neutral-800">{current.descriptor}</p>
                   </div>
+                  {current.designStudio && (
+                    <div>
+                      <p className="font-mono text-[9px] text-neutral-400 uppercase tracking-widest font-black">Design Studio //</p>
+                      <p className="font-sans text-xs font-bold text-neutral-800">{current.designStudio}</p>
+                    </div>
+                  )}
                   <div>
                     <p className="font-mono text-[9px] text-neutral-400 uppercase tracking-widest font-black">Frames //</p>
                     <p className="font-sans text-xs font-bold text-neutral-800">{current.images.length} Masters</p>
@@ -893,6 +902,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick }) =>
           View Gallery <ArrowRight size={10} />
         </span>
       </div>
+      {project.designStudio && (
+        <p className="font-mono text-[9px] text-neutral-400 uppercase tracking-widest -mt-2">
+          Design // <span className="text-neutral-700 font-bold">{project.designStudio}</span>
+        </p>
+      )}
     </motion.div>
   );
 };
