@@ -241,6 +241,13 @@ function run() {
               postalCode: "400068",
               addressCountry: "IN",
             },
+            sameAs: ["https://www.instagram.com/neoramastudios"],
+            founder: {
+              "@type": "Person",
+              name: "Sumit Bhandari",
+              jobTitle: "Creative Director & Director of Photography",
+              sameAs: ["https://www.linkedin.com/in/sumit-bhandari-40338384"],
+            },
             ...(logoUrl ? { logo: logoUrl } : {}),
           },
         },

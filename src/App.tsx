@@ -1163,11 +1163,11 @@ export default function App() {
           <a href="#" className="font-mono text-[11px] text-[#727784] hover:text-electric-blue transition-colors">
             Terms of Service
           </a>
-          <a href="#" className="font-mono text-[11px] text-[#727784] hover:text-electric-blue transition-colors inline-flex items-center gap-1">
+          <a href="https://www.instagram.com/neoramastudios" target="_blank" rel="noopener noreferrer" className="font-mono text-[11px] text-[#727784] hover:text-electric-blue transition-colors inline-flex items-center gap-1">
             <Instagram size={12} />
             Instagram
           </a>
-          <a href="#" className="font-mono text-[11px] text-[#727784] hover:text-electric-blue transition-colors inline-flex items-center gap-1">
+          <a href="https://www.linkedin.com/in/sumit-bhandari-40338384" target="_blank" rel="noopener noreferrer" className="font-mono text-[11px] text-[#727784] hover:text-electric-blue transition-colors inline-flex items-center gap-1">
             <Linkedin size={12} />
             LinkedIn
           </a>
