@@ -50,6 +50,8 @@ import sanjEventsThumbPhoto from "./assets/images/sanj_events_campaign_thumb.web
 // @ts-ignore
 import simhayanaKnottedThumbPhoto from "./assets/images/simhayana_knotted_thumb.webp";
 // @ts-ignore
+import architectureThumbPhoto from "./assets/images/arch_campaign_hero.webp";
+// @ts-ignore
 import tatvaVedThumbPhoto from "./assets/images/tatva_ved_thumbnail.webp";
 // @ts-ignore
 import mwbThumbPhoto from "./assets/images/mwb_thumbnail.webp";
@@ -243,6 +245,15 @@ export const PROJECTS: Project[] = [
     imageUrl: simhayanaKnottedThumbPhoto,
     description: "A fashion and lifestyle photography project in collaboration with Mahima Kothari for Simhayana and knotted.in — combining creator-led content with editorial photography across two distinct brand chapters.",
     year: "2025"
+  },
+  {
+    id: "architecture-interiors-photography",
+    title: "Architecture & Interiors | Spaces & Structures Photography",
+    category: "Architecture & Interiors Photography // Multiple Projects",
+    tags: ["Architectural Photography", "Interior Photography", "For Architects & Designers", "Project Photography"],
+    imageUrl: architectureThumbPhoto,
+    description: "Professional architectural and interior photography by Neorama Studios, Mumbai — helping architects and interior designers showcase their built projects. Portfolio spans Aravali Parisar, Goldmine Project Consultants, PACA Office, and Storey Studio.",
+    year: ""
   },
   {
     id: "tatva-veda-branding",

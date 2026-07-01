@@ -232,6 +232,45 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
       "Fashion and lifestyle photography with Mahima Kothari for Simhayana and knotted.in across two distinct brand chapters.",
     ogImageFile: "simhayana_knotted_thumb.jpg",
   },
+  {
+    id: "architecture-interiors-photography",
+    category: "photography",
+    slug: "architecture-interiors",
+    title: "Architectural & Interior Photography for Architects & Designers — Neorama Studios",
+    description:
+      "Professional architectural and interior photography by Neorama Studios, Mumbai — helping architects and interior designers showcase their built projects. Portfolio: Aravali Parisar, Goldmine Project Consultants, PACA Office and Storey Studio.",
+    ogImageFile: "arch_campaign_hero.jpg",
+    stories: [
+      {
+        slug: "aravali-parisar",
+        title: "Aravali Parisar — Architectural & Interior Photography | Neorama Studios",
+        description:
+          "Architectural and interior photography of Aravali Parisar by Neorama Studios, Mumbai — professional project photography for architects and interior designers.",
+        ogImageFile: "arch_aravali_thumb.jpg",
+      },
+      {
+        slug: "goldmine-consultants",
+        title: "Goldmine Project Consultants — Interior & Architectural Photography | Neorama Studios",
+        description:
+          "Interior and architectural photography of the Goldmine Project Consultants workspace by Neorama Studios, Mumbai — professional project photography for architects and interior designers.",
+        ogImageFile: "arch_goldmine_thumb.jpg",
+      },
+      {
+        slug: "paca-office",
+        title: "PACA Office — Interior & Architectural Photography | Neorama Studios",
+        description:
+          "Interior and architectural photography of PACA Office by Neorama Studios, Mumbai — professional workspace and project photography for architects and interior designers.",
+        ogImageFile: "arch_paca_thumb.jpg",
+      },
+      {
+        slug: "storey-studio",
+        title: "Storey Studio — Interior & Architectural Photography | Neorama Studios",
+        description:
+          "Interior and architectural photography of Storey Studio by Neorama Studios, Mumbai — professional project photography for architects and interior designers.",
+        ogImageFile: "arch_storey_thumb.jpg",
+      },
+    ],
+  },
 
   // ── Branding & Design ─────────────────────────────────────────────────────
   {

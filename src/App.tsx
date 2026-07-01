@@ -10,6 +10,7 @@ import AdidasCaseStudy from "./components/AdidasCaseStudy";
 import StayVistaCaseStudy from "./components/StayVistaCaseStudy";
 import SanjEventsCaseStudy from "./components/SanjEventsCaseStudy";
 import SimhayanaKnottedCaseStudy from "./components/SimhayanaKnottedCaseStudy";
+import ArchitectureInteriorsCaseStudy from "./components/ArchitectureInteriorsCaseStudy";
 import TatvaVedaCaseStudy from "./components/TatvaVedaCaseStudy";
 import MWBCaseStudy from "./components/MWBCaseStudy";
 import SocialMediaGallery from "./components/SocialMediaGallery";
@@ -664,9 +665,11 @@ export default function App() {
                         <span className="bg-[#3079D8]/40 text-pure-white px-3 py-1 rounded-full font-mono text-[10px] uppercase tracking-wider backdrop-blur-sm">
                           {proj.category.split(" // ")[0]}
                         </span>
-                        <span className="bg-pure-white/20 text-pure-white px-3 py-1 rounded-full font-mono text-[10px] uppercase tracking-wider backdrop-blur-sm">
-                          {proj.year}
-                        </span>
+                        {proj.year && (
+                          <span className="bg-pure-white/20 text-pure-white px-3 py-1 rounded-full font-mono text-[10px] uppercase tracking-wider backdrop-blur-sm">
+                            {proj.year}
+                          </span>
+                        )}
                       </div>
                       <h2 className="font-display text-2xl md:text-4xl font-extrabold text-pure-white mb-2 leading-none">
                         {proj.title}
@@ -735,9 +738,11 @@ export default function App() {
                         <span className="bg-pure-white/20 text-pure-white px-2.5 py-1 rounded-full font-mono text-[10px] uppercase tracking-wider backdrop-blur-sm text-[9px]">
                           {proj.category.split(" // ")[0]}
                         </span>
-                        <span className="bg-pure-white/10 text-pure-white/90 px-2.5 py-1 rounded-full font-mono text-[10px] uppercase tracking-wider backdrop-blur-sm text-[9px]">
-                          {proj.year}
-                        </span>
+                        {proj.year && (
+                          <span className="bg-pure-white/10 text-pure-white/90 px-2.5 py-1 rounded-full font-mono text-[10px] uppercase tracking-wider backdrop-blur-sm text-[9px]">
+                            {proj.year}
+                          </span>
+                        )}
                       </div>
                       <h2 className="font-display text-lg md:text-xl font-bold text-pure-white">
                         {proj.title}
@@ -1192,6 +1197,18 @@ export default function App() {
           onClose={closeProject}
           initialStory={initialStory}
           onStoryChange={handleStoryChange("sanj-events-photography")}
+          onSelectProjectById={(id) => {
+            const relProj = PROJECTS.find(p => p.id === id);
+            if (relProj) {
+              openProject(relProj);
+            }
+          }}
+        />
+      ) : selectedProject?.id === "architecture-interiors-photography" ? (
+        <ArchitectureInteriorsCaseStudy
+          onClose={closeProject}
+          initialStory={initialStory}
+          onStoryChange={handleStoryChange("architecture-interiors-photography")}
           onSelectProjectById={(id) => {
             const relProj = PROJECTS.find(p => p.id === id);
             if (relProj) {
