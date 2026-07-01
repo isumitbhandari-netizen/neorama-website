@@ -40,8 +40,6 @@ import raniJewelleryPhoto from "./assets/images/rani_pink_jewellery_178090591592
 // @ts-ignore
 import linenPhotographyPhoto from "./assets/images/regenerated_image_1780844748489.webp";
 // @ts-ignore
-import rawPresseryWebp from "./assets/images/regenerated_image_1780922541314.webp";
-// @ts-ignore
 import adidasCampaignPhoto from "./assets/images/regenerated_image_1780924734124.webp";
 // @ts-ignore
 import stayVistaThumbPhoto from "./assets/images/stayvista_campaign_hero.webp";
@@ -51,6 +49,8 @@ import sanjEventsThumbPhoto from "./assets/images/sanj_events_campaign_thumb.web
 import simhayanaKnottedThumbPhoto from "./assets/images/simhayana_knotted_thumb.webp";
 // @ts-ignore
 import architectureThumbPhoto from "./assets/images/arch_campaign_hero.webp";
+// @ts-ignore
+import foodBeverageThumbPhoto from "./assets/images/fb_campaign_hero.webp";
 // @ts-ignore
 import tatvaVedThumbPhoto from "./assets/images/tatva_ved_thumbnail.webp";
 // @ts-ignore
@@ -198,17 +198,6 @@ export const PROJECTS: Project[] = [
     year: "2025"
   },
   {
-    id: "raw-pressery-commercial",
-    title: "Raw Pressery | Commercial Photography",
-    category: "Product & Lifestyle Photography // Raw Pressery",
-    tags: ["Product Photography", "Lifestyle Photography", "Commercial Portfolio", "Creative Campaign"],
-    imageUrl: rawPresseryWebp,
-    description: "A commercial photography project created for Raw Pressery, designed to showcase the brand's vibrant identity, premium product range, and refreshing lifestyle appeal.",
-    clientBrief: "A commercial photography project created for Raw Pressery, designed to showcase the brand's vibrant identity, premium product range, and refreshing lifestyle appeal. Through clean compositions, thoughtful styling, and attention to detail, the imagery highlights the quality, freshness, and visual character of the products while maintaining a modern and engaging aesthetic.\n\nThe photographs were created for digital marketing, social media, brand communication, and promotional campaigns, helping strengthen Raw Pressery's visual presence across multiple platforms.",
-    deliverables: "Product Photography, Lifestyle Photography, Commercial Portfolio, Marketing Assets, Social Media Content, Brand Photography",
-    year: "2025"
-  },
-  {
     id: "adidas-bhavisha-kothari",
     title: "Adidas | Sports & Lifestyle Photography",
     category: "Sports & Lifestyle Photography // Adidas",
@@ -253,6 +242,15 @@ export const PROJECTS: Project[] = [
     tags: ["Architectural Photography", "Interior Photography", "For Architects & Designers", "Project Photography"],
     imageUrl: architectureThumbPhoto,
     description: "Professional architectural and interior photography by Neorama Studios, Mumbai — helping architects and interior designers showcase their built projects. Portfolio spans Aravali Parisar, Goldmine Project Consultants, PACA Office, and Storey Studio.",
+    year: ""
+  },
+  {
+    id: "food-beverage-photography",
+    title: "Food & Beverage | Restaurant & Café Photography",
+    category: "Food & Beverage Photography // Multiple Brands",
+    tags: ["Food Photography", "Beverage Photography", "For Restaurants & Cafés", "Menu & Social Content"],
+    imageUrl: foodBeverageThumbPhoto,
+    description: "A food and beverage photography portfolio for nine brands — Boom Burger, Costa Coffee, French Affair, Irish House, Mad Over Donuts, Mushmerry, Pizza Express, Raw Pressery and Sakheti — spanning restaurant, café, dessert, chocolate and packaged-food photography for menus, delivery, e-commerce and social.",
     year: ""
   },
   {

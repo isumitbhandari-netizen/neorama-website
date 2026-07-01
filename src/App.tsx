@@ -5,12 +5,12 @@ import { projectPath, categoryPath, parseRoute, type PortfolioFilter } from "./p
 import { type SocialReelCategory } from "./socialReels";
 import ProjectDetail from "./components/ProjectDetail";
 import PhotographyCaseStudy from "./components/PhotographyCaseStudy";
-import RawPresseryCaseStudy from "./components/RawPresseryCaseStudy";
 import AdidasCaseStudy from "./components/AdidasCaseStudy";
 import StayVistaCaseStudy from "./components/StayVistaCaseStudy";
 import SanjEventsCaseStudy from "./components/SanjEventsCaseStudy";
 import SimhayanaKnottedCaseStudy from "./components/SimhayanaKnottedCaseStudy";
 import ArchitectureInteriorsCaseStudy from "./components/ArchitectureInteriorsCaseStudy";
+import FoodBeverageCaseStudy from "./components/FoodBeverageCaseStudy";
 import TatvaVedaCaseStudy from "./components/TatvaVedaCaseStudy";
 import MWBCaseStudy from "./components/MWBCaseStudy";
 import SocialMediaGallery from "./components/SocialMediaGallery";
@@ -1196,16 +1196,6 @@ export default function App() {
             }
           }}
         />
-      ) : selectedProject?.id === "raw-pressery-commercial" ? (
-        <RawPresseryCaseStudy
-          onClose={closeProject}
-          onSelectProjectById={(id) => {
-            const relProj = PROJECTS.find(p => p.id === id);
-            if (relProj) {
-              openProject(relProj);
-            }
-          }}
-        />
       ) : selectedProject?.id === "adidas-bhavisha-kothari" ? (
         <AdidasCaseStudy
           onClose={closeProject}
@@ -1246,6 +1236,19 @@ export default function App() {
           onRequestContact={requestContact}
           initialStory={initialStory}
           onStoryChange={handleStoryChange("architecture-interiors-photography")}
+          onSelectProjectById={(id) => {
+            const relProj = PROJECTS.find(p => p.id === id);
+            if (relProj) {
+              openProject(relProj);
+            }
+          }}
+        />
+      ) : selectedProject?.id === "food-beverage-photography" ? (
+        <FoodBeverageCaseStudy
+          onClose={closeProject}
+          onRequestContact={requestContact}
+          initialStory={initialStory}
+          onStoryChange={handleStoryChange("food-beverage-photography")}
           onSelectProjectById={(id) => {
             const relProj = PROJECTS.find(p => p.id === id);
             if (relProj) {
