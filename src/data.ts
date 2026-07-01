@@ -247,7 +247,7 @@ export const PROJECTS: Project[] = [
   {
     id: "food-beverage-photography",
     title: "Food & Beverage | Restaurant & Café Photography",
-    category: "Food & Beverage Photography // Multiple Brands",
+    category: "Food & Beverage Photography // Multiple Clients",
     tags: ["Food Photography", "Beverage Photography", "For Restaurants & Cafés", "Menu & Social Content"],
     imageUrl: foodBeverageThumbPhoto,
     description: "A food and beverage photography portfolio for nine brands — Boom Burger, Costa Coffee, French Affair, Irish House, Mad Over Donuts, Mushmerry, Pizza Express, Raw Pressery and Sakheti — spanning restaurant, café, dessert, chocolate and packaged-food photography for menus, delivery, e-commerce and social.",
