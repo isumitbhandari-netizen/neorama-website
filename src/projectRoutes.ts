@@ -28,6 +28,10 @@ export interface StoryRoute {
   title: string; // share-card / <title>
   description: string; // share-card / meta description
   ogImageFile: string; // filename under src/assets/images
+  // Basename prefix (e.g. "arch_aravali") of this story's gallery WebP images in
+  // src/assets/images. When set, prerender emits an image sitemap entry listing
+  // every built (hashed) photo under this story's URL for image-search indexing.
+  imagePrefix?: string;
 }
 
 export interface ProjectRoute {
@@ -247,6 +251,7 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
         description:
           "Architectural and interior photography of Aravali Parisar by Neorama Studios, Mumbai — professional project photography for architects and interior designers.",
         ogImageFile: "arch_aravali_thumb.jpg",
+        imagePrefix: "arch_aravali",
       },
       {
         slug: "goldmine-consultants",
@@ -254,6 +259,7 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
         description:
           "Interior and architectural photography of the Goldmine Project Consultants workspace by Neorama Studios, Mumbai — professional project photography for architects and interior designers.",
         ogImageFile: "arch_goldmine_thumb.jpg",
+        imagePrefix: "arch_goldmine",
       },
       {
         slug: "paca-office",
@@ -261,6 +267,7 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
         description:
           "Interior and architectural photography of PACA Office by Neorama Studios, Mumbai — professional workspace and project photography for architects and interior designers.",
         ogImageFile: "arch_paca_thumb.jpg",
+        imagePrefix: "arch_paca",
       },
       {
         slug: "storey-studio",
@@ -268,6 +275,7 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
         description:
           "Interior and architectural photography of Storey Studio by Neorama Studios, Mumbai — professional project photography for architects and interior designers.",
         ogImageFile: "arch_storey_thumb.jpg",
+        imagePrefix: "arch_storey",
       },
     ],
   },

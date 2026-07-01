@@ -232,7 +232,7 @@ function run() {
             name: "Neorama Studios",
             url: `${BASE_URL}/`,
             telephone: "+91-9713102046",
-            email: "neoramastudios@gmail.com",
+            email: "sumit@neoramastudios.com",
             address: {
               "@type": "PostalAddress",
               streetAddress: "906, 9th Floor, Dev Plaza, S V Road, Andheri West",
@@ -288,7 +288,22 @@ function run() {
 
   // Portfolio project pages (shareable deep links) + nested story pages.
   // Each is a static, crawlable HTML shell that boots the interactive SPA.
-  const projectUrls: { loc: string; priority: string }[] = [];
+  const projectUrls: { loc: string; priority: string; images?: string[] }[] = [];
+
+  // Resolve a story's gallery photos to their built (hashed) URLs under
+  // dist/assets, e.g. "arch_aravali" → [".../assets/arch_aravali_01-XXXX.webp", …],
+  // numerically ordered. Used to emit image sitemap entries.
+  const assetsDir = path.join(DIST, "assets");
+  const listGalleryImageUrls = (prefix: string): string[] => {
+    let files: string[] = [];
+    try { files = fs.readdirSync(assetsDir); } catch { return []; }
+    const re = new RegExp(`^${prefix}_(\\d+)-[^.]+\\.webp$`);
+    return files
+      .map((f) => { const m = f.match(re); return m ? { f, n: parseInt(m[1], 10) } : null; })
+      .filter((x): x is { f: string; n: number } => x !== null)
+      .sort((a, b) => a.n - b.n)
+      .map((x) => `${BASE_URL}/assets/${x.f}`);
+  };
 
   for (const project of PROJECT_ROUTES) {
     const basePath = `/projects/${project.category}/${project.slug}`;
@@ -380,8 +395,13 @@ function run() {
       const storyOutDir = path.join(DIST, storyPath);
       fs.mkdirSync(storyOutDir, { recursive: true });
       fs.writeFileSync(path.join(storyOutDir, "index.html"), storyHtml, "utf-8");
-      projectUrls.push({ loc: storyCanonical, priority: "0.7" });
-      console.log(`  ✓ ${storyPath}/`);
+      const storyImages = story.imagePrefix ? listGalleryImageUrls(story.imagePrefix) : [];
+      projectUrls.push({
+        loc: storyCanonical,
+        priority: "0.7",
+        images: storyImages.length ? storyImages : undefined,
+      });
+      console.log(`  ✓ ${storyPath}/${storyImages.length ? ` (+${storyImages.length} images)` : ""}`);
     }
   }
 
@@ -500,11 +520,13 @@ function run() {
     ...projectUrls,
   ];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${urls
   .map(
     (u: any) =>
-      `  <url><loc>${u.loc}</loc>${u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : ""}<priority>${u.priority}</priority></url>`
+      `  <url><loc>${u.loc}</loc>${u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : ""}<priority>${u.priority}</priority>${(u.images ?? [])
+        .map((img: string) => `<image:image><image:loc>${img}</image:loc></image:image>`)
+        .join("")}</url>`
   )
   .join("\n")}
 </urlset>`;

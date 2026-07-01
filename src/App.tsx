@@ -204,6 +204,17 @@ export default function App() {
     }
   };
 
+  // Close the active case-study overlay and jump to the contact section
+  // (used by in-overlay CTAs, e.g. "get your project photographed").
+  const requestContact = () => {
+    setSelectedProject(null);
+    setInitialStory(null);
+    setCurrentPage("contact");
+    window.history.pushState({}, "", "/#contact");
+    window.location.hash = "contact";
+    setTimeout(() => scrollToSection("contact"), 60);
+  };
+
   // Sync the URL when navigating between a project and its nested stories.
   const handleStoryChange = (projId: string) => (storySlug: string | null) => {
     setInitialStory(storySlug);
@@ -996,7 +1007,7 @@ export default function App() {
                   </p>
                   <p className="flex items-center gap-2">
                     <Mail size={14} className="text-[#3079D8] shrink-0" />
-                    <span>Inquiries: <a href="mailto:neoramastudios@gmail.com" className="hover:text-[#3079D8] underline transition-colors">neoramastudios@gmail.com</a></span>
+                    <span>Inquiries: <a href="mailto:sumit@neoramastudios.com" className="hover:text-[#3079D8] underline transition-colors">sumit@neoramastudios.com</a></span>
                   </p>
                   <p className="flex items-center gap-2">
                     <Clock size={14} className="text-[#3079D8] shrink-0" />
@@ -1207,6 +1218,7 @@ export default function App() {
       ) : selectedProject?.id === "architecture-interiors-photography" ? (
         <ArchitectureInteriorsCaseStudy
           onClose={closeProject}
+          onRequestContact={requestContact}
           initialStory={initialStory}
           onStoryChange={handleStoryChange("architecture-interiors-photography")}
           onSelectProjectById={(id) => {

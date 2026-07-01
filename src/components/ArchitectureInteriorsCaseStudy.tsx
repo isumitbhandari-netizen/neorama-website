@@ -289,13 +289,15 @@ const PROJECTS: ArchProject[] = [
 interface Props {
   onClose: () => void;
   onSelectProjectById: (id: string) => void;
+  // Close the overlay and jump to the site's contact section.
+  onRequestContact?: () => void;
   // Project slug to open on mount / when the URL changes (null = collection landing).
   initialStory?: string | null;
   // Notify the parent so it can keep the shareable URL in sync.
   onStoryChange?: (storySlug: string | null) => void;
 }
 
-export default function ArchitectureInteriorsCaseStudy({ onClose, initialStory, onStoryChange }: Props) {
+export default function ArchitectureInteriorsCaseStudy({ onClose, onRequestContact, initialStory, onStoryChange }: Props) {
   const [activeProject, setActiveProject] = useState<string | null>(initialStory ?? null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
@@ -516,6 +518,30 @@ export default function ArchitectureInteriorsCaseStudy({ onClose, initialStory, 
               </div>
             </section>
 
+            {/* SECTION 4 — CTA: get your project photographed */}
+            <section className="bg-neutral-950 text-white py-24 md:py-32 px-6 border-t border-neutral-900/60">
+              <div className="max-w-3xl mx-auto text-center space-y-6">
+                <span className="font-mono text-[10px] text-[#3079D8] uppercase tracking-[0.3em] font-black block">
+                  For Architects &amp; Interior Designers
+                </span>
+                <h3 className="font-display text-3xl md:text-5xl font-black uppercase tracking-tight leading-none">
+                  Get Your Project Photographed
+                </h3>
+                <p className="font-sans text-sm md:text-base text-neutral-400 max-w-xl mx-auto leading-relaxed">
+                  We help architects and interior designers present their built work with professional architectural and interior photography. Tell us about your space and let&apos;s plan the shoot.
+                </p>
+                <div className="pt-4">
+                  <button
+                    onClick={() => onRequestContact?.()}
+                    className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-neutral-950 font-mono text-[11px] uppercase font-black tracking-widest hover:bg-[#3079D8] hover:text-white transition-all duration-300 hover:scale-[1.03] cursor-pointer"
+                  >
+                    Book a Shoot
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </div>
+            </section>
+
             <footer className="bg-neutral-950 py-16 text-center text-neutral-600 border-t border-neutral-900/60 font-mono text-[10px] tracking-widest uppercase">
               <p>© 2025 NEORAMA STUDIO. ALL ARCHITECTURE PHOTOGRAPHY PROOFS PROTECTED BY NDA.</p>
             </footer>
@@ -645,6 +671,30 @@ export default function ArchitectureInteriorsCaseStudy({ onClose, initialStory, 
                     </span>
                   </motion.div>
                 ))}
+              </div>
+            </section>
+
+            {/* CTA — book a shoot (project page) */}
+            <section className="bg-white py-16 md:py-20 px-6 border-t border-neutral-100">
+              <div className="max-w-3xl mx-auto text-center space-y-5">
+                <span className="font-mono text-[10px] text-neutral-400 uppercase tracking-[0.3em] font-black block">
+                  For Architects &amp; Interior Designers
+                </span>
+                <h3 className="font-display text-2xl md:text-4xl font-black uppercase tracking-tight text-neutral-900 leading-none">
+                  Have a Project to Photograph?
+                </h3>
+                <p className="font-sans text-sm text-neutral-500 max-w-lg mx-auto leading-relaxed">
+                  Professional architectural &amp; interior photography for your built work. Tell us about your space and let&apos;s plan the shoot.
+                </p>
+                <div className="pt-2">
+                  <button
+                    onClick={() => onRequestContact?.()}
+                    className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-neutral-950 text-white font-mono text-[11px] uppercase font-black tracking-widest hover:bg-[#3079D8] transition-all duration-300 hover:scale-[1.03] cursor-pointer"
+                  >
+                    Book a Shoot
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
               </div>
             </section>
 
