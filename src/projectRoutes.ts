@@ -275,16 +275,16 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
     id: "food-beverage-photography",
     category: "photography",
     slug: "food-beverage",
-    title: "Food & Beverage Photography for Restaurants & Cafés — Neorama Studios",
+    title: "Food & Beverage Photography for Restaurants, Cafés, Bars & Food Brands — Neorama Studios",
     description:
-      "Professional food and beverage photography by Neorama Studios, Mumbai — menu, product and lifestyle shoots for restaurants, cafés and F&B brands. Portfolio: Boom Burger, Costa Coffee, French Affair, Irish House, MOD, Mushmerry, Pizza Express, Raw Pressery and Sakheti.",
+      "Professional food and beverage photography by Neorama Studios, Mumbai — menu, product and social shoots for restaurants, cafés, bars and pubs, bakeries, patisseries and dessert shops, and packaged food & beverage brands. Portfolio: Boom Burger, Costa Coffee, French Affair, Irish House, Mad Over Donuts, Mushmerry, Pizza Express, Raw Pressery and Sakheti.",
     ogImageFile: "fb_campaign_hero.jpg",
     stories: [
       {
         slug: "boom-burger",
         title: "Boom Burger — Food & Brand Photography | Neorama Studios",
         description:
-          "Menu, packaging and lifestyle photography for Boom Burger by Neorama Studios, Mumbai — food photography built for delivery platforms, social and in-store.",
+          "Menu, packaging and lifestyle photography for Boom Burger by Neorama Studios, Mumbai — restaurant, burger-joint and cloud-kitchen food photography built for delivery platforms, social and in-store.",
         ogImageFile: "fb_boomburger_thumb.jpg",
         imagePrefix: "fb_boomburger",
       },
@@ -292,7 +292,7 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
         slug: "costa-coffee",
         title: "Costa Coffee — Food & Beverage Photography | Neorama Studios",
         description:
-          "Coffee, beverage and café-food photography for Costa Coffee by Neorama Studios, Mumbai — shot for menus, promotions and social.",
+          "Coffee, beverage and café-food photography for Costa Coffee by Neorama Studios, Mumbai — for cafés and coffee shops, shot for menus, promotions and social.",
         ogImageFile: "fb_costa_thumb.jpg",
         imagePrefix: "fb_costa",
       },
@@ -300,7 +300,7 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
         slug: "french-affair",
         title: "French Affair — Patisserie & Dessert Photography | Neorama Studios",
         description:
-          "Dark, editorial patisserie and dessert photography for French Affair (TFA) by Neorama Studios, Mumbai — cheesecakes, choux, tarts and mirror-glaze cakes for menus and social.",
+          "Dark, editorial patisserie and dessert photography for French Affair (TFA) by Neorama Studios, Mumbai — for bakeries, patisseries and dessert shops; cheesecakes, choux, tarts and mirror-glaze cakes for menus and social.",
         ogImageFile: "fb_frenchaffair_thumb.jpg",
         imagePrefix: "fb_frenchaffair",
       },
@@ -308,7 +308,7 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
         slug: "irish-house",
         title: "Irish House — Gastropub & Bar Photography | Neorama Studios",
         description:
-          "Food, drinks and bar photography for Irish House by Neorama Studios, Mumbai — gastropub imagery for menus, delivery and social.",
+          "Food, drinks and bar photography for Irish House by Neorama Studios, Mumbai — for bars, pubs and gastropubs; menu, cocktail and delivery imagery for social.",
         ogImageFile: "fb_irishhouse_thumb.jpg",
         imagePrefix: "fb_irishhouse",
       },
@@ -316,7 +316,7 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
         slug: "mod",
         title: "Mad Over Donuts (MOD) — Donut Photography | Neorama Studios",
         description:
-          "Playful donut photography for Mad Over Donuts (MOD) by Neorama Studios, Mumbai — colour-pop, levitation and festive frames for delivery apps, social and menus.",
+          "Playful donut photography for Mad Over Donuts (MOD) by Neorama Studios, Mumbai — for dessert shops and donut brands; colour-pop, levitation and festive frames for delivery apps, social and menus.",
         ogImageFile: "fb_mod_thumb.jpg",
         imagePrefix: "fb_mod",
       },
@@ -324,7 +324,7 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
         slug: "mushmerry",
         title: "Mushmerry — Chocolate & Gifting Photography | Neorama Studios",
         description:
-          "Chocolate, packaging and corporate-gifting photography for Mushmerry by Neorama Studios, Mumbai — artisan bonbons, bars and custom gift boxes for e-commerce and social.",
+          "Chocolate, packaging and corporate-gifting photography for Mushmerry by Neorama Studios, Mumbai — for chocolate brands, bakeries and gifting businesses; artisan bonbons, bars and custom gift boxes for e-commerce and social.",
         ogImageFile: "fb_mushmerry_thumb.jpg",
         imagePrefix: "fb_mushmerry",
       },
@@ -332,7 +332,7 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
         slug: "pizza-express",
         title: "Pizza Express — Pizzeria & Italian Photography | Neorama Studios",
         description:
-          "Pizza and Italian-kitchen photography for Pizza Express by Neorama Studios, Mumbai — shot for menus, delivery platforms and social.",
+          "Pizza and Italian-kitchen photography for Pizza Express by Neorama Studios, Mumbai — for restaurants and pizzerias, shot for menus, delivery platforms and social.",
         ogImageFile: "fb_pizzaexpress_thumb.jpg",
         imagePrefix: "fb_pizzaexpress",
       },
@@ -340,7 +340,7 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
         slug: "raw-pressery",
         title: "Raw Pressery — Cold-Pressed Juice & Beverage Photography | Neorama Studios",
         description:
-          "Cold-pressed juice and beverage photography for Raw Pressery by Neorama Studios, Mumbai — coconut water, juices, iced teas and more across product, pour and lifestyle frames for e-commerce and social.",
+          "Cold-pressed juice and beverage photography for Raw Pressery by Neorama Studios, Mumbai — for packaged food and beverage brands; coconut water, juices, iced teas and more across product, pour and lifestyle frames for e-commerce and social.",
         ogImageFile: "fb_rawpressery_thumb.jpg",
         imagePrefix: "fb_rawpressery",
       },
@@ -348,7 +348,7 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
         slug: "sakheti",
         title: "Sakheti Premium Atta — Product & Packaging Photography | Neorama Studios",
         description:
-          "Product and packaging photography for Sakheti Premium Atta by Neorama Studios, Mumbai — warm, rustic wheat-flour imagery for e-commerce, retail and brand marketing.",
+          "Product and packaging photography for Sakheti Premium Atta by Neorama Studios, Mumbai — for packaged food brands and FMCG; warm, rustic wheat-flour imagery for e-commerce, retail and brand marketing.",
         ogImageFile: "fb_sakheti_thumb.jpg",
         imagePrefix: "fb_sakheti",
       },
