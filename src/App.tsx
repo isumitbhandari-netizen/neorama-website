@@ -31,9 +31,8 @@ import {
   Check, 
   Menu, 
   X, 
-  Globe, 
+  Globe,
   ChevronRight,
-  ThumbsUp,
   Instagram,
   Linkedin,
   Search,
@@ -295,6 +294,8 @@ export default function App() {
   const [contactEmail, setContactEmail] = useState("");
   const [contactMessage, setContactMessage] = useState("");
   const [contactSuccess, setContactSuccess] = useState(false);
+  const [contactSending, setContactSending] = useState(false);
+  const [contactError, setContactError] = useState("");
 
   // Hero Scroll Navigation Effect
   const [scrolled, setScrolled] = useState(false);
@@ -324,19 +325,36 @@ export default function App() {
     return true;
   });
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!contactName || !contactEmail || !contactMessage) {
-      alert("Please provide all required entries to dispatch contact request.");
+      setContactError("Please fill in your name, email and message.");
       return;
     }
-    setContactSuccess(true);
-    setTimeout(() => {
-      // Clear values safely after some animation
+    setContactError("");
+    setContactSending(true);
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/sumit@neoramastudios.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: contactName,
+          email: contactEmail,
+          message: contactMessage,
+          _subject: `New enquiry from ${contactName} — neoramastudios.com`,
+          _template: "table",
+        }),
+      });
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
+      setContactSuccess(true);
       setContactName("");
       setContactEmail("");
       setContactMessage("");
-    }, 4000);
+    } catch (err) {
+      setContactError("Something went wrong sending your message. Please email us directly at sumit@neoramastudios.com.");
+    } finally {
+      setContactSending(false);
+    }
   };
 
   return (
@@ -986,10 +1004,10 @@ export default function App() {
                   LET'S TALK
                 </span>
                 <h2 className="font-display text-3xl md:text-5xl font-black text-on-surface tracking-tight leading-tight">
-                  Have a concept in active motion?
+                  Let's work on your project
                 </h2>
                 <p className="font-sans text-sm md:text-base text-on-surface-variant leading-relaxed">
-                  Whether you're starting from a blank page or seeking deep editorial cinema direction, we bring focus and style to your goals. Let us code something custom.
+                  Tell us a little about your space, brand, or campaign and what you'd like photographed. We'll get back to you with availability, our approach, and a quote.
                 </p>
               </div>
 
@@ -1003,21 +1021,21 @@ export default function App() {
                   </p>
                   <p className="flex items-center gap-2">
                     <Phone size={14} className="text-[#3079D8] shrink-0" />
-                    <span>Contact: +91-9713102046</span>
+                    <span>Phone: <a href="tel:+919713102046" className="hover:text-[#3079D8] transition-colors">+91 97131 02046</a></span>
                   </p>
                   <p className="flex items-center gap-2">
                     <Mail size={14} className="text-[#3079D8] shrink-0" />
-                    <span>Inquiries: <a href="mailto:sumit@neoramastudios.com" className="hover:text-[#3079D8] underline transition-colors">sumit@neoramastudios.com</a></span>
+                    <span>Email: <a href="mailto:sumit@neoramastudios.com" className="hover:text-[#3079D8] underline transition-colors">sumit@neoramastudios.com</a></span>
                   </p>
                   <p className="flex items-center gap-2">
                     <Clock size={14} className="text-[#3079D8] shrink-0" />
-                    <span>Active Hours: 09:30 - 18:30 (IST timezone)</span>
+                    <span>Hours: Mon–Sat, 09:30 – 18:30 IST</span>
                   </p>
                 </div>
               </div>
 
               <p className="text-xs text-[#727784] font-sans">
-                * By submitting this request, you agree to connect with our art coordinator. We store all creative ideas securely under strict NDA practices.
+                We usually reply within one business day. Your details are kept private and never shared.
               </p>
             </div>
 
@@ -1026,68 +1044,75 @@ export default function App() {
               {contactSuccess ? (
                 <div className="h-full flex flex-col items-center justify-center text-center space-y-4 py-12 animate-fadeInUp">
                   <div className="w-12 h-12 rounded-full bg-blue-50 text-[#3079D8] flex items-center justify-center border border-blue-100">
-                    <ThumbsUp size={22} className="text-[#3079D8]" />
+                    <Check size={22} strokeWidth={2.5} className="text-[#3079D8]" />
                   </div>
                   <div>
-                    <h4 className="font-display font-extrabold text-lg text-on-surface">Message Dispatch Completed</h4>
-                    <p className="text-xs text-[#414752] mt-1.5 font-sans leading-relaxed">
-                      Our creative studio directors will reach back via <i>{contactEmail}</i> shortly with dynamic moodboard templates.
+                    <h4 className="font-display font-extrabold text-lg text-on-surface">Message sent</h4>
+                    <p className="text-sm text-[#414752] mt-1.5 font-sans leading-relaxed max-w-xs">
+                      Thanks for reaching out. We've received your message and will get back to you shortly.
                     </p>
                   </div>
-                  <div className="text-[10px] font-mono text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100 flex items-center gap-1">
-                    <Check size={11} strokeWidth={3} />
-                    SECURE TRANSMISSION SECURED
-                  </div>
+                  <button
+                    onClick={() => setContactSuccess(false)}
+                    className="text-[11px] font-mono uppercase tracking-widest text-[#3079D8] hover:underline cursor-pointer"
+                  >
+                    Send another message
+                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleContactSubmit} className="space-y-5">
                   <h3 className="font-display font-extrabold text-lg text-on-surface border-b border-soft-gray pb-3">
-                    Direct Inbound Composer
+                    Send us a message
                   </h3>
-                  
-                  <div className="space-y-1">
-                    <label className="font-mono text-[10px] uppercase tracking-wider text-on-surface block">Your Full Identity</label>
+
+                  <div className="space-y-1.5">
+                    <label className="font-sans text-xs font-semibold text-on-surface block">Name</label>
                     <input
                       type="text"
                       required
                       value={contactName}
                       onChange={(e) => setContactName(e.target.value)}
-                      placeholder="e.g. Director of Brand Marketing"
-                      className="w-full px-4 py-3 bg-background-gray/70 border border-soft-gray rounded-lg focus:outline-none focus:border-[#3079D8] font-sans text-xs text-on-surface placeholder:text-[#727784]"
+                      placeholder="Your name"
+                      className="w-full px-4 py-3 bg-background-gray/70 border border-soft-gray rounded-lg focus:outline-none focus:border-[#3079D8] font-sans text-sm text-on-surface placeholder:text-[#727784]"
                     />
                   </div>
 
-                  <div className="space-y-1">
-                    <label className="font-mono text-[10px] uppercase tracking-wider text-on-surface block">Reply Address (Email)</label>
+                  <div className="space-y-1.5">
+                    <label className="font-sans text-xs font-semibold text-on-surface block">Email</label>
                     <input
                       type="email"
                       required
                       value={contactEmail}
                       onChange={(e) => setContactEmail(e.target.value)}
-                      placeholder="e.g. design-lead@capsule.co"
-                      className="w-full px-4 py-3 bg-background-gray/70 border border-soft-gray rounded-lg focus:outline-none focus:border-[#3079D8] font-sans text-xs text-on-surface placeholder:text-[#727784]"
+                      placeholder="you@example.com"
+                      className="w-full px-4 py-3 bg-background-gray/70 border border-soft-gray rounded-lg focus:outline-none focus:border-[#3079D8] font-sans text-sm text-on-surface placeholder:text-[#727784]"
                     />
                   </div>
 
-                  <div className="space-y-1">
-                    <label className="font-mono text-[10px] uppercase tracking-wider text-on-surface block">Conceptual Brief Summary</label>
+                  <div className="space-y-1.5">
+                    <label className="font-sans text-xs font-semibold text-on-surface block">Message</label>
                     <textarea
                       required
                       rows={4}
                       value={contactMessage}
                       onChange={(e) => setContactMessage(e.target.value)}
-                      placeholder="Share initial objectives, scope limits, project budget limits or scheduling milestones..."
-                      className="w-full px-4 py-3 bg-background-gray/70 border border-soft-gray rounded-lg focus:outline-none focus:border-[#3079D8] font-sans text-xs text-on-surface placeholder:text-[#727784] resize-none"
+                      placeholder="Tell us about your project — space, location, timeline, and what you'd like photographed."
+                      className="w-full px-4 py-3 bg-background-gray/70 border border-soft-gray rounded-lg focus:outline-none focus:border-[#3079D8] font-sans text-sm text-on-surface placeholder:text-[#727784] resize-none"
                     />
                   </div>
 
+                  {contactError && (
+                    <p className="text-xs text-red-600 font-sans leading-relaxed">{contactError}</p>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full py-3.5 bg-[#3079D8] text-pure-white hover:bg-opacity-90 text-xs font-mono uppercase tracking-widest rounded-lg transition-all shadow flex items-center justify-center gap-1.5 cursor-pointer focus:ring-2 focus:ring-[#3079D8]"
+                    disabled={contactSending}
+                    className="w-full py-3.5 bg-[#3079D8] text-pure-white hover:bg-opacity-90 text-xs font-sans font-semibold tracking-wide rounded-lg transition-all shadow flex items-center justify-center gap-2 cursor-pointer focus:ring-2 focus:ring-[#3079D8] disabled:opacity-60 disabled:cursor-not-allowed"
                     id="direct-contact-submit"
                   >
-                    <span>Dispatch Letter</span>
-                    <Send size={12} />
+                    <span>{contactSending ? "Sending…" : "Send message"}</span>
+                    {!contactSending && <Send size={13} />}
                   </button>
                 </form>
               )}
