@@ -458,6 +458,33 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
       },
     ],
   },
+  {
+    id: "golden-mirror-ai",
+    category: "ai-production",
+    slug: "golden-mirror",
+    title: "Golden Mirror | AI-Produced Luxury Fashion Brand — Neorama Studios",
+    description:
+      "Golden Mirror — a luxury fashion brand produced end-to-end with AI by Neorama Studios: a launch campaign film and a full editorial set for an indigo & rust floral-jacquard co-ord.",
+    ogImageFile: "gm_thumbnail.jpg",
+    faqs: [
+      {
+        q: "What is Golden Mirror?",
+        a: "Golden Mirror is a luxury fashion brand created by Neorama Studios and produced entirely with AI. Its launch campaign pairs a 20-second vertical film with a full editorial photography set for an indigo and rust floral-jacquard co-ord, shot against palace-courtyard and coastal locations.",
+      },
+      {
+        q: "Do you produce AI fashion films and campaigns?",
+        a: "Yes. Neorama Studios produces AI-native fashion campaigns — generative editorial and product photography plus AI-produced campaign films — holding a consistent model, garment and print across every frame, without a traditional shoot.",
+      },
+      {
+        q: "Was Golden Mirror shot with a real model and garment?",
+        a: "No. The model, garment, locations, editorial frames and campaign film were all generated and art-directed with AI. This lets brands explore a complete campaign look quickly and affordably before committing to production.",
+      },
+      {
+        q: "Can you produce an AI fashion campaign for my brand?",
+        a: "Yes. We produce complete campaigns with AI — editorial photography and a launch-ready fashion film. Share your brief through the contact form on neoramastudios.com or DM us on Instagram (@neoramastudios) and we'll come back with an approach and a quote.",
+      },
+    ],
+  },
 ];
 
 // ── Category landing pages (the portfolio filter "sections") ────────────────

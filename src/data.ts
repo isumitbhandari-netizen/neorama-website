@@ -56,7 +56,9 @@ import tatvaVedThumbPhoto from "./assets/images/tatva_ved_thumbnail.webp";
 // @ts-ignore
 import mwbThumbPhoto from "./assets/images/mwb_thumbnail.webp";
 // @ts-ignore
-import khanSahebThumbPhoto from "./assets/images/ks_hero.webp";
+import khanSahebThumbPhoto from "./assets/images/ks_content_17.webp";
+// @ts-ignore
+import goldenMirrorThumbPhoto from "./assets/images/gm_09.webp";
 
 export const PROJECTS: Project[] = [
   {
@@ -286,6 +288,18 @@ export const PROJECTS: Project[] = [
     description: "A complete luxury menswear brand — identity, editorial photography and a full digital-flagship e-commerce experience — conceived and produced end-to-end with AI at Neorama Studios.",
     clientBrief: "Khan Saheb is a concept house for bespoke Indian and contemporary menswear, imagined end-to-end using generative AI. From the brand voice and art direction to the editorial and product photography and a complete digital-flagship e-commerce design, every asset was produced without a single traditional shoot or stock image.\n\nThe project spans three pillars — Content, Design and Development. The content pillar covers AI-generated brand, editorial and product photography across wedding, business and bespoke lines. The design pillar delivers a full UX/UI system: home, collections, the bespoke journey, a build-your-suit configurator, checkout and a private client dashboard. The development pillar turns that design into a buildable, production-ready web experience — a demonstration of what AI-native production makes possible for a modern brand.",
     deliverables: "AI Brand Identity, Generative Editorial & Product Photography, UX / UI Design, Design System, AI-Assisted Web Development",
+    year: "2026"
+  },
+  {
+    id: "golden-mirror-ai",
+    title: "Golden Mirror | AI-Produced Luxury Fashion Brand",
+    category: "AI Production // Golden Mirror",
+    tags: ["AI Production", "AI Fashion Film", "Generative Photography", "Art Direction"],
+    imageUrl: goldenMirrorThumbPhoto,
+    description: "A luxury fashion brand — its launch campaign is a 20-second vertical film and a full editorial set — built around an indigo & rust floral-jacquard co-ord, produced end-to-end with AI at Neorama Studios.",
+    clientBrief: "Golden Mirror is a luxury fashion brand built around an indigo and rust floral-jacquard co-ord — a blazer and wide-leg trouser — set against carved palace courtyards and a coastal counterpoint, with the peacock woven through as its signature motif.\n\nThe model, the location, the garment, the launch film and every editorial frame were generated and art-directed with AI, holding a single consistent character and print across the whole set. The brand's launch campaign pairs a 20-second vertical film with an editorial set of environmental and macro fashion frames — an entire brand world built without a traditional shoot.",
+    deliverables: "AI Fashion Film, Generative Editorial Photography, Art Direction, Character & Print Consistency, Macro Detail, Editorial Retouch",
+    vimeoIds: ["1209790393"],
     year: "2026"
   }
 ];

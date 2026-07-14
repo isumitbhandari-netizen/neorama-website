@@ -6,7 +6,7 @@ import { PROJECT_ROUTES } from "../projectRoutes";
 const FAQS = PROJECT_ROUTES.find((p) => p.id === "khan-saheb-ai")?.faqs ?? [];
 
 // @ts-ignore
-import ksHero from "../assets/images/ks_hero.webp";
+import ksHero from "../assets/images/ks_content_17.webp";
 // @ts-ignore
 import ksThumb from "../assets/images/ks_thumb.webp";
 

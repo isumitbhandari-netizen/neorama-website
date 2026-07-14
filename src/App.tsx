@@ -14,6 +14,7 @@ import FoodBeverageCaseStudy from "./components/FoodBeverageCaseStudy";
 import TatvaVedaCaseStudy from "./components/TatvaVedaCaseStudy";
 import MWBCaseStudy from "./components/MWBCaseStudy";
 import KhanSahebCaseStudy from "./components/KhanSahebCaseStudy";
+import GoldenMirrorCaseStudy from "./components/GoldenMirrorCaseStudy";
 import SocialMediaGallery from "./components/SocialMediaGallery";
 import ServicesShowcase from "./components/ServicesShowcase";
 // @ts-ignore
@@ -1288,6 +1289,11 @@ export default function App() {
           onRequestContact={requestContact}
           initialStory={initialStory}
           onStoryChange={handleStoryChange("khan-saheb-ai")}
+        />
+      ) : selectedProject?.id === "golden-mirror-ai" ? (
+        <GoldenMirrorCaseStudy
+          onClose={closeProject}
+          onRequestContact={requestContact}
         />
       ) : (
         <ProjectDetail
