@@ -13,6 +13,7 @@ import ArchitectureInteriorsCaseStudy from "./components/ArchitectureInteriorsCa
 import FoodBeverageCaseStudy from "./components/FoodBeverageCaseStudy";
 import TatvaVedaCaseStudy from "./components/TatvaVedaCaseStudy";
 import MWBCaseStudy from "./components/MWBCaseStudy";
+import KhanSahebCaseStudy from "./components/KhanSahebCaseStudy";
 import SocialMediaGallery from "./components/SocialMediaGallery";
 import ServicesShowcase from "./components/ServicesShowcase";
 // @ts-ignore
@@ -318,6 +319,9 @@ export default function App() {
     }
     if (projectFilter === "campaign") {
       return proj.category.toLowerCase().includes("social") || proj.category.toLowerCase().includes("campaign") || proj.category.toLowerCase().includes("marketing");
+    }
+    if (projectFilter === "ai") {
+      return proj.category.toLowerCase().includes("ai production");
     }
     if (projectFilter === "brand") {
       return proj.category.toLowerCase().includes("design") || proj.category.toLowerCase().includes("brand") || proj.category.toLowerCase().includes("identity");
@@ -625,7 +629,7 @@ export default function App() {
               <span className="font-mono text-xs text-[#3079D8] uppercase tracking-wider font-semibold block">
                 PORTFOLIO SHOWCASE
               </span>
-              <h2 className="font-display text-3xl md:text-5xl font-black text-on-surface tracking-tight">
+              <h2 className="font-display text-4xl md:text-6xl font-black text-on-surface tracking-tight">
                 Selected Projects
               </h2>
             </div>
@@ -635,7 +639,7 @@ export default function App() {
                 01 // PROJECTS
               </span>
               <div className="flex flex-wrap gap-3 font-mono text-xs tracking-wider uppercase">
-                {(["all", "cinematography", "photography", "campaign", "brand"] as const).map((cat) => (
+                {(["all", "cinematography", "photography", "campaign", "brand", "ai"] as const).map((cat) => (
                   <button
                     key={cat}
                     onClick={() => selectFilter(cat)}
@@ -646,15 +650,17 @@ export default function App() {
                     }`}
                     id={`filter-btn-${cat}`}
                   >
-                    {cat === "all" 
-                      ? "All" 
-                      : cat === "cinematography" 
+                    {cat === "all"
+                      ? "All"
+                      : cat === "cinematography"
                       ? "Ads & Corporate Films"
-                      : cat === "photography" 
-                      ? "Photography" 
-                      : cat === "campaign" 
-                      ? "Social Media & Marketing" 
-                      : "Branding/Design"}
+                      : cat === "photography"
+                      ? "Photography"
+                      : cat === "campaign"
+                      ? "Social Media & Marketing"
+                      : cat === "brand"
+                      ? "Branding/Design"
+                      : "AI Production - Content, Design & Development"}
                   </button>
                 ))}
               </div>
@@ -1275,6 +1281,13 @@ export default function App() {
               openProject(relProj);
             }
           }}
+        />
+      ) : selectedProject?.id === "khan-saheb-ai" ? (
+        <KhanSahebCaseStudy
+          onClose={closeProject}
+          onRequestContact={requestContact}
+          initialStory={initialStory}
+          onStoryChange={handleStoryChange("khan-saheb-ai")}
         />
       ) : (
         <ProjectDetail

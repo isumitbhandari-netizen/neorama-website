@@ -18,10 +18,10 @@
 
 import { SOCIAL_REELS, CATEGORY_ORDER, type SocialReelCategory } from "./socialReels";
 
-export type ProjectCategorySlug = "films" | "photography" | "social-media" | "branding";
+export type ProjectCategorySlug = "films" | "photography" | "social-media" | "branding" | "ai-production";
 
 // Matches the portfolio filter state in App.tsx.
-export type PortfolioFilter = "all" | "cinematography" | "photography" | "campaign" | "brand";
+export type PortfolioFilter = "all" | "cinematography" | "photography" | "campaign" | "brand" | "ai";
 
 export interface StoryRoute {
   slug: string;
@@ -413,6 +413,51 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
       "A packaging design collection for MW&B with bold visual storytelling, vibrant illustration systems and shelf-impact design.",
     ogImageFile: "mwb_thumbnail.png",
   },
+  {
+    id: "khan-saheb-ai",
+    category: "ai-production",
+    slug: "khan-saheb",
+    title: "Khan Saheb | AI-Produced Luxury Menswear Brand — Neorama Studios",
+    description:
+      "Khan Saheb — a complete luxury menswear brand produced end-to-end with AI by Neorama Studios: brand identity, generative editorial photography and a full digital-flagship e-commerce design.",
+    ogImageFile: "ks_thumbnail.jpg",
+    faqs: [
+      {
+        q: "What is Khan Saheb?",
+        a: "Khan Saheb is a concept luxury menswear brand created by Neorama Studios and produced entirely with AI — from brand identity and editorial photography to a complete digital-flagship e-commerce design. It demonstrates how a full brand world can be built with an AI-native production pipeline.",
+      },
+      {
+        q: "Do you offer AI production for content, design and development?",
+        a: "Yes. Neorama Studios produces AI-native content (brand, editorial and product photography), UX/UI design (websites, e-commerce and product experiences) and AI-assisted development that turns those designs into production-ready builds.",
+      },
+      {
+        q: "Was any of the Khan Saheb imagery a traditional photo shoot?",
+        a: "No. Every image was generated and art-directed with AI — no traditional photo shoot or stock imagery was used. This lets brands explore a complete visual identity quickly and affordably before committing to production.",
+      },
+      {
+        q: "Can you produce a full brand and website with AI for my business?",
+        a: "Yes. We build complete brand worlds with AI — identity, photography, a full design system and a launch-ready website. Share your brief through the contact form on neoramastudios.com or DM us on Instagram (@neoramastudios) and we'll come back with an approach and a quote.",
+      },
+    ],
+    stories: [
+      {
+        slug: "editorial-photography",
+        title: "Khan Saheb — AI Editorial & Product Photography | Neorama Studios",
+        description:
+          "AI-generated editorial and product photography for Khan Saheb by Neorama Studios — wedding, business and bespoke menswear imagery produced entirely with generative AI.",
+        ogImageFile: "ks_editorial.jpg",
+        imagePrefix: "ks_content",
+      },
+      {
+        slug: "digital-flagship",
+        title: "Khan Saheb — Digital Flagship UX / UI & Web Design | Neorama Studios",
+        description:
+          "A complete UX/UI and web design system for the Khan Saheb digital flagship by Neorama Studios — home, collections, bespoke journey, configurator, checkout and client dashboard.",
+        ogImageFile: "ks_flagship.jpg",
+        imagePrefix: "ks_design",
+      },
+    ],
+  },
 ];
 
 // ── Category landing pages (the portfolio filter "sections") ────────────────
@@ -451,6 +496,13 @@ export const CATEGORY_ROUTES: CategoryRoute[] = [
     title: "Branding & Design — Portfolio | Neorama Studios",
     description:
       "Brand identity, packaging and visual design systems by Neorama Studios, Mumbai.",
+  },
+  {
+    slug: "ai-production",
+    filter: "ai",
+    title: "AI Production — Content, Design & Development | Neorama Studios",
+    description:
+      "AI-native production by Neorama Studios, Mumbai — generative brand and product photography, UX/UI design and AI-assisted development, shown through the Khan Saheb concept brand.",
   },
 ];
 

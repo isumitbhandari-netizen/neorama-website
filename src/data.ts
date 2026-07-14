@@ -55,6 +55,8 @@ import foodBeverageThumbPhoto from "./assets/images/fb_campaign_hero.webp";
 import tatvaVedThumbPhoto from "./assets/images/tatva_ved_thumbnail.webp";
 // @ts-ignore
 import mwbThumbPhoto from "./assets/images/mwb_thumbnail.webp";
+// @ts-ignore
+import khanSahebThumbPhoto from "./assets/images/ks_hero.webp";
 
 export const PROJECTS: Project[] = [
   {
@@ -274,6 +276,17 @@ export const PROJECTS: Project[] = [
     clientBrief: "A packaging design project developed for MW&B, focused on creating distinctive product packaging through bold visual storytelling, vibrant illustration systems, and shelf-impact design.\n\nThe collection showcases multiple packaging concepts across different product categories while maintaining a consistent visual identity system. Each packaging concept was developed to command attention at point of sale, communicate brand values at a glance, and create a cohesive family across the full product range.",
     deliverables: "Packaging Design System, Brand Applications, Mockup Visuals, Collection Design",
     year: "2025"
+  },
+  {
+    id: "khan-saheb-ai",
+    title: "Khan Saheb | AI-Produced Luxury Menswear Brand",
+    category: "AI Production // Khan Saheb",
+    tags: ["AI Production", "Generative Photography", "UX / UI Design", "AI-Assisted Development"],
+    imageUrl: khanSahebThumbPhoto,
+    description: "A complete luxury menswear brand — identity, editorial photography and a full digital-flagship e-commerce experience — conceived and produced end-to-end with AI at Neorama Studios.",
+    clientBrief: "Khan Saheb is a concept house for bespoke Indian and contemporary menswear, imagined end-to-end using generative AI. From the brand voice and art direction to the editorial and product photography and a complete digital-flagship e-commerce design, every asset was produced without a single traditional shoot or stock image.\n\nThe project spans three pillars — Content, Design and Development. The content pillar covers AI-generated brand, editorial and product photography across wedding, business and bespoke lines. The design pillar delivers a full UX/UI system: home, collections, the bespoke journey, a build-your-suit configurator, checkout and a private client dashboard. The development pillar turns that design into a buildable, production-ready web experience — a demonstration of what AI-native production makes possible for a modern brand.",
+    deliverables: "AI Brand Identity, Generative Editorial & Product Photography, UX / UI Design, Design System, AI-Assisted Web Development",
+    year: "2026"
   }
 ];
 
