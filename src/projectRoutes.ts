@@ -393,6 +393,15 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
       },
     ],
   },
+  {
+    id: "monarque-gold-diamond",
+    category: "photography",
+    slug: "monarque-gold-diamond",
+    title: "Monarque Gold & Diamond | Jewellery Photography & Films — Neorama Studios",
+    description:
+      "A jewellery campaign for Monarque Gold & Diamond — editorial photography and social media films showcasing fine gold and diamond pieces.",
+    ogImageFile: "monarque_hero.jpg",
+  },
 
   // ── Branding & Design ─────────────────────────────────────────────────────
   {

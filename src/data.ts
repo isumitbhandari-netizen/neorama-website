@@ -59,8 +59,21 @@ import mwbThumbPhoto from "./assets/images/mwb_thumbnail.webp";
 import khanSahebThumbPhoto from "./assets/images/ks_content_17.webp";
 // @ts-ignore
 import goldenMirrorThumbPhoto from "./assets/images/gm_09.webp";
+// @ts-ignore
+import monarqueThumbPhoto from "./assets/images/monarque_thumb.webp";
 
 export const PROJECTS: Project[] = [
+  {
+    id: "monarque-gold-diamond",
+    title: "Monarque Gold & Diamond | Jewellery Campaign",
+    category: "Fashion & Lifestyle Photography // Monarque Gold & Diamond",
+    tags: ["Jewellery Photography", "Fashion Campaign", "Social Media Content", "Editorial"],
+    imageUrl: monarqueThumbPhoto,
+    description: "A jewellery campaign for Monarque Gold & Diamond — editorial photography and social media films celebrating fine gold and diamond pieces on real faces and hands.",
+    clientBrief: "A jewellery campaign created for Monarque Gold & Diamond, pairing editorial photography with a series of social media films to showcase the brand's gold and diamond collection. Rings, chains, cufflinks, studs and bracelets are shot in close, deliberate detail — on hands, ears and necklines — so the craftsmanship and brilliance of each piece reads clearly.\n\nStyled against a clean, minimal studio backdrop, the campaign balances intimate macro detail with confident editorial portraiture, giving Monarque a content library built for its website, social channels and marketing across both men's and women's collections.",
+    deliverables: "Jewellery Photography, Editorial Portraiture, Social Media Films, Marketing Assets",
+    year: "2026"
+  },
   {
     id: "heritage-redefined",
     title: "Myntra x House of Pataudi",

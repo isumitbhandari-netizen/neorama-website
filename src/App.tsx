@@ -15,6 +15,7 @@ import TatvaVedaCaseStudy from "./components/TatvaVedaCaseStudy";
 import MWBCaseStudy from "./components/MWBCaseStudy";
 import KhanSahebCaseStudy from "./components/KhanSahebCaseStudy";
 import GoldenMirrorCaseStudy from "./components/GoldenMirrorCaseStudy";
+import MonarqueCaseStudy from "./components/MonarqueCaseStudy";
 import SocialMediaGallery from "./components/SocialMediaGallery";
 import ServicesShowcase from "./components/ServicesShowcase";
 // @ts-ignore
@@ -1294,6 +1295,17 @@ export default function App() {
         <GoldenMirrorCaseStudy
           onClose={closeProject}
           onRequestContact={requestContact}
+        />
+      ) : selectedProject?.id === "monarque-gold-diamond" ? (
+        <MonarqueCaseStudy
+          onClose={closeProject}
+          onRequestContact={requestContact}
+          onSelectProjectById={(id) => {
+            const relProj = PROJECTS.find(p => p.id === id);
+            if (relProj) {
+              openProject(relProj);
+            }
+          }}
         />
       ) : (
         <ProjectDetail
