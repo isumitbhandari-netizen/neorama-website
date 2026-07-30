@@ -34,6 +34,8 @@ import tataTrustsPhoto from "./assets/images/tata_trusts_film_1780854327377.webp
 // @ts-ignore
 import fureverFriendsPhoto from "./assets/images/furever_friends_royal_canin.webp";
 // @ts-ignore
+import stayfreeWorkFromHomePhoto from "./assets/images/stayfree_work_from_home.webp";
+// @ts-ignore
 import linenFactoryPhoto from "./assets/images/linen_factory_tour_1780902734823.webp";
 // @ts-ignore
 import manikSchoolPhoto from "./assets/images/manik_school_film_1780903814735.webp";
@@ -174,6 +176,20 @@ export const PROJECTS: Project[] = [
     year: "2026",
     youtubeIds: [
       "f6lLihqbTmw"
+    ]
+  },
+  {
+    id: "stayfree-work-from-home",
+    title: "Stayfree | Work From Home",
+    category: "Ads & Corporate Films // Stayfree",
+    tags: ["Ads & Corporate Films", "Documentary & Impact Film", "Social Impact", "Women's Stories"],
+    imageUrl: stayfreeWorkFromHomePhoto,
+    description: "A short documentary film for Stayfree that looks at the unpaid, unseen work women do at home — and asks what it means to finally call it work.",
+    clientBrief: "A short documentary film created for Stayfree, built around a simple reframe: for the women running a household every day, home is where the work happens. \"Work From Home\" follows that labor as it actually looks — early mornings, kitchens, the quiet, constant, unpaid effort that keeps a household running — and asks why it's rarely recognized as work at all.\n\nShot with a documentary eye rather than a conventional ad approach, the film gives Stayfree's message room to breathe, letting real, lived-in moments carry the point instead of a voiceover. It's the kind of socially resonant, story-first film we build for brands that want to say something that actually lands.",
+    deliverables: "Documentary Filmmaking, Brand Campaign Film, Social Impact Storytelling, Post Production",
+    year: "2026",
+    youtubeIds: [
+      "UEa0Edoq18I"
     ]
   },
   {

@@ -113,6 +113,15 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
     ogImageFile: "furever_friends_royal_canin.jpg",
   },
   {
+    id: "stayfree-work-from-home",
+    category: "films",
+    slug: "stayfree-work-from-home",
+    title: "Stayfree | Work From Home — Neorama Studios",
+    description:
+      "A short documentary film for Stayfree on the unpaid, unseen work women do at home — and what it means to finally call it work.",
+    ogImageFile: "stayfree_work_from_home.jpg",
+  },
+  {
     id: "linen-factory-tour",
     category: "films",
     slug: "linen-and-linens-factory-tour",
