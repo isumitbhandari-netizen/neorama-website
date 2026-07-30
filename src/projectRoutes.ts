@@ -104,6 +104,15 @@ export const PROJECT_ROUTES: ProjectRoute[] = [
     ogImageFile: "tata_trusts_film_1780854327377.png",
   },
   {
+    id: "furever-friends-royal-canin",
+    category: "films",
+    slug: "furever-friends-royal-canin",
+    title: "Furever Friends x Royal Canin | Street Dog Rescue Documentary Film — Neorama Studios",
+    description:
+      "A documentary film for the NGO Furever Friends and Royal Canin India, following founder Vikas Luthra and Sher Khan, a stray he rescued.",
+    ogImageFile: "furever_friends_royal_canin.jpg",
+  },
+  {
     id: "linen-factory-tour",
     category: "films",
     slug: "linen-and-linens-factory-tour",

@@ -32,6 +32,8 @@ import villaTesoroPhoto from "./assets/images/regenerated_image_1780853559429.we
 // @ts-ignore
 import tataTrustsPhoto from "./assets/images/tata_trusts_film_1780854327377.webp";
 // @ts-ignore
+import fureverFriendsPhoto from "./assets/images/furever_friends_royal_canin.webp";
+// @ts-ignore
 import linenFactoryPhoto from "./assets/images/linen_factory_tour_1780902734823.webp";
 // @ts-ignore
 import manikSchoolPhoto from "./assets/images/manik_school_film_1780903814735.webp";
@@ -158,6 +160,20 @@ export const PROJECTS: Project[] = [
     year: "2024",
     youtubeIds: [
       "1xkkn2ZML3Q"
+    ]
+  },
+  {
+    id: "furever-friends-royal-canin",
+    title: "Furever Friends x Royal Canin | Street Dog Rescue Documentary Film",
+    category: "Ads & Corporate Films // Furever Friends x Royal Canin",
+    tags: ["Ads & Corporate Films", "Documentary & Impact Film", "CSR & NGO Storytelling", "Animal Welfare"],
+    imageUrl: fureverFriendsPhoto,
+    description: "A documentary film for the NGO Furever Friends, made with Royal Canin India, following the bond between founder Vikas Luthra and Sher Khan — a stray he found and took in.",
+    clientBrief: "A documentary film created for Furever Friends in partnership with Royal Canin India, told through the real relationship between Furever Friends founder Vikas Luthra and Sher Khan, a stray dog he found on the street and welcomed into his life. Rather than a straight brand or NGO explainer, the film follows one specific act of care to speak to the larger work Furever Friends does every day for India's street dogs.\n\nThe project shows what a corporate partner and a grassroots NGO can build together — a film that carries a brand's CSR commitment honestly, without overshadowing the story or the people and animals living it. For brand CSR teams and NGOs and foundations looking to tell their own impact work this way, this is the kind of film we make.",
+    deliverables: "Documentary Filmmaking, CSR Campaign Film, Brand-NGO Partnership Storytelling, Interviews, Post Production",
+    year: "2026",
+    youtubeIds: [
+      "f6lLihqbTmw"
     ]
   },
   {
