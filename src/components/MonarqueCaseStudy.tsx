@@ -37,6 +37,17 @@ const REELS: Reel[] = [
   { id: "monarque-hands", vimeoId: "1212562633", label: "Reel 04", thumbnail: "/images/social/monarque-hands.webp" },
   { id: "monarque-signet", vimeoId: "1212562630", label: "Reel 05", thumbnail: "/images/social/monarque-signet.webp" },
   { id: "monarque-earring", vimeoId: "1212562632", label: "Reel 06", thumbnail: "/images/social/monarque-earring.webp" },
+  { id: "monarque-reel07", vimeoId: "1217595249", label: "Reel 07", thumbnail: "/images/social/monarque-reel07.webp" },
+  { id: "monarque-reel08", vimeoId: "1217595255", label: "Reel 08", thumbnail: "/images/social/monarque-reel08.webp" },
+  { id: "monarque-reel09", vimeoId: "1217595236", label: "Reel 09", thumbnail: "/images/social/monarque-reel09.webp" },
+  { id: "monarque-reel10", vimeoId: "1217595232", label: "Reel 10", thumbnail: "/images/social/monarque-reel10.webp" },
+  { id: "monarque-reel11", vimeoId: "1217595223", label: "Reel 11", thumbnail: "/images/social/monarque-reel11.webp" },
+  { id: "monarque-reel12", vimeoId: "1217595224", label: "Reel 12", thumbnail: "/images/social/monarque-reel12.webp" },
+  { id: "monarque-reel13", vimeoId: "1217595193", label: "Reel 13", thumbnail: "/images/social/monarque-reel13.webp" },
+  { id: "monarque-reel14", vimeoId: "1217595191", label: "Reel 14", thumbnail: "/images/social/monarque-reel14.webp" },
+  { id: "monarque-reel15", vimeoId: "1217595262", label: "Reel 15", thumbnail: "/images/social/monarque-reel15.webp" },
+  { id: "monarque-reel16", vimeoId: "1217595275", label: "Reel 16", thumbnail: "/images/social/monarque-reel16.webp" },
+  { id: "monarque-reel17", vimeoId: "1217595263", label: "Reel 17", thumbnail: "/images/social/monarque-reel17.webp" },
 ];
 
 interface Props {
@@ -223,7 +234,7 @@ export default function MonarqueCaseStudy({ onClose, onRequestContact, onSelectP
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="text-center space-y-3">
             <span className="font-mono text-[10px] text-neutral-400 uppercase tracking-[0.3em] font-black block">
-              SOCIAL MEDIA CONTENT // 06 FILMS
+              SOCIAL MEDIA CONTENT // {String(REELS.length).padStart(2, "0")} FILMS
             </span>
             <h3 className="font-display text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-neutral-900">
               Campaign Films
